@@ -3,7 +3,7 @@ let
   inherit (prev.vimUtils) buildVimPluginFrom2Nix;
 in
 {
-  myVimPlugins = {
+  vitalityVimPlugins = {
     galaxyline-nvim = buildVimPluginFrom2Nix {
       pname = "galaxyline-nvim";
       version = "master";
