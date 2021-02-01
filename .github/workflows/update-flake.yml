@@ -2,8 +2,9 @@ name: Update Flake
 
 on:
   schedule:
-    # every day at 8am UTC
-    - cron: "0 8 * * *"
+    # every day at 8:15am UTC
+    # bumped 15 minutes to make sure to capture neovim-nightly's daily flake update
+    - cron: "15 8 * * *"
   workflow_dispatch:
 
 jobs:
