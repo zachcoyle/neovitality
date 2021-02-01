@@ -16,7 +16,7 @@
 
   };
 
-  outputs = { self, nixpkgs, flake-utils, ... }@inputs:
+  outputs = { self, nixpkgs, flake-utils, nixpkgsMaster, nur, ... }@inputs:
     flake-utils.lib.eachDefaultSystem (system:
       let
         vim-plugins-overlay = import ./vim-plugins-overlay.nix;
@@ -29,6 +29,10 @@
             (vim-plugins-overlay inputs)
             inputs.neovim-nightly-overlay.overlay
             (neovitality-overlay { pkgs = pkgs; })
+            nur.overlay
+            (final: prev: {
+              bleedingEdge = nixpkgsMaster.legacyPackages."${system}";
+            })
           ];
         };
       in
