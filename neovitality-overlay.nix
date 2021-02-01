@@ -158,18 +158,14 @@ let
     EOF
   '';
 
-  galaxyline-config = ''
+  wrapLuaConfig = luaConfigPath: ''
     lua << EOF
-      ${builtins.readFile ./config/galaxyline-nvim-config.lua}
+    ${builtins.readFile luaConfigPath}
     EOF
   '';
 
-  gitsignsConfig = ''
-    lua << EOF
-      ${builtins.readFile ./config/gitsigns-nvim-config.lua} 
-    EOF
-  '';
-
+  gitsignsConfig = wrapLuaConfig ./config/gitsigns-nvim-config.lua;
+  galaxyline-config = wrapLuaConfig ./config/galaxyline-nvim-config.lua;
 
 in
 {
