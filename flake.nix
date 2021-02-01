@@ -36,8 +36,17 @@
           ];
         };
       in
-      {
+      rec {
         defaultPackage = pkgs.neovitality;
+
+        apps = {
+          nvim = flake-utils.lib.mkApp {
+            drv = pkgs.neovitality;
+            name = "nvim";
+          };
+        };
+
+        defaultApp = apps.nvim;
       }
     );
 }
