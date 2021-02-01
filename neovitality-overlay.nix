@@ -44,13 +44,23 @@ let
     { plugin = vimagit; }
   ];
 
+  # todo: probably a lib function for this somewhere...
+  getOrDefault = attribute: defaultValue: attrSet:
+    if
+      (builtins.hasAttr attribute attrSet)
+    then
+      (builtins.getAttr attribute attrSet)
+    else defaultValue;
+
   configs =
     builtins.concatStringsSep ''
         ''
       (map
         (plugin: ''
           "{{{ ${plugin.plugin.name}
-            ${if (builtins.hasAttr "config" plugin) then builtins.getAttr "config" plugin else ""}
+
+          ${getOrDefault "config" "" plugin }
+
           "}}} 
         '')
         plugins);
@@ -163,17 +173,23 @@ let
 
 in
 {
-  neovitality = pkgs.wrapNeovim pkgs.neovim-nightly {
-    configure = {
-      customRC = ''
-        ${builtins.readFile ./config/init.vim}
-      '' + configs;
+  neovitality = pkgs.wrapNeovim
+    (pkgs.neovim-nightly.overrideAttrs (oldAttrs: {
+      propagatedBuildInputs = (getOrDefault "propagatedBuildInputs" [ ] oldAttrs)
+        ++ formatters
+        ++ lsHelpers;
+    }))
+    {
+      configure = {
+        customRC = ''
+          ${builtins.readFile ./config/init.vim}
+        '' + configs;
 
-      packages.myVimPackage = with pkgs.vimPlugins; {
-        start = map (plugin: plugin.plugin) plugins;
-        opt = [ ];
+        packages.myVimPackage = with pkgs.vimPlugins; {
+          start = map (plugin: plugin.plugin) plugins;
+          opt = [ ];
+        };
       };
-    };
 
-  };
+    };
 }
