@@ -49,7 +49,7 @@ let
         ''
       (map
         (plugin: ''
-          "{{{ 
+          "{{{ ${plugin.plugin.name}
             ${if (builtins.hasAttr "config" plugin) then builtins.getAttr "config" plugin else ""}
           "}}} 
         '')
