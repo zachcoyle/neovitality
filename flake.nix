@@ -2,11 +2,11 @@
   description = "Big Neovim Energy";
 
   inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgsMaster.url = "github:nixos/nixpkgs/master";
 
     flake-utils.url = "github:numtide/flake-utils";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    nixpkgsMaster.url = "github:nixos/nixpkgs/master";
     nur.url = "github:nix-community/NUR";
 
     galaxyline-nvim = { url = "github:glepnir/galaxyline.nvim"; flake = false; };
