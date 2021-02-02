@@ -13,6 +13,7 @@
     scrollbar-nvim = { url = "github:Xuyuanp/scrollbar.nvim"; flake = false; };
     vim-dadbod-ui = { url = "github:kristijanhusak/vim-dadbod-ui"; flake = false; };
     vim-prisma = { url = "github:pantharshit00/vim-prisma"; flake = false; };
+    formatter-nvim = { url = "github:mhartington/formatter.nvim"; flake = false; };
 
   };
 

@@ -46,6 +46,22 @@
         "type": "github"
       }
     },
+    "formatter-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1609893540,
+        "narHash": "sha256-kLdvb8jsDWHdHZDry+9xUm88wbcre1VDdzX+AQTT1CI=",
+        "owner": "mhartington",
+        "repo": "formatter.nvim",
+        "rev": "85f6da30fa79815142c81f22f45444a0599fd476",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mhartington",
+        "repo": "formatter.nvim",
+        "type": "github"
+      }
+    },
     "galaxyline-nvim": {
       "flake": false,
       "locked": {
@@ -199,6 +215,7 @@
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
+        "formatter-nvim": "formatter-nvim",
         "galaxyline-nvim": "galaxyline-nvim",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixpkgs": "nixpkgs_2",

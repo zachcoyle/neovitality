@@ -24,5 +24,10 @@ in
       version = "master";
       src = inputs.vim-prisma;
     };
+    formatter-nvim = buildVimPluginFrom2Nix {
+      pname = "formatter-nvim";
+      version = "master";
+      src = inputs.formatter-nvim;
+    };
   };
 }
