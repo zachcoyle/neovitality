@@ -20,9 +20,6 @@ let
     { plugin = nvim-dap-virtual-text; }
     { plugin = nvim-dap; config = dapConfig + (readFile ./config/nvim-dap-config.vim); }
     { plugin = nvim-tree-lua; config = readFile ./config/nvim-tree-lua-config.vim; }
-    { plugin = nvim-treesitter-context; }
-    { plugin = nvim-treesitter-refactor; }
-    { plugin = nvim-treesitter-textobjects; config = readFile ./config/nvim-treesitter-textobjects-config.vim; }
     { plugin = nvim-treesitter; config = readFile ./config/nvim-treesitter-config.vim; }
     { plugin = nvim-web-devicons; }
     { plugin = plenary-nvim; }
@@ -42,6 +39,10 @@ let
     { plugin = vim-sensible; }
     { plugin = vim-tmux-navigator; }
     { plugin = vimagit; }
+  ] ++ lib.optionals (pkgs.system == "x86_64-darwin") [
+    { plugin = nvim-treesitter-context; }
+    { plugin = nvim-treesitter-refactor; }
+    { plugin = nvim-treesitter-textobjects; config = readFile ./config/nvim-treesitter-textobjects-config.vim; }
   ];
 
   # todo: probably a lib function for this somewhere...
