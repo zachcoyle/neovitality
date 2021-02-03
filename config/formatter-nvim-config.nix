@@ -42,14 +42,8 @@ let
     go = {
       extension = "go";
       formatters = [
-        {
-          exe = "${pkgs.gofumpt}/bin/gofumpt";
-          args = [ ];
-        }
-        {
-          exe = "${pkgs.gofumpt}/bin/gofumports";
-          args = [ ];
-        }
+        { exe = "${pkgs.gofumpt}/bin/gofumpt"; }
+        { exe = "${pkgs.gofumpt}/bin/gofumports"; }
       ];
     };
 
@@ -60,12 +54,7 @@ let
 
     haskell = {
       extension = "hs";
-      formatters = [
-        {
-          exe = "${pkgs.ormolu}/bin/ormolu";
-          args = [ ];
-        }
-      ];
+      formatters = [{ exe = "${pkgs.ormolu}/bin/ormolu"; }];
     };
 
     javascript = {
@@ -95,12 +84,7 @@ let
 
     nix = {
       extension = "nix";
-      formatters = [
-        {
-          exe = "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt";
-          args = [ ];
-        }
-      ];
+      formatters = [{ exe = "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt"; }];
     };
 
     objc = {
@@ -130,6 +114,11 @@ let
           args = [ "'--auto-correct'" "'--stdin'" "'\"%:p\"'" "'2>/dev/null'" "'|'" "'sed \"1,/^====================$/d\"'" ];
         }
       ];
+    };
+
+    rust = {
+      extension = "rs";
+      formatters = [{ exe = "${pkgs.rustfmt}/bin/rustfmt"; }];
     };
 
     scala = {
@@ -187,7 +176,6 @@ let
   #     formatters = [
   #       {
   #         exe = "${pkgs.swiftformat}/bin/swiftformat";
-  #         args = [ ];
   #       }
   #     ];
   #   };
