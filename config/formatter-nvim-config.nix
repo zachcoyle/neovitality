@@ -1,16 +1,6 @@
 { pkgs }:
 let
-  prettier_fn = ''
-    function()
-      return {
-        exe = '${pkgs.nodePackages.prettier}/bin/prettier',
-        args = { '--stdin-filepath', vim.api.nvim_buf_get_name(0) },
-        stdin = true,
-      }
-    end
-  '';
-
-  buildFormatter = { exe, args ? [ ], stdin }: ''
+  buildFormatter = { exe, args ? [ ], stdin ? true }: ''
     function()
       return {
         exe = '${exe}',
@@ -30,35 +20,54 @@ let
   prettierFormatter = {
     exe = "${pkgs.nodePackages.prettier}/bin/prettier";
     args = [ "'--stdin-filepath'" "vim.api.nvim_buf_get_name(0)" ];
-    stdin = true;
+  };
+
+  clangFormatter = {
+    exe = "${pkgs.clang-tools}/bin/clang-format";
+    args = [ "'--assume-filename=' .. vim.api.nvim_buf_get_name(0)" ];
   };
 
   filetypes = {
-    nix = {
-      extension = "nix";
+
+    c = {
+      extension = "c,*.h";
+      formatters = [ clangFormatter ];
+    };
+
+    cpp = {
+      extension = "cpp,*.h";
+      formatters = [ clangFormatter ];
+    };
+
+    go = {
+      extension = "go";
       formatters = [
         {
-          exe = "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt";
+          exe = "${pkgs.gofumpt}/bin/gofumpt";
           args = [ ];
-          stdin = true;
+        }
+        {
+          exe = "${pkgs.gofumpt}/bin/gofumports";
+          args = [ ];
         }
       ];
     };
-    python = {
-      extension = "py";
+
+    graphql = {
+      extension = "graphql,*.gql";
+      formatters = [ prettierFormatter ];
+    };
+
+    haskell = {
+      extension = "hs";
       formatters = [
         {
-          exe = "${pkgs.python3Packages.black}/bin/black";
-          args = [ "'-q'" "'-'" ];
-          stdin = true;
-        }
-        {
-          exe = "${pkgs.python3Packages.isort}/bin/isort";
-          args = [ "'-'" ];
-          stdin = true;
+          exe = "${pkgs.ormolu}/bin/ormolu";
+          args = [ ];
         }
       ];
     };
+
     javascript = {
       extension = "js";
       formatters = [ prettierFormatter ];
@@ -67,6 +76,91 @@ let
     javascriptreact = {
       extension = "jsx";
       formatters = [ prettierFormatter ];
+    };
+
+    java = {
+      extension = "java";
+      formatters = [ clangFormatter ];
+    };
+
+    kotlin = {
+      extension = "kt";
+      formatters = [
+        {
+          exe = "${pkgs.ktlint}/bin/ktlint";
+          args = [ "'-F'" ];
+        }
+      ];
+    };
+
+    nix = {
+      extension = "nix";
+      formatters = [
+        {
+          exe = "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt";
+          args = [ ];
+        }
+      ];
+    };
+
+    objc = {
+      extension = "m,*.h";
+      formatters = [ clangFormatter ];
+    };
+
+    python = {
+      extension = "py";
+      formatters = [
+        {
+          exe = "${pkgs.python3Packages.isort}/bin/isort";
+          args = [ "'-'" ];
+        }
+        {
+          exe = "${pkgs.python3Packages.black}/bin/black";
+          args = [ "'-q'" "'-'" ];
+        }
+      ];
+    };
+
+    ruby = {
+      extension = "rb";
+      formatters = [
+        {
+          exe = "${pkgs.rubocop}/bin/rubocop";
+          args = [ "'--auto-correct'" "'--stdin'" "'\"%:p\"'" "'2>/dev/null'" "'|'" "'sed \"1,/^====================$/d\"'" ];
+        }
+      ];
+    };
+
+    scala = {
+      extension = "scala,*.sc";
+      formatters = [
+        {
+          exe = "${pkgs.scalafmt}/bin/scalafmt";
+          args = [ "'--stdin'" ];
+
+        }
+      ];
+    };
+
+    sh = {
+      extension = "sh";
+      formatters = [
+        {
+          exe = "${pkgs.shfmt}/bin/shfmt";
+          args = [ "'-i 2'" ];
+        }
+      ];
+    };
+
+    terraform = {
+      extension = "tf";
+      formatters = [
+        {
+          exe = "${pkgs.terraform}/bin/terraform";
+          args = [ "'fmt'" "'-write'" "'-'" ];
+        }
+      ];
     };
 
     typescript = {
@@ -79,7 +173,25 @@ let
       formatters = [ prettierFormatter ];
     };
 
+    yaml = {
+      extension = "yml,*.yaml";
+      formatters = [ prettierFormatter ];
+    };
+
   };
+
+  # currently doesn't build :(
+  # // (if pkgs.system != "x86_64-darwin" then { } else {
+  #   swift = {
+  #     extension = "swift";
+  #     formatters = [
+  #       {
+  #         exe = "${pkgs.swiftformat}/bin/swiftformat";
+  #         args = [ ];
+  #       }
+  #     ];
+  #   };
+  # });
 
   newline = ''
   '';
