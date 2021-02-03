@@ -212,7 +212,7 @@ let
 in
 ''
   require('formatter').setup({
-    logging = true,
+    logging = false,
     filetype = {
       ${builtins.concatStringsSep newline ((map buildFormatterGroupByName enabledLanguages))}
     }
