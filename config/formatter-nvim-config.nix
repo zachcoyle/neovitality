@@ -72,6 +72,11 @@ let
       formatters = [ clangFormatter ];
     };
 
+    json = {
+      extension = "json";
+      formatters = [ prettierFormatter ];
+    };
+
     kotlin = {
       extension = "kt";
       formatters = [
