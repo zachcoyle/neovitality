@@ -2,7 +2,7 @@
 with pkgs;
 with builtins;
 let
-  plugins = with pkgs.vitalityVimPlugins;  [
+  plugins = with pkgs.vimPlugins; with pkgs.vitalityVimPlugins;  [
     { plugin = auto-pairs; }
     { plugin = barbar-nvim; }
     { plugin = colorizer; }
