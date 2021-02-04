@@ -1,7 +1,8 @@
 { pkgs }: final: prev:
 with pkgs;
+with builtins;
 let
-  plugins = with pkgs.bleedingEdge.vimPlugins; with pkgs.vitalityVimPlugins; with builtins; [
+  plugins = with pkgs.vitalityVimPlugins;  [
     { plugin = auto-pairs; }
     { plugin = barbar-nvim; }
     { plugin = colorizer; }
@@ -30,7 +31,7 @@ let
     { plugin = vim-commentary; }
     { plugin = vim-cursorword; }
     { plugin = vim-dadbod-ui; }
-    { plugin = vim-dadbod;    }
+    { plugin = vim-dadbod; }
     { plugin = vim-devicons; }
     { plugin = vim-dispatch; }
     { plugin = vim-polyglot; }
@@ -63,7 +64,7 @@ let
 
           ${getOrDefault "config" "" plugin }
 
-          "}}} 
+          "}}}
         '')
         plugins);
 
