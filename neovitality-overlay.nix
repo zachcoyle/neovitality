@@ -34,6 +34,7 @@ let
     { plugin = vim-dadbod; }
     { plugin = vim-devicons; }
     { plugin = vim-dispatch; }
+    { plugin = vim-parinfer; }
     { plugin = vim-polyglot; }
     { plugin = vim-prisma; }
     { plugin = vim-repeat; }
@@ -60,11 +61,13 @@ let
         ''
       (map
         (plugin: ''
+
           "{{{ ${plugin.plugin.name}
 
           ${getOrDefault "config" "" plugin }
 
           "}}}
+
         '')
         plugins);
 
