@@ -17,10 +17,17 @@ let
       },
     '';
 
-  prettierFormatter = {
-    exe = "${pkgs.nodePackages.prettier}/bin/prettier";
-    args = [ "'--stdin-filepath'" "vim.api.nvim_buf_get_name(0)" ];
-  };
+  prettierFormatter = { parser ? null }:
+    let
+      parserArgs =
+        if parser != null
+        then [ "'--parser'" "'${parser}'" ]
+        else [ ];
+    in
+    {
+      exe = "${pkgs.nodePackages.prettier}/bin/prettier";
+      args = [ "'--stdin-filepath'" "vim.api.nvim_buf_get_name(0)" ] ++ parserArgs;
+    };
 
   clangFormatter = {
     exe = "${pkgs.clang-tools}/bin/clang-format";
@@ -49,7 +56,7 @@ let
 
     graphql = {
       extension = "graphql,*.gql";
-      formatters = [ prettierFormatter ];
+      formatters = [ (prettierFormatter { parser = "graphql"; }) ];
     };
 
     haskell = {
@@ -59,12 +66,12 @@ let
 
     javascript = {
       extension = "js";
-      formatters = [ prettierFormatter ];
+      formatters = [ (prettierFormatter { }) ];
     };
 
     javascriptreact = {
       extension = "jsx";
-      formatters = [ prettierFormatter ];
+      formatters = [ (prettierFormatter { }) ];
     };
 
     java = {
@@ -74,7 +81,12 @@ let
 
     json = {
       extension = "json";
-      formatters = [ prettierFormatter ];
+      formatters = [ (prettierFormatter { parser = "json"; }) ];
+    };
+
+    jsonc = {
+      extension = "json,*.jsonc";
+      formatters = [ (prettierFormatter { parser = "json"; }) ];
     };
 
     kotlin = {
@@ -159,17 +171,17 @@ let
 
     typescript = {
       extension = "ts";
-      formatters = [ prettierFormatter ];
+      formatters = [ (prettierFormatter { }) ];
     };
 
     typescriptreact = {
       extension = "tsx";
-      formatters = [ prettierFormatter ];
+      formatters = [ (prettierFormatter { }) ];
     };
 
     yaml = {
       extension = "yml,*.yaml";
-      formatters = [ prettierFormatter ];
+      formatters = [ (prettierFormatter { parser = "yaml"; }) ];
     };
 
   };
