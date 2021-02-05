@@ -19,6 +19,7 @@ let
     "snippets-nvim"
     "vim-dadbod-ui"
     "vim-prisma"
+    "vim-vsnip"
   ];
 in
 {

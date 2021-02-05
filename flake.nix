@@ -22,6 +22,7 @@
     snippets-nvim = { url = github:norcalli/snippets.nvim; flake = false; };
     vim-dadbod-ui = { url = github:kristijanhusak/vim-dadbod-ui; flake = false; };
     vim-prisma = { url = github:pantharshit00/vim-prisma; flake = false; };
+    vim-vsnip = { url = github:hrsh7th/vim-vsnip; flake = false; };
 
   };
 

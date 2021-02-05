@@ -182,7 +182,8 @@
         "scrollbar-nvim": "scrollbar-nvim",
         "snippets-nvim": "snippets-nvim",
         "vim-dadbod-ui": "vim-dadbod-ui",
-        "vim-prisma": "vim-prisma"
+        "vim-prisma": "vim-prisma",
+        "vim-vsnip": "vim-vsnip"
       }
     },
     "scrollbar-nvim": {
@@ -246,6 +247,22 @@
       "original": {
         "owner": "pantharshit00",
         "repo": "vim-prisma",
+        "type": "github"
+      }
+    },
+    "vim-vsnip": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1612279083,
+        "narHash": "sha256-LGD3q8QXQrZk071HASf14RMYFB/ELjDyk38FrevM0DE=",
+        "owner": "hrsh7th",
+        "repo": "vim-vsnip",
+        "rev": "cacfe408e58f9b2cbc6ecd0f1135ff4810e42889",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hrsh7th",
+        "repo": "vim-vsnip",
         "type": "github"
       }
     }

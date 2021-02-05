@@ -1,7 +1,23 @@
 { pkgs }: final: prev:
 with pkgs;
 with builtins;
+with (import ./lib.nix);
 let
+  wrapLuaConfig = luaConfig: ''
+    lua << EOF
+    ${luaConfig}
+    EOF
+  '';
+
+  lspConfigs =
+    wrapLuaConfig (import ./config/nvim-lspconfig-config.nix { inherit pkgs; }) +
+    wrapLuaConfig (readFile ./config/nvim-lspconfig-config.lua);
+
+  dapConfig = import ./config/nvim-dap-config.nix { inherit pkgs; };
+
+  gitsignsConfig = wrapLuaConfig (builtins.readFile ./config/gitsigns-nvim-config.lua);
+  galaxyline-config = wrapLuaConfig (builtins.readFile ./config/galaxyline-nvim-config.lua);
+
   plugins = with pkgs.vimPlugins; with pkgs.vitalityVimPlugins;  [
     { plugin = auto-pairs; }
     { plugin = barbar-nvim; }
@@ -16,12 +32,11 @@ let
     { plugin = galaxyline-nvim; config = galaxyline-config; }
     { plugin = gitsigns-nvim; config = gitsignsConfig; }
     { plugin = gruvbox; config = readFile ./config/theme-config.vim; }
-    { plugin = lush-nvim; config = wrapLuaConfig (import ./config/lush-nvim-config.nix { inherit pkgs; }); }
     { plugin = lspkind-nvim; config = "lua require('lspkind').init()"; }
+    #{ plugin = lush-nvim; config = wrapLuaConfig (import ./config/lush-nvim-config.nix { inherit pkgs; }); }
     { plugin = nvim-compe; config = wrapLuaConfig (readFile ./config/nvim-compe-config.lua); }
     { plugin = nvim-dap-virtual-text; }
     { plugin = nvim-dap; config = dapConfig + (readFile ./config/nvim-dap-config.vim); }
-    { plugin = vitalityVimPlugins.nvim-lspconfig; config = wrapLuaConfig (import ./config/nvim-lspconfig-config.nix { inherit pkgs; }); }
     { plugin = nvim-tree-lua; config = readFile ./config/nvim-tree-lua-config.vim; }
     { plugin = nvim-treesitter; config = readFile ./config/nvim-treesitter-config.vim; }
     { plugin = nvim-web-devicons; }
@@ -41,22 +56,17 @@ let
     { plugin = vim-prisma; }
     { plugin = vim-repeat; }
     { plugin = vim-sensible; }
+    { plugin = vim-startify; config = readFile ./config/vim-startify-config.vim; }
     { plugin = vim-tmux-navigator; }
     { plugin = vimagit; }
+    { plugin = vitalityVimPlugins.nvim-lspconfig; config = lspConfigs; }
+    { plugin = vitalityVimPlugins.vim-vsnip; }
   ] ++ lib.optionals (pkgs.system == "x86_64-darwin") [
     #TODO: install treesitter grammars from nix
     { plugin = nvim-treesitter-context; }
     { plugin = nvim-treesitter-refactor; }
     { plugin = nvim-treesitter-textobjects; config = readFile ./config/nvim-treesitter-textobjects-config.vim; }
   ];
-
-  # TODO: probably a lib function for this somewhere...
-  getOrDefault = attribute: defaultValue: attrSet:
-    if
-      (builtins.hasAttr attribute attrSet)
-    then
-      (builtins.getAttr attribute attrSet)
-    else defaultValue;
 
   configs =
     builtins.concatStringsSep ''
@@ -72,18 +82,6 @@ let
 
         '')
         plugins);
-
-  dapConfig = import ./config/nvim-dap-config.nix { inherit pkgs; };
-  lspConfig = import ./config/LanguageClient-neovim-config.nix { inherit pkgs; };
-
-  wrapLuaConfig = luaConfig: ''
-    lua << EOF
-    ${luaConfig}
-    EOF
-  '';
-
-  gitsignsConfig = wrapLuaConfig (builtins.readFile ./config/gitsigns-nvim-config.lua);
-  galaxyline-config = wrapLuaConfig (builtins.readFile ./config/galaxyline-nvim-config.lua);
 
 in
 {
