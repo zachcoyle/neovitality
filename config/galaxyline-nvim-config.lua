@@ -8,26 +8,7 @@ function has_width_gt(cols)
   return vim.fn.winwidth(0) / 2 > cols
 end
 
-function diagnostic_counts(diagnostic_type)
-  local diagnostics = vim.api.nvim_call_function("LanguageClient#statusLineDiagnosticsCounts", {})
-  diagnostic_count = diagnostics[diagnostic_type]
-  
-  if (diagnostic_count == nil)
-  then 
-    return nil
-  end
-
-  if (diagnostic_count > 0)
-  then 
-    return diagnostic_count
-  else 
-    return nil
-  end
-
-end
-
 local gl = require('galaxyline')
-
 
 local gls = gl.section
 gl.short_line_list = { 'NvimTree', 'defx', 'packager', 'vista', 'zsh' }
@@ -159,7 +140,7 @@ gls.left[10] = {
 }
 gls.left[11] = {
   DiagnosticError = {
-    provider = function() return diagnostic_counts('E') end,
+    provider = 'DiagnosticError',
     icon = '  ',
     highlight = { colors.red, colors.section_bg }
   }
@@ -172,7 +153,7 @@ gls.left[12] = {
 }
 gls.left[13] = {
   DiagnosticWarn = {
-    provider = function() return diagnostic_counts('W') end,
+    provider = 'DiagnosticWarn',
     icon = '  ',
     highlight = {colors.orange,colors.section_bg},
   }
@@ -185,14 +166,14 @@ gls.left[14] = {
 }
 gls.left[15] = {
   DiagnosticInfo = {
-    provider = function() return diagnostic_counts('I') end,
+    provider = 'DiagnosticInfo',
     icon = '  ',
     highlight = {colors.blue,colors.section_bg},
   }
 }
 gls.left[16] = {
   DiagnosticHint = {
-    provider = function() return diagnostic_counts('H') end,
+    provider = 'DiagnosticHint',
     icon = '  ',
     highlight = {colors.blue,colors.section_bg},
     separator = ' ',

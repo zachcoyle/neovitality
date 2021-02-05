@@ -12,6 +12,7 @@ set splitright
 set signcolumn=yes
 set tabstop=2
 let g:mapleader = ';'
+set exrc
 syntax on
 
 "set nobackup

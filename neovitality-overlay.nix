@@ -7,7 +7,6 @@ let
     { plugin = barbar-nvim; }
     { plugin = colorizer; }
     { plugin = conjure; }
-    { plugin = deoplete-nvim; config = readFile ./config/deoplete-nvim-config.vim; }
     { plugin = direnv-vim; config = readFile ./config/direnv-vim-config.vim; }
     { plugin = editorconfig-vim; }
     { plugin = emmet-vim; config = readFile ./config/emmet-vim-config.vim; }
@@ -17,9 +16,12 @@ let
     { plugin = galaxyline-nvim; config = galaxyline-config; }
     { plugin = gitsigns-nvim; config = gitsignsConfig; }
     { plugin = gruvbox; config = readFile ./config/theme-config.vim; }
-    { plugin = LanguageClient-neovim; config = (readFile ./config/LanguageClient-neovim-config.vim) + lspConfig; }
+    { plugin = lush-nvim; config = wrapLuaConfig (import ./config/lush-nvim-config.nix { inherit pkgs; }); }
+    { plugin = lspkind-nvim; config = "lua require('lspkind').init()"; }
+    { plugin = nvim-compe; config = wrapLuaConfig (readFile ./config/nvim-compe-config.lua); }
     { plugin = nvim-dap-virtual-text; }
     { plugin = nvim-dap; config = dapConfig + (readFile ./config/nvim-dap-config.vim); }
+    { plugin = vitalityVimPlugins.nvim-lspconfig; config = wrapLuaConfig (import ./config/nvim-lspconfig-config.nix { inherit pkgs; }); }
     { plugin = nvim-tree-lua; config = readFile ./config/nvim-tree-lua-config.vim; }
     { plugin = nvim-treesitter; config = readFile ./config/nvim-treesitter-config.vim; }
     { plugin = nvim-web-devicons; }

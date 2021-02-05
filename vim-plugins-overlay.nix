@@ -1,33 +1,31 @@
 inputs: final: prev:
 let
   inherit (prev.vimUtils) buildVimPluginFrom2Nix;
+
+  buildVitalityPlugin = name: buildVimPluginFrom2Nix {
+    pname = name;
+    version = "master";
+    src = builtins.getAttr name inputs;
+  };
+
+  plugins = [
+    "formatter-nvim"
+    "galaxyline-nvim"
+    "lspkind-nvim"
+    "lush-nvim"
+    "nvim-compe"
+    "nvim-lspconfig"
+    "scrollbar-nvim"
+    "snippets-nvim"
+    "vim-dadbod-ui"
+    "vim-prisma"
+  ];
 in
 {
-  vitalityVimPlugins = {
-    galaxyline-nvim = buildVimPluginFrom2Nix {
-      pname = "galaxyline-nvim";
-      version = "master";
-      src = inputs.galaxyline-nvim;
-    };
-    scrollbar-nvim = buildVimPluginFrom2Nix {
-      pname = "scrollbar-nvim";
-      version = "master";
-      src = inputs.scrollbar-nvim;
-    };
-    vim-dadbod-ui = buildVimPluginFrom2Nix {
-      pname = "vim-dadbod-ui";
-      version = "master";
-      src = inputs.vim-dadbod-ui;
-    };
-    vim-prisma = buildVimPluginFrom2Nix {
-      pname = "vim-prisma";
-      version = "master";
-      src = inputs.vim-prisma;
-    };
-    formatter-nvim = buildVimPluginFrom2Nix {
-      pname = "formatter-nvim";
-      version = "master";
-      src = inputs.formatter-nvim;
-    };
-  };
+  vitalityVimPlugins = builtins.listToAttrs
+    (map
+      (name:
+        { inherit name; value = buildVitalityPlugin name; })
+      plugins);
+
 }
