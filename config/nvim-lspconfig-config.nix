@@ -73,7 +73,7 @@ in
   }
 
   lspconfig.tsserver.setup {
-    cmd = { '${nodePackages.typescript-language-server}/bin/typescript-language-server', '--stdio', '--tsserver-path', 'tsserver' },
+    cmd = { '${nodePackages.typescript-language-server}/bin/typescript-language-server', '--stdio' },
     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "json", "jsonc" },
   }
 
