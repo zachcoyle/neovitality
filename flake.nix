@@ -30,32 +30,36 @@
     flake-utils.lib.eachDefaultSystem (system:
       let
         vim-plugins-overlay = import ./vim-plugins-overlay.nix;
-        neovitality-overlay = import ./neovitality-overlay.nix;
 
         pkgs = import nixpkgs {
           inherit system;
           config = { allowUnfree = true; };
           overlays = [
             (vim-plugins-overlay inputs)
-            (neovitality-overlay { pkgs = pkgs; })
             nur.overlay
             (final: prev: {
               neovim-nightly = neovim.defaultPackage.${system};
             })
           ];
         };
+        neovimBuilder = import ./options/neovimBuilder.nix { inherit pkgs; };
       in
       rec {
-        defaultPackage = pkgs.neovitality;
+        defaultPackage = neovimBuilder {
+          config = {
+            vim = import ./examples/zach.nix { inherit pkgs; };
+          };
+        };
 
         apps = {
           nvim = flake-utils.lib.mkApp {
-            drv = pkgs.neovitality;
+            drv = defaultPackage;
             name = "nvim";
           };
         };
 
         defaultApp = apps.nvim;
+
       }
     );
 }

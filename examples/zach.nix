@@ -1,7 +1,6 @@
-{ pkgs }: final: prev:
-with pkgs;
+{ pkgs, lib ? pkgs.lib }:
 with builtins;
-with (import ./lib.nix);
+with lib;
 let
   wrapLuaConfig = luaConfig: ''
     lua << EOF
@@ -18,6 +17,8 @@ let
   gitsignsConfig = wrapLuaConfig (builtins.readFile ./config/gitsigns-nvim-config.lua);
   galaxyline-config = wrapLuaConfig (builtins.readFile ./config/galaxyline-nvim-config.lua);
 
+in
+{
   plugins = with pkgs.vimPlugins; with pkgs.vitalityVimPlugins;  [
     { plugin = auto-pairs; }
     { plugin = barbar-nvim; }
@@ -38,7 +39,6 @@ let
     { plugin = nvim-dap-virtual-text; }
     { plugin = nvim-dap; config = dapConfig + (readFile ./config/nvim-dap-config.vim); }
     { plugin = nvim-tree-lua; config = readFile ./config/nvim-tree-lua-config.vim; }
-    { plugin = nvim-treesitter; config = readFile ./config/nvim-treesitter-config.vim; }
     { plugin = nvim-web-devicons; }
     { plugin = plenary-nvim; }
     { plugin = scrollbar-nvim; config = readFile ./config/scrollbar-nvim-config.vim; }
@@ -59,44 +59,17 @@ let
     { plugin = vim-startify; config = readFile ./config/vim-startify-config.vim; }
     { plugin = vim-tmux-navigator; }
     { plugin = vimagit; }
-    { plugin = vitalityVimPlugins.nvim-lspconfig; config = lspConfigs; }
-    { plugin = vitalityVimPlugins.vim-vsnip; }
-  ] ++ lib.optionals (pkgs.system == "x86_64-darwin") [
+    { plugin = nvim-lspconfig; config = lspConfigs; }
+    { plugin = vim-vsnip; }
+  ] ++ optionals (pkgs.system == "x86_64-darwin") [
     #TODO: install treesitter grammars from nix
+    { plugin = nvim-treesitter; config = readFile ./config/nvim-treesitter-config.vim; }
     { plugin = nvim-treesitter-context; }
     { plugin = nvim-treesitter-refactor; }
     { plugin = nvim-treesitter-textobjects; config = readFile ./config/nvim-treesitter-textobjects-config.vim; }
   ];
 
-  configs =
-    builtins.concatStringsSep ''
-        ''
-      (map
-        (plugin: ''
-
-          "{{{ ${plugin.plugin.name}
-
-          ${getOrDefault "config" "" plugin }
-
-          "}}}
-
-        '')
-        plugins);
-
-in
-{
-  neovitality = pkgs.wrapNeovim pkgs.neovim-nightly {
-
-    configure = {
-      customRC = ''
-        ${builtins.readFile ./config/init.vim}
-      '' + configs;
-
-      packages.myVimPackage = with pkgs.vimPlugins; {
-        start = map (plugin: plugin.plugin) plugins;
-        opt = [ ];
-      };
-    };
-
-  };
+  vimScript = ''
+    ${builtins.readFile ./config/init.vim}
+  '';
 }
