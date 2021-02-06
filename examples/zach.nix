@@ -71,6 +71,5 @@ in
 
   vimScript = ''
     ${builtins.readFile ./config/init.vim}
-    set number
   '';
 }

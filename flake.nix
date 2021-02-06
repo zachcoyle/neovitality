@@ -47,7 +47,7 @@
       rec {
         defaultPackage = neovimBuilder {
           config = {
-            vim = import ./examples/zack.nix { inherit pkgs; };
+            vim = import ./examples/zach.nix { inherit pkgs; };
           };
         };
 
