@@ -13,7 +13,7 @@ in
 pkgs.wrapNeovim pkgs.neovim-nightly {
   configure = {
     customRC = ''
-      ${vim.vimScript}
+      ${vim.configRC}
     '';
 
     packages.myVimPackage = with pkgs.vimPlugins; {

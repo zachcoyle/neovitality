@@ -69,7 +69,7 @@ in
     { plugin = nvim-treesitter-textobjects; config = readFile ./config/nvim-treesitter-textobjects-config.vim; }
   ];
 
-  vimScript = ''
+  configRC = ''
     ${builtins.readFile ./config/init.vim}
   '';
 }
