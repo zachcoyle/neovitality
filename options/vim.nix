@@ -37,22 +37,14 @@ with lib;
 
   config =
     let
-      getOrDefault = attribute: defaultValue: attrSet:
-        if
-          (builtins.hasAttr attribute attrSet)
-        then
-          (builtins.getAttr attribute attrSet)
-        else defaultValue;
-      configs =
-        builtins.concatStringsSep ''
-      ''
-          (map
-            (plugin: ''
-              "{{{ ${plugin.plugin.name}
-              ${getOrDefault "config" "" plugin }
-              "}}}
-            '')
-            config.vim.plugins);
+      attrsWithConfig = filter (it: it ? config) config.vim.plugins;
+      configs = builtins.concatStringsSep '' '' (map (plugin: ''
+
+        "{{{ ${plugin.plugin.name}
+        ${plugin.config}
+        "}}}
+      '')
+      (attrsWithConfig));
       start = map (plugin: plugin.plugin) config.vim.plugins;
     in
     {
