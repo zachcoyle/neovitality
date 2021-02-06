@@ -39,7 +39,6 @@ in
     { plugin = nvim-dap-virtual-text; }
     { plugin = nvim-dap; config = dapConfig + (readFile ./config/nvim-dap-config.vim); }
     { plugin = nvim-tree-lua; config = readFile ./config/nvim-tree-lua-config.vim; }
-    { plugin = nvim-treesitter; config = readFile ./config/nvim-treesitter-config.vim; }
     { plugin = nvim-web-devicons; }
     { plugin = plenary-nvim; }
     { plugin = scrollbar-nvim; config = readFile ./config/scrollbar-nvim-config.vim; }
@@ -64,6 +63,7 @@ in
     { plugin = vim-vsnip; }
   ] ++ optionals (pkgs.system == "x86_64-darwin") [
     #TODO: install treesitter grammars from nix
+    { plugin = nvim-treesitter; config = readFile ./config/nvim-treesitter-config.vim; }
     { plugin = nvim-treesitter-context; }
     { plugin = nvim-treesitter-refactor; }
     { plugin = nvim-treesitter-textobjects; config = readFile ./config/nvim-treesitter-textobjects-config.vim; }
