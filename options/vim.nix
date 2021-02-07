@@ -138,7 +138,7 @@ with builtins;
       cmap = mapVimBinding "cmap" config.vim.cmap;
       omap = mapVimBinding "omap" config.vim.omap;
 
-      nnoremap = mapVimBinding "nmap" config.vim.nmap;
+      nnoremap = mapVimBinding "nnoremap" config.vim.nnoremap;
       inoremap = mapVimBinding "inoremap" config.vim.inoremap;
       vnoremap = mapVimBinding "vnoremap" config.vim.vnoremap;
       xnoremap = mapVimBinding "xnoremap" config.vim.xnoremap;
