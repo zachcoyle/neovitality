@@ -2,7 +2,13 @@
 
 with lib;
 with builtins;
-
+let
+  mkMappingOption = it: mkOption ({
+    example = { abc = ":FZF<CR>"; Ctrl-p = ":FZF<CR>"; }; # Probably should be overwritten per option basis
+    default = { };
+    type = with types; attrsOf (nullOr str);
+  } // it);
+in
 {
   options = {
     enable = mkEnableOption "vitality vim package";
@@ -35,90 +41,62 @@ with builtins;
     };
 
 
-    nnoremap = mkOption {
-      example = { abc = ":FZF<CR>"; Ctrl-p = ":FZF<CR>"; };
+    nnoremap = mkMappingOption {
       description = "Defines 'Normal mode' mappings";
-      type = with types; attrsOf (nullOr str);
     };
 
-    inoremap = mkOption {
-      example = { abc = ":FZF<CR>"; Ctrl-p = ":FZF<CR>"; };
+    inoremap = mkMappingOption {
       description = "Defines 'Insert and Replace mode' mappings";
-      type = with types; attrsOf (nullOr str);
     };
 
-    vnoremap = mkOption {
-      example = { abc = ":FZF<CR>"; Ctrl-p = ":FZF<CR>"; };
+    vnoremap = mkMappingOption {
       description = "Defines 'Visual and Select mode' mappings";
-      type = with types; attrsOf (nullOr str);
     };
 
-    xnoremap = mkOption {
-      example = { abc = ":FZF<CR>"; Ctrl-p = ":FZF<CR>"; };
+    xnoremap = mkMappingOption {
       description = "Defines 'Visual mode' mappings";
-      type = with types; attrsOf (nullOr str);
     };
 
-    snoremap = mkOption {
-      example = { abc = ":FZF<CR>"; Ctrl-p = ":FZF<CR>"; };
+    snoremap = mkMappingOption {
       description = "Defines 'Select mode' mappings";
-      type = with types; attrsOf (nullOr str);
     };
 
-    cnoremap = mkOption {
-      example = { abc = ":FZF<CR>"; Ctrl-p = ":FZF<CR>"; };
+    cnoremap = mkMappingOption {
       description = "Defines 'Command-line mode' mappings";
-      type = with types; attrsOf (nullOr str);
     };
 
-    onoremap = mkOption {
-      example = { abc = ":FZF<CR>"; Ctrl-p = ":FZF<CR>"; };
+    onoremap = mkMappingOption {
       description = "Defines 'Operator pending mode' mappings";
-      type = with types; attrsOf (nullOr str);
     };
 
 
 
-    nmap = mkOption {
-      example = { abc = ":FZF<CR>"; Ctrl-p = ":FZF<CR>"; };
+    nmap = mkMappingOption {
       description = "Defines 'Normal mode' mappings";
-      type = with types; attrsOf (nullOr str);
     };
 
-    imap = mkOption {
-      example = { abc = ":FZF<CR>"; Ctrl-p = ":FZF<CR>"; };
+    imap = mkMappingOption {
       description = "Defines 'Insert and Replace mode' mappings";
-      type = with types; attrsOf (nullOr str);
     };
 
-    vmap = mkOption {
-      example = { abc = ":FZF<CR>"; Ctrl-p = ":FZF<CR>"; };
+    vmap = mkMappingOption {
       description = "Defines 'Visual and Select mode' mappings";
-      type = with types; attrsOf (nullOr str);
     };
 
-    xmap = mkOption {
-      example = { abc = ":FZF<CR>"; Ctrl-p = ":FZF<CR>"; };
+    xmap = mkMappingOption {
       description = "Defines 'Visual mode' mappings";
-      type = with types; attrsOf (nullOr str);
     };
 
-    smap = mkOption {
-      example = { abc = ":FZF<CR>"; Ctrl-p = ":FZF<CR>"; };
+    smap = mkMappingOption {
       description = "Defines 'Select mode' mappings";
-      type = with types; attrsOf (nullOr str);
     };
 
-    cmap = mkOption {
-      example = { abc = ":FZF<CR>"; Ctrl-p = ":FZF<CR>"; };
+    cmap = mkMappingOption {
       description = "Defines 'Command-line mode' mappings";
-      type = with types; attrsOf (nullOr str);
     };
 
-    omap = mkOption {
-      example = { abc = ":FZF<CR>"; Ctrl-p = ":FZF<CR>"; };
+    omap = mkMappingOption {
       description = "Defines 'Operator pending mode' mappings";
-      type = with types; attrsOf (nullOr str);
     };
   };
 
