@@ -51,7 +51,7 @@
 
         defaultPackage = neovimBuilder {
           config = {
-            vim = import ./examples/zach.nix { inherit pkgs; };
+            vim = import ./examples/defaultConfig.nix { inherit pkgs; };
           };
         };
 
