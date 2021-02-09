@@ -45,6 +45,9 @@
         neovimBuilder = import ./options/neovimBuilder.nix { inherit pkgs; };
       in
       rec {
+
+        inherit neovimBuilder;
+
         defaultPackage = neovimBuilder {
           config = {
             vim = import ./examples/zach.nix { inherit pkgs; };

@@ -11,7 +11,7 @@ end
 local gl = require('galaxyline')
 
 local gls = gl.section
-gl.short_line_list = { 'NvimTree', 'defx', 'packager', 'vista', 'zsh' }
+gl.short_line_list = { 'NvimTree', 'defx', 'packager', 'vista', 'zsh', 'TERMINAL' }
 
 -- Colors
 local colors = {

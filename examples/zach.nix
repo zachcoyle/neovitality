@@ -37,7 +37,7 @@ in
     #{ plugin = lush-nvim; config = wrapLuaConfig (import ./config/lush-nvim-config.nix { inherit pkgs; }); }
     { plugin = nvim-compe; config = wrapLuaConfig (readFile ./config/nvim-compe-config.lua); }
     { plugin = nvim-dap-virtual-text; }
-    { plugin = nvim-dap; config = dapConfig + (readFile ./config/nvim-dap-config.vim); }
+    { plugin = nvim-dap; config = dapConfig; }
     { plugin = nvim-tree-lua; config = readFile ./config/nvim-tree-lua-config.vim; }
     { plugin = nvim-web-devicons; }
     { plugin = plenary-nvim; }
@@ -72,4 +72,52 @@ in
   configRC = ''
     ${builtins.readFile ./config/init.vim}
   '';
+
+  nnoremap = {
+
+    #NvimTree
+    "<C-n>" = ":NvimTreeToggle<CR>";
+    "<leader>n" = ":NvimTreeFindFile<CR";
+    "<leader>r" = ":NvimTreeRefresh<CR>";
+
+    # nvim lsp
+    "<F2>" = "<cmd>lua vim.lsp.buf.rename()<CR>";
+    "<leader>D" = "<cmd>lua vim.lsp.buf.type_definition()<CR>";
+    "<leader>e" = "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>";
+    "<leader>f" = "<cmd>lua vim.lsp.buf.formatting()<CR>";
+    "<leader>k" = "<cmd>lua vim.lsp.buf.signature_help()<CR>";
+    "<leader>q" = "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>";
+    "<leader>rn" = "<cmd>lua vim.lsp.buf.rename()<CR>";
+    "<leader>wa" = "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>";
+    "<leader>wl" = "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>";
+    "<leader>wr" = "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>";
+    "[d" = "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>";
+    "]d" = "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>";
+    gD = "<cmd>lua vim.lsp.buf.declaration()<CR>";
+    gd = "<cmd>lua vim.lsp.buf.definition()<CR>";
+    gi = "<cmd>lua vim.lsp.buf.implementation()<CR>";
+    gr = "<cmd>lua vim.lsp.buf.references()<CR>";
+    K = "<cmd>lua vim.lsp.buf.hover()<CR>";
+
+    # fzf
+    "<C-_>" = ":RG<CR>";
+    "<C-P>" = ":FZF<CR>";
+
+    # navigation
+    "<C-h>" = "<C-W>h";
+    "<C-j>" = "<C-W>j";
+    "<C-k>" = "<C-W>k";
+    "<C-l>" = "<C-W>l";
+
+    # nvim-dap
+    "<F10>" = "lua require'dap'.step_over()<CR>";
+    "<F11>" = "lua require'dap'.step_into()<CR>";
+    "<F12>" = "lua require'dap'.step_out()<CR>";
+    "<F5>" = "lua require'dap'.continue()<CR>";
+    "<leader>B" = "lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition:'))<CR>";
+    "<leader>b" = "lua require'dap'.toggle_breakpoint()<CR>";
+    "<leader>dl" = "lua require'dap'.repl.run_last()<CR>";
+    "<leader>dr" = "lua require'dap'.repl.open()<CR>";
+    "<leader>lp" = "lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message:'))<CR>";
+  };
 }

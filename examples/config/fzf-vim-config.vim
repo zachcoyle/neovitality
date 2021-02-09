@@ -10,5 +10,3 @@ let $FZF_DEFAULT_COMMAND = 'fd -t f'
 
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
-nnoremap <C-_> :RG<CR>
-nnoremap <C-P> :FZF<CR>
