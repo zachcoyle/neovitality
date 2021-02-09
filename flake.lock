@@ -50,15 +50,16 @@
     "galaxyline-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1612602612,
-        "narHash": "sha256-UUHIugtuBwoPNGYipls5WdVOSmaMoPMgxa7wKxxhZDM=",
+        "lastModified": 1612830011,
+        "narHash": "sha256-M4RgkkrUZCzLHSh1qcBXnDTp3UQvGGN0fgw8mPx+hic=",
         "owner": "glepnir",
         "repo": "galaxyline.nvim",
-        "rev": "eddfeb713b019372cf91b61e45955c08f9f4c6db",
+        "rev": "e30c355aaf6d2ca9aaa3a246eb87c7ceb4c42855",
         "type": "github"
       },
       "original": {
         "owner": "glepnir",
+        "ref": "main",
         "repo": "galaxyline.nvim",
         "type": "github"
       }
@@ -106,11 +107,11 @@
       },
       "locked": {
         "dir": "contrib",
-        "lastModified": 1612812599,
-        "narHash": "sha256-/+xhV7X2TtTGhq4GDZmWj4UE9d7A/TftJrZoyPmNm1Y=",
+        "lastModified": 1612840243,
+        "narHash": "sha256-e3qmeoqYnSSnNNtYo/odi+78ID8h8k9yk1eS19K5Q/Q=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "38ea2ce342e0b0c5e1410a5d936b91d19fb9d4bb",
+        "rev": "8becdec3919c0925cd274ca8316c9c1c0faad722",
         "type": "github"
       },
       "original": {
@@ -138,11 +139,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1612828406,
-        "narHash": "sha256-FMO9IWSX6qSEXTWGU1I4wmtMNeY89YyeuyWb1Xo16iE=",
+        "lastModified": 1612837175,
+        "narHash": "sha256-9xFtHmAfBzHuKfqdjyzK0vS8+MMH/MVjOrPTcYHwRLg=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "960401f84785da5bacda81ea772cc440d39a945c",
+        "rev": "00a7ae25bc7e9e7a1ad64884b790f8bd2d1d57ac",
         "type": "github"
       },
       "original": {
@@ -154,11 +155,11 @@
     "nvim-compe": {
       "flake": false,
       "locked": {
-        "lastModified": 1612793333,
-        "narHash": "sha256-19NhajxvYa8+x0EFlcBxEmnYCWeepLcj5C7dUrc+m0k=",
+        "lastModified": 1612836779,
+        "narHash": "sha256-hK9TnziU2Wd8yD9pOpL1kYQnHLca3oM8XAJYWr14B2I=",
         "owner": "hrsh7th",
         "repo": "nvim-compe",
-        "rev": "5b5f007166872d4f76d2d9ff15132875e9efaab8",
+        "rev": "819d2e81191986f8068d8ce3acfc0f5b79da6467",
         "type": "github"
       },
       "original": {
