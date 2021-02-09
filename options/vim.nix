@@ -69,6 +69,10 @@ in
       description = "Defines 'Operator pending mode' mappings";
     };
 
+    tnoremap = mkMappingOption {
+      description = "Defines 'Terminal mode' mappings";
+    };
+
 
 
     nmap = mkMappingOption {
@@ -98,6 +102,10 @@ in
     omap = mkMappingOption {
       description = "Defines 'Operator pending mode' mappings";
     };
+
+    tmap = mkMappingOption {
+      description = "Defines 'Terminal mode' mappings";
+    };
   };
 
   config =
@@ -115,6 +123,7 @@ in
       smap = mapVimBinding "smap" config.vim.smap;
       cmap = mapVimBinding "cmap" config.vim.cmap;
       omap = mapVimBinding "omap" config.vim.omap;
+      tmap = mapVimBinding "tmap" config.vim.tmap;
 
       nnoremap = mapVimBinding "nnoremap" config.vim.nnoremap;
       inoremap = mapVimBinding "inoremap" config.vim.inoremap;
@@ -123,6 +132,7 @@ in
       snoremap = mapVimBinding "snoremap" config.vim.snoremap;
       cnoremap = mapVimBinding "cnoremap" config.vim.cnoremap;
       onoremap = mapVimBinding "onoremap" config.vim.onoremap;
+      tnoremap = mapVimBinding "tnoremap" config.vim.tnoremap;
 
       attrsWithConfig = filter (it: it ? config) config.vim.plugins;
       configs = builtins.concatStringsSep " " (map
@@ -146,6 +156,7 @@ in
         ${builtins.concatStringsSep "\n" smap}
         ${builtins.concatStringsSep "\n" cmap}
         ${builtins.concatStringsSep "\n" omap}
+        ${builtins.concatStringsSep "\n" tmap}
 
         ${builtins.concatStringsSep "\n" nnoremap}
         ${builtins.concatStringsSep "\n" inoremap}
@@ -154,6 +165,7 @@ in
         ${builtins.concatStringsSep "\n" snoremap}
         ${builtins.concatStringsSep "\n" cnoremap}
         ${builtins.concatStringsSep "\n" onoremap}
+        ${builtins.concatStringsSep "\n" tnoremap}
       '';
     };
 }

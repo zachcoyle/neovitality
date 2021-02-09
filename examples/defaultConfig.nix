@@ -126,4 +126,8 @@ in
   inoremap = { };
 
   snoremap = { };
+
+  tnoremap = {
+    "<leader>x" = "<Esc> <C-\\><C-n>";
+  };
 }
