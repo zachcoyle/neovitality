@@ -52,6 +52,7 @@ in
     { plugin = vim-dadbod; }
     { plugin = vim-devicons; }
     { plugin = vim-dispatch; }
+    { plugin = vim-floaterm; }
     { plugin = vim-parinfer; }
     { plugin = vim-polyglot; }
     { plugin = vim-prisma; }
