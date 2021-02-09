@@ -13,6 +13,7 @@
     };
 
     formatter-nvim = { url = github:mhartington/formatter.nvim; flake = false; };
+    fzf-lsp-nvim = { url = github:gfanto/fzf-lsp.nvim; flake = false; };
     galaxyline-nvim = { url = github:glepnir/galaxyline.nvim; flake = false; };
     lspkind-nvim = { url = github:onsails/lspkind-nvim; flake = false; };
     lush-nvim = { url = github:rktjmp/lush.nvim; flake = false; };
@@ -23,7 +24,6 @@
     vim-dadbod-ui = { url = github:kristijanhusak/vim-dadbod-ui; flake = false; };
     vim-prisma = { url = github:pantharshit00/vim-prisma; flake = false; };
     vim-vsnip = { url = github:hrsh7th/vim-vsnip; flake = false; };
-    fzf-lsp-nvim = { url = github:gfanto/fzf-lsp.nvim; flake = false; };
 
   };
 
@@ -63,6 +63,11 @@
         };
 
         defaultApp = apps.nvim;
+
+        devShell = pkgs.mkShell {
+          inherit system;
+          buildInputs = [ defaultPackage ];
+        };
 
       }
     );
