@@ -10,6 +10,7 @@ let
 
   plugins = [
     "formatter-nvim"
+    "fzf-lsp-nvim"
     "galaxyline-nvim"
     "lspkind-nvim"
     "lush-nvim"

@@ -31,6 +31,22 @@
         "type": "github"
       }
     },
+    "fzf-lsp-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1612463502,
+        "narHash": "sha256-20Ou5cGLJpQPZUbwryrW1NrC4MJ1hJJvjc5oI03UZKk=",
+        "owner": "gfanto",
+        "repo": "fzf-lsp.nvim",
+        "rev": "1386cbae761415b9c7b45565d87283fb4d584aed",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gfanto",
+        "repo": "fzf-lsp.nvim",
+        "type": "github"
+      }
+    },
     "galaxyline-nvim": {
       "flake": false,
       "locked": {
@@ -171,6 +187,7 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "formatter-nvim": "formatter-nvim",
+        "fzf-lsp-nvim": "fzf-lsp-nvim",
         "galaxyline-nvim": "galaxyline-nvim",
         "lspkind-nvim": "lspkind-nvim",
         "lush-nvim": "lush-nvim",

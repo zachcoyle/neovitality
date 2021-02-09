@@ -29,6 +29,7 @@ in
     { plugin = emmet-vim; config = readFile ./config/emmet-vim-config.vim; }
     { plugin = formatter-nvim; config = wrapLuaConfig (import ./config/formatter-nvim-config.nix { inherit pkgs; }); }
     { plugin = fugitive; }
+    { plugin = fzf-lsp-nvim; config = "lua require'fzf_lsp'.setup()"; }
     { plugin = fzf-vim; config = readFile ./config/fzf-vim-config.vim; }
     { plugin = galaxyline-nvim; config = galaxyline-config; }
     { plugin = gitsigns-nvim; config = gitsignsConfig; }
