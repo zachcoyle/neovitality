@@ -121,4 +121,8 @@ in
     "<leader>dr" = "lua require'dap'.repl.open()<CR>";
     "<leader>lp" = "lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message:'))<CR>";
   };
+
+  inoremap = { };
+
+  snoremap = { };
 }
