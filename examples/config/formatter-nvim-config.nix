@@ -46,6 +46,11 @@ let
       formatters = [ clangFormatter ];
     };
 
+    css = {
+      extension = "css";
+      formatters = [ (prettierFormatter { parser = "css"; }) ];
+    };
+
     go = {
       extension = "go";
       formatters = [
