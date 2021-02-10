@@ -12,6 +12,7 @@ let
     "formatter-nvim"
     "fzf-lsp-nvim"
     "galaxyline-nvim"
+    "gruvbox"
     "lspkind-nvim"
     "lush-nvim"
     "nvim-compe"

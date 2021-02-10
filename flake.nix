@@ -24,6 +24,7 @@
     vim-dadbod-ui = { url = github:kristijanhusak/vim-dadbod-ui; flake = false; };
     vim-prisma = { url = github:pantharshit00/vim-prisma; flake = false; };
     vim-vsnip = { url = github:hrsh7th/vim-vsnip; flake = false; };
+    gruvbox = { url = github:gruvbox-community/gruvbox; flake = false; };
 
   };
 

@@ -64,6 +64,22 @@
         "type": "github"
       }
     },
+    "gruvbox": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1610902889,
+        "narHash": "sha256-eYQx7lZZbNE3mMRgiyl8nZSN8i9vHB9mWg7gDlnZm1M=",
+        "owner": "gruvbox-community",
+        "repo": "gruvbox",
+        "rev": "c73e63203f76ab8e39b2b05369c0a8877a981435",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gruvbox-community",
+        "repo": "gruvbox",
+        "type": "github"
+      }
+    },
     "lspkind-nvim": {
       "flake": false,
       "locked": {
@@ -107,11 +123,11 @@
       },
       "locked": {
         "dir": "contrib",
-        "lastModified": 1612840243,
-        "narHash": "sha256-e3qmeoqYnSSnNNtYo/odi+78ID8h8k9yk1eS19K5Q/Q=",
+        "lastModified": 1612867262,
+        "narHash": "sha256-/XMyFx9bKOgMiOhlwVHO4Wt//vwJeHxy8VJPEqHVYJY=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "8becdec3919c0925cd274ca8316c9c1c0faad722",
+        "rev": "971e0ca903fce05bd4853b129ed40dee7366956f",
         "type": "github"
       },
       "original": {
@@ -139,11 +155,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1612845930,
-        "narHash": "sha256-c1pSJbU9zPK2U6AJB+2VZ+BF0UNeFvD0/xIvf12JILs=",
+        "lastModified": 1612908731,
+        "narHash": "sha256-XGDsUTohNh1QUsfA0rN8DUs8E8oBSzEkQidYN/oqhd4=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "47eec7ed4016d9e2278ad25e7d2ff161b7ba9ef3",
+        "rev": "fb4e043e3260f192adb22c2c7d49581f0270eeaa",
         "type": "github"
       },
       "original": {
@@ -190,6 +206,7 @@
         "formatter-nvim": "formatter-nvim",
         "fzf-lsp-nvim": "fzf-lsp-nvim",
         "galaxyline-nvim": "galaxyline-nvim",
+        "gruvbox": "gruvbox",
         "lspkind-nvim": "lspkind-nvim",
         "lush-nvim": "lush-nvim",
         "neovim": "neovim",

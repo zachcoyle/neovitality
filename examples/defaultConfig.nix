@@ -33,7 +33,7 @@ in
     { plugin = fzf-vim; config = readFile ./config/fzf-vim-config.vim; }
     { plugin = galaxyline-nvim; config = galaxyline-config; }
     { plugin = gitsigns-nvim; config = gitsignsConfig; }
-    { plugin = gruvbox; config = readFile ./config/theme-config.vim; }
+    { plugin = pkgs.vitalityVimPlugins.gruvbox; config = readFile ./config/theme-config.vim; }
     { plugin = lspkind-nvim; config = "lua require('lspkind').init()"; }
     #{ plugin = lush-nvim; config = wrapLuaConfig (import ./config/lush-nvim-config.nix { inherit pkgs; }); }
     { plugin = nvim-compe; config = wrapLuaConfig (readFile ./config/nvim-compe-config.lua); }
