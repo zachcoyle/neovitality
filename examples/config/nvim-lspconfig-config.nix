@@ -72,6 +72,10 @@ in
     cmd = { '${rust-analyzer}/bin/rust-analyzer' }
   }
 
+  lspconfig.terraformls.setup { 
+    cmd = { '${terraform-ls}/bin/terraform-ls', 'serve' }
+  }
+
   lspconfig.tsserver.setup {
     cmd = { '${nodePackages.typescript-language-server}/bin/typescript-language-server', '--stdio' },
     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "json", "jsonc" },
