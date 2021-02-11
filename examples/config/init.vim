@@ -9,7 +9,7 @@ set relativenumber
 set shiftwidth=2
 set splitbelow
 set splitright
-set signcolumn=yes
+set signcolumn=number
 set tabstop=2
 set exrc
 syntax on

@@ -8,10 +8,6 @@ let
     EOF
   '';
 
-  lspConfigs =
-    wrapLuaConfig (import ./config/nvim-lspconfig-config.nix { inherit pkgs; }) +
-    wrapLuaConfig (readFile ./config/nvim-lspconfig-config.lua);
-
   dapConfig = import ./config/nvim-dap-config.nix { inherit pkgs; };
 
   gitsignsConfig = wrapLuaConfig (builtins.readFile ./config/gitsigns-nvim-config.lua);
@@ -38,7 +34,7 @@ in
     { plugin = nvim-compe; config = wrapLuaConfig (readFile ./config/nvim-compe-config.lua); }
     { plugin = nvim-dap-virtual-text; }
     { plugin = nvim-dap; config = dapConfig; }
-    { plugin = nvim-lspconfig; config = lspConfigs; }
+    { plugin = nvim-lspconfig; config = wrapLuaConfig (import ./config/nvim-lspconfig-config.nix { inherit pkgs; }); }
     { plugin = nvim-tree-lua; config = readFile ./config/nvim-tree-lua-config.vim; }
     { plugin = nvim-web-devicons; }
     { plugin = pkgs.vitalityVimPlugins.gruvbox; config = readFile ./config/theme-config.vim; }

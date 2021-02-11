@@ -1,6 +1,0 @@
-{ pkgs }:
-let
-  theme = { };
-in
-''
-''
