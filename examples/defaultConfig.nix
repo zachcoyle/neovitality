@@ -20,6 +20,7 @@ let
 in
 {
   plugins = with pkgs.vimPlugins; with pkgs.vitalityVimPlugins;  [
+    #{ plugin = lush-nvim; config = wrapLuaConfig (import ./config/lush-nvim-config.nix { inherit pkgs; }); }
     { plugin = auto-pairs; }
     { plugin = barbar-nvim; }
     { plugin = colorizer; }
@@ -33,14 +34,14 @@ in
     { plugin = fzf-vim; config = readFile ./config/fzf-vim-config.vim; }
     { plugin = galaxyline-nvim; config = galaxyline-config; }
     { plugin = gitsigns-nvim; config = gitsignsConfig; }
-    { plugin = pkgs.vitalityVimPlugins.gruvbox; config = readFile ./config/theme-config.vim; }
     { plugin = lspkind-nvim; config = "lua require('lspkind').init()"; }
-    #{ plugin = lush-nvim; config = wrapLuaConfig (import ./config/lush-nvim-config.nix { inherit pkgs; }); }
     { plugin = nvim-compe; config = wrapLuaConfig (readFile ./config/nvim-compe-config.lua); }
     { plugin = nvim-dap-virtual-text; }
     { plugin = nvim-dap; config = dapConfig; }
+    { plugin = nvim-lspconfig; config = lspConfigs; }
     { plugin = nvim-tree-lua; config = readFile ./config/nvim-tree-lua-config.vim; }
     { plugin = nvim-web-devicons; }
+    { plugin = pkgs.vitalityVimPlugins.gruvbox; config = readFile ./config/theme-config.vim; }
     { plugin = plenary-nvim; }
     { plugin = scrollbar-nvim; config = readFile ./config/scrollbar-nvim-config.vim; }
     { plugin = surround; }
@@ -60,9 +61,8 @@ in
     { plugin = vim-sensible; }
     { plugin = vim-startify; config = readFile ./config/vim-startify-config.vim; }
     { plugin = vim-tmux-navigator; }
-    { plugin = vimagit; }
-    { plugin = nvim-lspconfig; config = lspConfigs; }
     { plugin = vim-vsnip; }
+    { plugin = vimagit; }
   ] ++ optionals (pkgs.system == "x86_64-darwin") [
     #TODO: install treesitter grammars from nix
     { plugin = nvim-treesitter; config = readFile ./config/nvim-treesitter-config.vim; }
