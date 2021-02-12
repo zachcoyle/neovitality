@@ -41,6 +41,13 @@ in
     };
 
 
+
+    globals = mkOption {
+      example = { some_fancy_varialbe = 1; };
+      default = { };
+      type = types.attrs;
+    };
+
     nnoremap = mkMappingOption {
       description = "Defines 'Normal mode' mappings";
     };
@@ -111,10 +118,13 @@ in
   config =
     let
       matchCtrl = it: match "Ctrl-(.)(.*)" it;
-      filterMappings = mappings: filterAttrs (name: value: value != null) mappings;
+      filterNonNull = mappings: filterAttrs (name: value: value != null) mappings;
+
       mapKeybinding = it:
         let groups = matchCtrl it; in if groups == null then it else "<C-${toUpper (head groups)}>${head (tail groups)}";
-      mapVimBinding = prefix: mappings: mapAttrsFlatten (name: value: "${prefix} ${mapKeybinding name} ${value}") (filterMappings mappings);
+      mapVimBinding = prefix: mappings: mapAttrsFlatten (name: value: "${prefix} ${mapKeybinding name} ${value}") (filterNonNull mappings);
+
+      globalsVimscript = mapAttrsFlatten (name: value: "let g:${name}=${toJSON value}") (filterNonNull config.vim.globals);
 
       nmap = mapVimBinding "nmap" config.vim.nmap;
       imap = mapVimBinding "imap" config.vim.imap;
@@ -166,6 +176,7 @@ in
         ${builtins.concatStringsSep "\n" cnoremap}
         ${builtins.concatStringsSep "\n" onoremap}
         ${builtins.concatStringsSep "\n" tnoremap}
+        ${builtins.concatStringsSep "\n" globalsVimscript}
       '';
     };
 }
