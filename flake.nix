@@ -26,6 +26,8 @@
     vim-vsnip = { url = github:hrsh7th/vim-vsnip; flake = false; };
     gruvbox = { url = github:gruvbox-community/gruvbox; flake = false; };
 
+    rnix-lsp.url = github:nix-community/rnix-lsp;
+
   };
 
   outputs = { self, nixpkgs, neovim, flake-utils, nur, ... }@inputs:
@@ -37,6 +39,9 @@
           inherit system;
           config = { allowUnfree = true; };
           overlays = [
+            (final: prev: {
+              rnix-lsp = inputs.rnix-lsp.defaultPackage.${system};
+            })
             (vim-plugins-overlay inputs)
             nur.overlay
             (final: prev: {
