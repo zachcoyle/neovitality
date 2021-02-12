@@ -39,13 +39,12 @@
           inherit system;
           config = { allowUnfree = true; };
           overlays = [
-            (final: prev: {
-              rnix-lsp = inputs.rnix-lsp.defaultPackage.${system};
-            })
             (vim-plugins-overlay inputs)
             nur.overlay
+
             (final: prev: {
               neovim-nightly = neovim.defaultPackage.${system};
+              rnix-lsp = inputs.rnix-lsp.defaultPackage.${system};
             })
           ];
         };
@@ -54,6 +53,10 @@
       rec {
 
         inherit neovimBuilder;
+
+        packages = {
+          neovim-nightly = neovim.defaultPackage.${system};
+        };
 
         defaultPackage = neovimBuilder {
           config = {
