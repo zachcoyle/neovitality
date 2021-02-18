@@ -28,6 +28,8 @@ in
     { plugin = fugitive; }
     { plugin = fzf-lsp-nvim; config = "lua require'fzf_lsp'.setup()"; }
     { plugin = fzf-vim; config = readFile ./config/fzf-vim-config.vim; }
+    { plugin = popup-nvim; }
+    { plugin = telescope-nvim; }
     { plugin = galaxyline-nvim; config = galaxyline-config; }
     { plugin = gitsigns-nvim; config = gitsignsConfig; }
     { plugin = lspkind-nvim; config = "lua require('lspkind').init()"; }
@@ -97,9 +99,15 @@ in
     gr = "<cmd>lua vim.lsp.buf.references()<CR>";
     K = "<cmd>lua vim.lsp.buf.hover()<CR>";
 
-    # fzf
-    "<C-_>" = ":RG<CR>";
-    "<C-P>" = ":FZF<CR>";
+    # telescope
+    "<C-_>" = "<cmd>lua require('telescope.builtin').live_grep()<cr>";
+    "<C-P>" = "<cmd>lua require('telescope.builtin').find_files()<cr>";
+    "<C-B>" = "<cmd>lua require('telescope.builtin').buffers()<cr>";
+    "<G-R>" = "<cmd>lua require('telescope.builtin').lsp_references()<cr>";
+    "<G-A>" = "<cmd>lua require('telescope.builtin').lsp_code_actions()<cr>";
+    "<G-S>" = "<cmd>lua require('telescope.builtin').lsp_workspace_symbols()<cr>";
+
+
 
     # navigation
     "<C-h>" = "<C-W>h";

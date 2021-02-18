@@ -3,7 +3,7 @@ with pkgs;
 with lib;
 let
 
-  mkLanguageOption = { lspconfig }: { };
+  mkLanguageOption = { lspconfig, formatterConfig }: { };
 in
 {
 
