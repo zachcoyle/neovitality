@@ -30,6 +30,7 @@ in
     { plugin = fzf-vim; config = readFile ./config/fzf-vim-config.vim; }
     { plugin = galaxyline-nvim; config = galaxyline-config; }
     { plugin = gitsigns-nvim; config = gitsignsConfig; }
+    { plugin = gundo; }
     { plugin = lspkind-nvim; config = "lua require('lspkind').init()"; }
     { plugin = nvim-compe; config = wrapLuaConfig (readFile ./config/nvim-compe-config.lua); }
     { plugin = nvim-dap-virtual-text; }
@@ -117,6 +118,9 @@ in
     "<leader>dl" = "lua require'dap'.repl.run_last()<CR>";
     "<leader>dr" = "lua require'dap'.repl.open()<CR>";
     "<leader>lp" = "lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message:'))<CR>";
+
+    #gundo 
+    "<F3>" = "<cmd>GundoToggle<CR>";
   };
 
   inoremap = { };
