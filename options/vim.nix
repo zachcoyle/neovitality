@@ -3,38 +3,64 @@
 with lib;
 with builtins;
 let
+  wrapLuaConfig = luaConfig: ''
+    lua << EOF
+    ${luaConfig}
+    EOF
+  '';
   mkMappingOption = it: mkOption ({
     example = { abc = ":FZF<CR>"; Ctrl-p = ":FZF<CR>"; }; # Probably should be overwritten per option basis
     default = { };
     type = with types; attrsOf (nullOr str);
   } // it);
+  languagesOpts = { name, config, ... }: {
+    options = {
+      lspConfig = {
+
+        cmd = mkOption {
+          default = [ ];
+          type = with types; listOf string;
+        };
+
+        filetypes = mkOption {
+          default = [ ];
+          type = with types; listOf string;
+        };
+      };
+    };
+  };
 in
 {
   options = {
-    enable = mkEnableOption "vitality vim package";
+    vim.enable = mkEnableOption "vitality vim package";
 
-    startPlugins = mkOption {
+    vim.languages = mkOption {
+      default = { };
+      type = with types; attrsOf (submodule languagesOpts);
+    };
+
+    vim.startPlugins = mkOption {
       type = with types; listOf package;
       default = [ ];
       description = "";
       example = [ pkgs.vim-clap ];
     };
 
-    optPlugins = mkOption {
+    vim.optPlugins = mkOption {
       type = with types; listOf package;
       default = [ ];
       description = "";
       example = [ pkgs.vim-clap ];
     };
 
-    plugins = mkOption {
+    vim.plugins = mkOption {
       type = with types; listOf attrs; # Probably some legit type should be set
       default = [ ];
       description = "";
       example = [{ plugin = pkgs.vim-clap; config = "abc"; }];
     };
 
-    configRC = mkOption {
+    vim.configRC = mkOption {
       default = "";
       description = ''VimScript config'';
       type = types.lines;
@@ -42,75 +68,75 @@ in
 
 
 
-    globals = mkOption {
+    vim.globals = mkOption {
       example = { some_fancy_varialbe = 1; };
       default = { };
       type = types.attrs;
     };
 
-    nnoremap = mkMappingOption {
+    vim.nnoremap = mkMappingOption {
       description = "Defines 'Normal mode' mappings";
     };
 
-    inoremap = mkMappingOption {
+    vim.inoremap = mkMappingOption {
       description = "Defines 'Insert and Replace mode' mappings";
     };
 
-    vnoremap = mkMappingOption {
+    vim.vnoremap = mkMappingOption {
       description = "Defines 'Visual and Select mode' mappings";
     };
 
-    xnoremap = mkMappingOption {
+    vim.xnoremap = mkMappingOption {
       description = "Defines 'Visual mode' mappings";
     };
 
-    snoremap = mkMappingOption {
+    vim.snoremap = mkMappingOption {
       description = "Defines 'Select mode' mappings";
     };
 
-    cnoremap = mkMappingOption {
+    vim.cnoremap = mkMappingOption {
       description = "Defines 'Command-line mode' mappings";
     };
 
-    onoremap = mkMappingOption {
+    vim.onoremap = mkMappingOption {
       description = "Defines 'Operator pending mode' mappings";
     };
 
-    tnoremap = mkMappingOption {
+    vim.tnoremap = mkMappingOption {
       description = "Defines 'Terminal mode' mappings";
     };
 
 
 
-    nmap = mkMappingOption {
+    vim.nmap = mkMappingOption {
       description = "Defines 'Normal mode' mappings";
     };
 
-    imap = mkMappingOption {
+    vim.imap = mkMappingOption {
       description = "Defines 'Insert and Replace mode' mappings";
     };
 
-    vmap = mkMappingOption {
+    vim.vmap = mkMappingOption {
       description = "Defines 'Visual and Select mode' mappings";
     };
 
-    xmap = mkMappingOption {
+    vim.xmap = mkMappingOption {
       description = "Defines 'Visual mode' mappings";
     };
 
-    smap = mkMappingOption {
+    vim.smap = mkMappingOption {
       description = "Defines 'Select mode' mappings";
     };
 
-    cmap = mkMappingOption {
+    vim.cmap = mkMappingOption {
       description = "Defines 'Command-line mode' mappings";
     };
 
-    omap = mkMappingOption {
+    vim.omap = mkMappingOption {
       description = "Defines 'Operator pending mode' mappings";
     };
 
-    tmap = mkMappingOption {
+    vim.tmap = mkMappingOption {
       description = "Defines 'Terminal mode' mappings";
     };
   };
@@ -148,17 +174,33 @@ in
       configs = builtins.concatStringsSep " " (map
         (plugin: ''
 
-        "{{{ ${plugin.plugin.name}
-        ${plugin.config}
-        "}}}
-      '')
+          "{{{ ${plugin.plugin.name}
+          ${plugin.config}
+          "}}}
+        '')
         (attrsWithConfig));
       start = map (plugin: plugin.plugin) config.vim.plugins;
+
+      luaArray = name: values: optionalString
+        (any (it: true) values)
+        "${name} = {'${builtins.concatStringsSep "', '" values}'},";
+
+
+      buildLspConfig = name: config: ''
+        lspconfig.${name}.setup {
+          ${luaArray "cmd" config.cmd}
+          ${luaArray "filetypes" config.filetypes}
+        }
+      '';
+      lspConfigs = mapAttrsFlatten (name: value: buildLspConfig name value.lspConfig) config.vim.languages;
     in
     {
+      vim.languages = import ./lspDefaults.nix { inherit pkgs; };
+
       vim.startPlugins = start;
       vim.configRC = ''
         ${configs}
+
         ${builtins.concatStringsSep "\n" nmap}
         ${builtins.concatStringsSep "\n" imap}
         ${builtins.concatStringsSep "\n" vmap}
@@ -177,6 +219,23 @@ in
         ${builtins.concatStringsSep "\n" onoremap}
         ${builtins.concatStringsSep "\n" tnoremap}
         ${builtins.concatStringsSep "\n" globalsVimscript}
+
+        ${wrapLuaConfig ''
+            local lspconfig = require'lspconfig'
+            ${builtins.concatStringsSep "\n" lspConfigs}
+
+            local function preview_location_callback(_, _, result)
+              if result == nil or vim.tbl_isempty(result) then
+                return nil
+              end
+              vim.lsp.util.preview_location(result[1])
+            end
+
+            function PeekDefinition()
+              local params = vim.lsp.util.make_position_params()
+              return vim.lsp.buf_request(0, 'textDocument/definition', params, preview_location_callback)
+            end
+          ''}
       '';
     };
 }
