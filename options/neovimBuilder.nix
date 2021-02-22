@@ -4,17 +4,18 @@
 let
   vimOptions = lib.evalModules {
     modules = [
-      { imports = [ ./default.nix ]; }
+      { imports = [ ./vim.nix ]; }
       config
     ];
+    specialArgs = {
+      inherit pkgs;
+    };
   };
   vim = vimOptions.config.vim;
 in
 pkgs.wrapNeovim pkgs.neovim-nightly {
   configure = {
-    customRC = ''
-      ${vim.configRC}
-    '';
+    customRC = vim.configRC;
 
     packages.myVimPackage = with pkgs.vimPlugins; {
       start = vim.startPlugins;

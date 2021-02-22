@@ -34,7 +34,7 @@ in
     { plugin = nvim-compe; config = wrapLuaConfig (readFile ./config/nvim-compe-config.lua); }
     { plugin = nvim-dap-virtual-text; }
     { plugin = nvim-dap; config = dapConfig; }
-    { plugin = nvim-lspconfig; config = wrapLuaConfig (import ./config/nvim-lspconfig-config.nix { inherit pkgs; }); }
+    { plugin = nvim-lspconfig; }
     { plugin = nvim-tree-lua; config = readFile ./config/nvim-tree-lua-config.vim; }
     { plugin = nvim-web-devicons; }
     { plugin = pkgs.vitalityVimPlugins.gruvbox; config = readFile ./config/theme-config.vim; }
@@ -119,7 +119,7 @@ in
     "<leader>dr" = "lua require'dap'.repl.open()<CR>";
     "<leader>lp" = "lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message:'))<CR>";
 
-    #gundo 
+    #gundo
     "<F3>" = "<cmd>MundoToggle<CR>";
   };
 
