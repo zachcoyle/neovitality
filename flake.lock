@@ -67,11 +67,11 @@
     "gruvbox": {
       "flake": false,
       "locked": {
-        "lastModified": 1613245958,
-        "narHash": "sha256-nWSgx8o0W77DiCbUyKlM1P2Y87aqn2aa96cQF+mNhxA=",
+        "lastModified": 1614109150,
+        "narHash": "sha256-kw75rEtmtkuKaqkESAlpawCcsOX+PqGG0K+/PUSUK9A=",
         "owner": "gruvbox-community",
         "repo": "gruvbox",
-        "rev": "8b29832551088fd7ecc1241c2576c8cf89f0842c",
+        "rev": "deb4e40e4f26b0ca9db81e5463110c060f24635a",
         "type": "github"
       },
       "original": {
@@ -141,11 +141,11 @@
       },
       "locked": {
         "dir": "contrib",
-        "lastModified": 1614042794,
-        "narHash": "sha256-MdvfcdpQpcnl2UGqVOiZknu4zi+jcHZMoxKlPKaXnVs=",
+        "lastModified": 1614134375,
+        "narHash": "sha256-mg0CyH1xrKRTa7oTvgqsD/WkQb51ADB5KYE8R2Z6RdY=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "0450e155d48cb2d8a73358e193931d8966a9d2e0",
+        "rev": "6b7cc45c4845624aa08232a860941b5a55b9640b",
         "type": "github"
       },
       "original": {
@@ -157,11 +157,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1614012903,
-        "narHash": "sha256-QZkn/ZEgYUpHvJUu5rI8PHwxYoAwM2vv1z42vfSETdU=",
+        "lastModified": 1614104499,
+        "narHash": "sha256-eAQlDUvwaGNZkuvVGAJzB8HBNwVJgpKhlP1d3t69gCo=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "8542021fe7f9f777294649b1cdc853240806ff21",
+        "rev": "cad282477da59dca50643ef98078d47cfa55bc4d",
         "type": "github"
       },
       "original": {
@@ -201,11 +201,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1614066247,
-        "narHash": "sha256-V+KlX/NQ14IxOCSpztOWxlqUeNdw7EsDVBzLDjhM85s=",
+        "lastModified": 1614153077,
+        "narHash": "sha256-tEIwmPMS/j6z3GnKAJwuUKv5D/Pj2GJEgOha8i2ZfGo=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "9ce5854be4220329537675620d575854eeb9b9b2",
+        "rev": "e97bf47d5f6c390559a51f059b2091d748f4a00b",
         "type": "github"
       },
       "original": {
@@ -217,11 +217,11 @@
     "nvim-compe": {
       "flake": false,
       "locked": {
-        "lastModified": 1614060753,
-        "narHash": "sha256-TwJ9igbe4jtDlgiD6JsAR4CTEdXpcKTo9zQIiy0UC0E=",
+        "lastModified": 1614151238,
+        "narHash": "sha256-cQmbYcgzZTULUjCRYb96p+F8HNJkVvPlAo/aBoRpI8o=",
         "owner": "hrsh7th",
         "repo": "nvim-compe",
-        "rev": "c1764beef2ceba2adb62de5ed89475c71f183a57",
+        "rev": "677269cb485d7c7cf64fce43f286e7be12cc0d0f",
         "type": "github"
       },
       "original": {
@@ -253,11 +253,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1613927707,
-        "narHash": "sha256-IwBzgTRBOFWejDfS1HJlArPBtRmIqZiokmcl2SiStnk=",
+        "lastModified": 1614075989,
+        "narHash": "sha256-BO6W2QzUXJ091JUroq/ro11XQwua+ygF1ortOE2oavw=",
         "owner": "nix-community",
         "repo": "rnix-lsp",
-        "rev": "4b6bce1ebcf4e1332b4004a14a70046579054f46",
+        "rev": "6c12d7fd20e3330669ba1a845b78694d600283a3",
         "type": "github"
       },
       "original": {
@@ -324,11 +324,11 @@
     "telescope-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1614011457,
-        "narHash": "sha256-e/qGZpY6G011wrU/ENn5ZeIDlX7shLNh3zVFpz1AoPU=",
+        "lastModified": 1614134842,
+        "narHash": "sha256-f48sQl0bIRsXGJTudoWWbOmpAtu6WkAx+W2eNmdAP+0=",
         "owner": "nvim-telescope",
         "repo": "telescope.nvim",
-        "rev": "d7c02e3b52b5a13265e071d0de2d6a989110a515",
+        "rev": "b5051eeb01bfbff2df2b46f59c13318987ed1e59",
         "type": "github"
       },
       "original": {
@@ -355,11 +355,11 @@
     "vim-dadbod-ui": {
       "flake": false,
       "locked": {
-        "lastModified": 1613406300,
-        "narHash": "sha256-9+RJCauONp+G7r3BX6vnH+suk2bc4yNIs1sATKCLAqY=",
+        "lastModified": 1614146104,
+        "narHash": "sha256-kt73vzm+uJm11BJW4D0bX3cJ4Rj3HMuI+A1vOXGfpFQ=",
         "owner": "kristijanhusak",
         "repo": "vim-dadbod-ui",
-        "rev": "be493eade2ae2b01a217a5a6b2aad7fc3c27af47",
+        "rev": "f7b0de14f98eda1f5c6d0271d5df2f189c8ec132",
         "type": "github"
       },
       "original": {
