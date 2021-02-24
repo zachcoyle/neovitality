@@ -60,8 +60,6 @@ in
     { plugin = vim-tmux-navigator; }
     { plugin = vim-vsnip; }
     { plugin = vimagit; }
-  ] ++ optionals (pkgs.system == "x86_64-darwin") [
-    #TODO: install treesitter grammars from nix
     { plugin = nvim-treesitter; config = readFile ./config/nvim-treesitter-config.vim; }
     { plugin = nvim-treesitter-context; }
     { plugin = nvim-treesitter-refactor; }
