@@ -55,5 +55,5 @@ set termguicolors
 
 highlight NvimTreeFolderIcon guibg=blue
 
-autocmd FileType NvimTree setlocal signcolumn=no
-autocmd FileType NvimTree setlocal nocursorcolumn
+"autocmd FileType NvimTree setlocal signcolumn=no
+"autocmd FileType NvimTree setlocal nocursorcolumn

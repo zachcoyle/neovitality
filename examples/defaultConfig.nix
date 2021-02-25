@@ -37,7 +37,7 @@ in
     { plugin = nvim-lspconfig; }
     { plugin = nvim-tree-lua; config = readFile ./config/nvim-tree-lua-config.vim; }
     { plugin = nvim-web-devicons; }
-    { plugin = pkgs.vitalityVimPlugins.gruvbox; config = readFile ./config/theme-config.vim; }
+    { plugin = gruvbox; config = readFile ./config/theme-config.vim; }
     { plugin = plenary-nvim; }
     { plugin = scrollbar-nvim; config = readFile ./config/scrollbar-nvim-config.vim; }
     { plugin = surround; }
@@ -58,11 +58,9 @@ in
     { plugin = vim-sensible; }
     { plugin = vim-startify; config = readFile ./config/vim-startify-config.vim; }
     { plugin = vim-tmux-navigator; }
-    { plugin = vim-vsnip; }
     { plugin = vimagit; }
     { plugin = nvim-treesitter; config = readFile ./config/nvim-treesitter-config.vim; }
     { plugin = nvim-treesitter-context; }
-    { plugin = nvim-treesitter-refactor; }
     { plugin = nvim-treesitter-textobjects; config = readFile ./config/nvim-treesitter-textobjects-config.vim; }
   ];
 
@@ -73,7 +71,7 @@ in
   nnoremap = {
 
     #NvimTree
-    "<C-n>" = ":NvimTreeToggle<CR>";
+    Ctrl-n = ":NvimTreeToggle<CR>";
     "<leader>n" = ":NvimTreeFindFile<CR";
     "<leader>r" = ":NvimTreeRefresh<CR>";
 
@@ -97,14 +95,14 @@ in
     K = "<cmd>lua vim.lsp.buf.hover()<CR>";
 
     # fzf
-    "<C-_>" = ":RG<CR>";
-    "<C-P>" = ":FZF<CR>";
+    Ctrl-_ = ":RG<CR>";
+    Ctrl-P = ":FZF<CR>";
 
     # navigation
-    "<C-h>" = "<C-W>h";
-    "<C-j>" = "<C-W>j";
-    "<C-k>" = "<C-W>k";
-    "<C-l>" = "<C-W>l";
+    Ctrl-h = "<C-W>h";
+    Ctrl-j = "<C-W>j";
+    Ctrl-k = "<C-W>k";
+    Ctrl-l = "<C-W>l";
 
     # nvim-dap
     "<F10>" = "lua require'dap'.step_over()<CR>";

@@ -76,7 +76,9 @@
 
         devShell = pkgs.mkShell {
           inherit system;
-          buildInputs = [ defaultPackage ];
+          buildInputs = [
+            defaultPackage
+          ];
         };
 
       }
