@@ -17,9 +17,12 @@ let
     "lush-nvim"
     "nvim-compe"
     "nvim-lspconfig"
+    "nvim-tree-lua"
+    "nvim-web-devicons"
     "scrollbar-nvim"
     "snippets-nvim"
     "vim-dadbod-ui"
+    "vim-devicons"
     "vim-prisma"
     "vim-vsnip"
   ];
