@@ -11,6 +11,7 @@ set splitbelow
 set splitright
 set signcolumn=auto:3
 set tabstop=2
+set nowrap
 set exrc
 syntax on
 
