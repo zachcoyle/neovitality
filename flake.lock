@@ -96,22 +96,6 @@
         "type": "github"
       }
     },
-    "lush-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1614601354,
-        "narHash": "sha256-pxXZXUTDEAc96Z4HxYW99osHR+yGPRC2wFNOwtD9L6A=",
-        "owner": "rktjmp",
-        "repo": "lush.nvim",
-        "rev": "9f720e13b3aa21eb28d4ac369f4408c68bfea266",
-        "type": "github"
-      },
-      "original": {
-        "owner": "rktjmp",
-        "repo": "lush.nvim",
-        "type": "github"
-      }
-    },
     "naersk": {
       "inputs": {
         "nixpkgs": "nixpkgs_2"
@@ -307,7 +291,6 @@
         "galaxyline-nvim": "galaxyline-nvim",
         "gruvbox": "gruvbox",
         "lspkind-nvim": "lspkind-nvim",
-        "lush-nvim": "lush-nvim",
         "neovim": "neovim",
         "nixpkgs": "nixpkgs",
         "nur": "nur",

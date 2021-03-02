@@ -16,7 +16,6 @@ let
 in
 {
   plugins = with pkgs.vimPlugins; with pkgs.vitalityVimPlugins;  [
-    #{ plugin = lush-nvim; config = wrapLuaConfig (import ./config/lush-nvim-config.nix { inherit pkgs; }); }
     { plugin = auto-pairs; }
     { plugin = barbar-nvim; }
     { plugin = colorizer; }

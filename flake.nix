@@ -17,7 +17,6 @@
     galaxyline-nvim = { url = github:glepnir/galaxyline.nvim/main; flake = false; };
     gruvbox = { url = github:gruvbox-community/gruvbox; flake = false; };
     lspkind-nvim = { url = github:onsails/lspkind-nvim; flake = false; };
-    lush-nvim = { url = github:rktjmp/lush.nvim; flake = false; };
     nvim-compe = { url = github:hrsh7th/nvim-compe; flake = false; };
     nvim-lspconfig = { url = github:neovim/nvim-lspconfig; flake = false; };
     nvim-tree-lua = { url = github:kyazdani42/nvim-tree.lua/48cd6a1ad31754aa722b53d45d5d923236de4083; flake = false; };

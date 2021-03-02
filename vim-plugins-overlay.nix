@@ -14,7 +14,6 @@ let
     "galaxyline-nvim"
     "gruvbox"
     "lspkind-nvim"
-    "lush-nvim"
     "nvim-compe"
     "nvim-lspconfig"
     "nvim-tree-lua"
