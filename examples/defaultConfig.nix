@@ -116,6 +116,7 @@ in
 
     #gundo
     "<F3>" = "<cmd>MundoToggle<CR>";
+
   };
 
   inoremap = { };
