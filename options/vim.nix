@@ -26,6 +26,12 @@ let
           default = [ ];
           type = with types; listOf string;
         };
+
+        useCapabilities = mkOption {
+          default = false;
+          type = types.bool;
+
+        };
       };
     };
   };
@@ -185,11 +191,11 @@ in
         (any (it: true) values)
         "${name} = {'${builtins.concatStringsSep "', '" values}'},";
 
-
       buildLspConfig = name: config: ''
         lspconfig.${name}.setup {
           ${luaArray "cmd" config.cmd}
           ${luaArray "filetypes" config.filetypes}
+          ${if builtins.hasAttr "useCapabilities" config && config.useCapabilities then "capabilities=capabilities," else ""}
         }
       '';
       lspConfigs = mapAttrsFlatten (name: value: buildLspConfig name value.lspConfig) config.vim.languages;
@@ -222,6 +228,14 @@ in
 
         ${wrapLuaConfig ''
             local lspconfig = require'lspconfig'
+
+            local capabilities = vim.lsp.protocol.make_client_capabilities()
+            capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+            require'lspconfig'.rust_analyzer.setup {
+              capabilities = capabilities,
+            }
+
             ${builtins.concatStringsSep "\n" lspConfigs}
 
             local function preview_location_callback(_, _, result)
