@@ -64,6 +64,22 @@
         "type": "github"
       }
     },
+    "goyo-vim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1598665353,
+        "narHash": "sha256-FRJ4E0iwE0XJncyLvYG6EQgmCWJcXLBrYYy3dD6ruCY=",
+        "owner": "junegunn",
+        "repo": "goyo.vim",
+        "rev": "a865dec7ca7616dbbd69315ad1417b84d0c411f8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "junegunn",
+        "repo": "goyo.vim",
+        "type": "github"
+      }
+    },
     "gruvbox": {
       "flake": false,
       "locked": {
@@ -185,11 +201,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1614745716,
-        "narHash": "sha256-a8YHwHtXuilefofeS8UQ5eSCiBTe4myHrJO6bDTLMsw=",
+        "lastModified": 1614757654,
+        "narHash": "sha256-WTlPHUVr/+gn2riiipJprAFzoyL9Mf/5qAuy9AnUKJE=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "ed073c12e0c9f84289b9df06141841957a36bdfe",
+        "rev": "f60a8eee64d523862aed56935f55218d8da84e78",
         "type": "github"
       },
       "original": {
@@ -396,6 +412,7 @@
         "formatter-nvim": "formatter-nvim",
         "fzf-lsp-nvim": "fzf-lsp-nvim",
         "galaxyline-nvim": "galaxyline-nvim",
+        "goyo-vim": "goyo-vim",
         "gruvbox": "gruvbox",
         "lspkind-nvim": "lspkind-nvim",
         "nixpkgs": [
@@ -414,11 +431,11 @@
         "vim-vsnip": "vim-vsnip"
       },
       "locked": {
-        "lastModified": 1614756559,
-        "narHash": "sha256-HCuQe1FwqqF3edqRX40xkO8H83lOJR5BmgLoflThV2A=",
+        "lastModified": 1614758276,
+        "narHash": "sha256-4nU/GuaeCicsV0PWf8EDl1hm7BkSXH14GKdn/3O13Ck=",
         "owner": "vi-tality",
         "repo": "vim-plugins-overlay",
-        "rev": "2baf7e2f6467dd239693a4fb3804f309cc1638be",
+        "rev": "a2adde94eb6303d062ad807777d9d8577c64dc9d",
         "type": "github"
       },
       "original": {
