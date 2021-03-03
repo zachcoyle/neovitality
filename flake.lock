@@ -286,26 +286,11 @@
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "formatter-nvim": "formatter-nvim",
-        "fzf-lsp-nvim": "fzf-lsp-nvim",
-        "galaxyline-nvim": "galaxyline-nvim",
-        "gruvbox": "gruvbox",
-        "lspkind-nvim": "lspkind-nvim",
         "neovim": "neovim",
         "nixpkgs": "nixpkgs",
         "nur": "nur",
-        "nvim-compe": "nvim-compe",
-        "nvim-lspconfig": "nvim-lspconfig",
-        "nvim-tree-lua": "nvim-tree-lua",
-        "nvim-web-devicons": "nvim-web-devicons",
         "rnix-lsp": "rnix-lsp",
-        "scrollbar-nvim": "scrollbar-nvim",
-        "snippets-nvim": "snippets-nvim",
-        "telescope-nvim": "telescope-nvim",
-        "vim-dadbod-ui": "vim-dadbod-ui",
-        "vim-devicons": "vim-devicons",
-        "vim-prisma": "vim-prisma",
-        "vim-vsnip": "vim-vsnip"
+        "vim-plugins-overlay": "vim-plugins-overlay"
       }
     },
     "scrollbar-nvim": {
@@ -343,11 +328,11 @@
     "telescope-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1614688861,
-        "narHash": "sha256-bqLGQKJ4xW9Iq8n/K/7cYegCVKQoiiH1v9kKvruDMgI=",
+        "lastModified": 1614754361,
+        "narHash": "sha256-i51RcUI7Z/7f5+hm1+Zs3A1Lb2dvw4goTuR3/doTnrg=",
         "owner": "nvim-telescope",
         "repo": "telescope.nvim",
-        "rev": "569ebd43e7c8b2fcbadf03751e05526ab39fdf77",
+        "rev": "b67c6fdfeeede7e55595c0a16f47e6ce7de7508f",
         "type": "github"
       },
       "original": {
@@ -400,6 +385,45 @@
       "original": {
         "owner": "ryanoasis",
         "repo": "vim-devicons",
+        "type": "github"
+      }
+    },
+    "vim-plugins-overlay": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "formatter-nvim": "formatter-nvim",
+        "fzf-lsp-nvim": "fzf-lsp-nvim",
+        "galaxyline-nvim": "galaxyline-nvim",
+        "gruvbox": "gruvbox",
+        "lspkind-nvim": "lspkind-nvim",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "nvim-compe": "nvim-compe",
+        "nvim-lspconfig": "nvim-lspconfig",
+        "nvim-tree-lua": "nvim-tree-lua",
+        "nvim-web-devicons": "nvim-web-devicons",
+        "scrollbar-nvim": "scrollbar-nvim",
+        "snippets-nvim": "snippets-nvim",
+        "telescope-nvim": "telescope-nvim",
+        "vim-dadbod-ui": "vim-dadbod-ui",
+        "vim-devicons": "vim-devicons",
+        "vim-prisma": "vim-prisma",
+        "vim-vsnip": "vim-vsnip"
+      },
+      "locked": {
+        "lastModified": 1614756559,
+        "narHash": "sha256-HCuQe1FwqqF3edqRX40xkO8H83lOJR5BmgLoflThV2A=",
+        "owner": "vi-tality",
+        "repo": "vim-plugins-overlay",
+        "rev": "2baf7e2f6467dd239693a4fb3804f309cc1638be",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vi-tality",
+        "repo": "vim-plugins-overlay",
         "type": "github"
       }
     },
