@@ -222,6 +222,7 @@ in
 
         ${wrapLuaConfig ''
             local lspconfig = require'lspconfig'
+
             ${builtins.concatStringsSep "\n" lspConfigs}
 
             local function preview_location_callback(_, _, result)
