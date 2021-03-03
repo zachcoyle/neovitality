@@ -232,10 +232,6 @@ in
             local capabilities = vim.lsp.protocol.make_client_capabilities()
             capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-            require'lspconfig'.rust_analyzer.setup {
-              capabilities = capabilities,
-            }
-
             ${builtins.concatStringsSep "\n" lspConfigs}
 
             local function preview_location_callback(_, _, result)
