@@ -29,7 +29,6 @@ in
     { plugin = fzf-vim; config = readFile ./config/fzf-vim-config.vim; }
     { plugin = galaxyline-nvim; config = galaxyline-config; }
     { plugin = gitsigns-nvim; config = gitsignsConfig; }
-    { plugin = goyo-vim; }
     { plugin = gruvbox; config = readFile ./config/theme-config.vim; }
     { plugin = lspkind-nvim; config = "lua require('lspkind').init()"; }
     { plugin = nvim-compe; config = wrapLuaConfig (readFile ./config/nvim-compe-config.lua); }
