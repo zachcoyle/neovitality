@@ -19,10 +19,11 @@
     };
 
     rnix-lsp.url = github:nix-community/rnix-lsp;
+    nixpkgs-for-jdtls.url = github:jlesquembre/nixpkgs/jdt-ls;
 
   };
 
-  outputs = { self, nixpkgs, neovim, rnix-lsp, flake-utils, nur, vim-plugins-overlay }:
+  outputs = { self, nixpkgs, neovim, flake-utils, nur, vim-plugins-overlay, ... }@inputs:
     flake-utils.lib.eachDefaultSystem (system:
       let
 
@@ -34,7 +35,8 @@
             nur.overlay
             (final: prev: {
               neovim-nightly = neovim.defaultPackage.${system};
-              rnix-lsp = rnix-lsp.defaultPackage.${system};
+              rnix-lsp = inputs.rnix-lsp.defaultPackage.${system};
+              jdt-ls = (import inputs.nixpkgs-for-jdtls { inherit system; }).jdt-ls;
             })
           ];
         };

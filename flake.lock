@@ -171,6 +171,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-for-jdtls": {
+      "locked": {
+        "lastModified": 1610919156,
+        "narHash": "sha256-022HJ5uQgMQGm1EufMF63uFfcHfKspG2iQ3qLCW4fi4=",
+        "owner": "jlesquembre",
+        "repo": "nixpkgs",
+        "rev": "3825eb534dc07214a3607493bc101494d1fb1d7e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jlesquembre",
+        "ref": "jdt-ls",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1605988311,
@@ -304,6 +320,7 @@
         "flake-utils": "flake-utils",
         "neovim": "neovim",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-for-jdtls": "nixpkgs-for-jdtls",
         "nur": "nur",
         "rnix-lsp": "rnix-lsp",
         "vim-plugins-overlay": "vim-plugins-overlay"

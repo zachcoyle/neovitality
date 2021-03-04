@@ -34,6 +34,76 @@ with pkgs;
     };
   };
 
+  jdtls = {
+
+    lspConfig = {
+      /*
+
+
+      # from derivation: 
+
+    3 # Example:
+    4
+    5 # jdt-ls -Xms500M --java-opts "-Xdiag -showversion" -data /tmp/jdtls_workspace
+    6 #                                                                                                                                                                                                                                    ▲
+    7 # === executes ===>                                                                                                                                                                                                                  █
+    8 #                                                                                                                                                                                                                                    █
+    9 # java \                                                                                                                                                                                                                             █
+   10 #  -Xms500M \                                                                                                                                                                                                                        █
+   11 #  -Xmx2G \                                                                                                                                                                                                                          █
+   12 #  -Dlog.level=INFO  \                                                                                                                                                                                                               ▼
+   13 #  -Xdiag \
+   14 #  -showversion \
+   15 #  -jar /nix/store/...equinox.launcher.jar \
+   16 #  --add-modules=ALL-SYSTEM \
+   17 #  --add-opens java.base/java.util=ALL-UNNAMED \
+   18 #  --add-opens java.base/java.lang=ALL-UNNAMED \
+   19 #  -configuration /tmp/jdtls_config/stXVO \
+   20 #  -data /tmp/jdtls_workspace
+      */
+
+
+
+
+
+      cmd = [
+        "${jdt-ls}/bin/jdt-ls"
+        "-Xms500M"
+        "-configuration"
+        "tostring(vim.fn.getenv(\"JDTLS_CONFIG\"))"
+        "-data"
+        "tostring(vim.fn.getenv(\"WORKSPACE\"))"
+        "--add-modules=ALL-SYSTEM"
+        "--add-opens java.base/java.util=ALL-UNNAMED"
+        "--add-opens java.base/java.lang=ALL-UNNAMED"
+
+        # from lsp-config:
+        #########
+        # "util.path.join(tostring(vim.fn.getenv(\"JAVA_HOME\")), \"/bin/java\")"
+        # "-Declipse.application=org.eclipse.jdt.ls.core.id1"
+        # "-Dosgi.bundles.defaultStartLevel=4"
+        # "-Declipse.product=org.eclipse.jdt.ls.core.product"
+        # "-Dlog.protocol=true"
+        # "-Dlog.level=ALL"
+        # "-Xms1g"
+        # "-Xmx2G"
+        # "-jar"
+        # "tostring(vim.fn.getenv(\"JAR\"))"
+        # "-configuration"
+        # "tostring(vim.fn.getenv(\"JDTLS_CONFIG\"))"
+        # "-data"
+        # "tostring(vim.fn.getenv(\"WORKSPACE\"))"
+        # "--add-modules=ALL-SYSTEM"
+        # "--add-opens java.base/java.util=ALL-UNNAMED"
+        # "--add-opens java.base/java.lang=ALL-UNNAMED"
+
+        # also there is https://github.com/mfussenegger/nvim-jdtls
+
+      ];
+    };
+
+  };
+
   kotlin_language_server = {
     lspConfig = {
       cmd = [ "${nur.repos.zachcoyle.kotlin-language-server}/bin/kotlin-language-server" ];
