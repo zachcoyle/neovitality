@@ -19,7 +19,7 @@
     lspkind-nvim = { url = github:onsails/lspkind-nvim; flake = false; };
     nvim-compe = { url = github:hrsh7th/nvim-compe; flake = false; };
     nvim-lspconfig = { url = github:neovim/nvim-lspconfig; flake = false; };
-    nvim-tree-lua = { url = github:kyazdani42/nvim-tree.lua/48cd6a1ad31754aa722b53d45d5d923236de4083; flake = false; };
+    nvim-tree-lua = { url = github:kyazdani42/nvim-tree.lua; flake = false; };
     nvim-web-devicons = { url = github:kyazdani42/nvim-web-devicons; flake = false; };
     scrollbar-nvim = { url = github:Xuyuanp/scrollbar.nvim; flake = false; };
     snippets-nvim = { url = github:norcalli/snippets.nvim; flake = false; };
