@@ -30,6 +30,7 @@ in
     { plugin = galaxyline-nvim; config = galaxyline-config; }
     { plugin = gitsigns-nvim; config = gitsignsConfig; }
     { plugin = gruvbox; config = readFile ./config/theme-config.vim; }
+    { plugin = lsp_extensions-nvim; }
     { plugin = lspkind-nvim; config = "lua require('lspkind').init()"; }
     { plugin = nvim-compe; config = wrapLuaConfig (readFile ./config/nvim-compe-config.lua); }
     { plugin = nvim-dap-virtual-text; }
