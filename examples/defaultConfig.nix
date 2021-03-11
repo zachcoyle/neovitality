@@ -25,8 +25,6 @@ in
     { plugin = emmet-vim; config = readFile ./config/emmet-vim-config.vim; }
     { plugin = formatter-nvim; config = wrapLuaConfig (import ./config/formatter-nvim-config.nix { inherit pkgs; }); }
     { plugin = fugitive; }
-    { plugin = fzf-lsp-nvim; config = "lua require'fzf_lsp'.setup()"; }
-    { plugin = fzf-vim; config = readFile ./config/fzf-vim-config.vim; }
     { plugin = galaxyline-nvim; config = galaxyline-config; }
     { plugin = gitsigns-nvim; config = gitsignsConfig; }
     { plugin = gruvbox; config = readFile ./config/theme-config.vim; }
@@ -42,9 +40,13 @@ in
     { plugin = nvim-treesitter; config = readFile ./config/nvim-treesitter-config.vim; }
     { plugin = nvim-web-devicons; }
     { plugin = plenary-nvim; }
+    { plugin = popup-nvim; }
     { plugin = scrollbar-nvim; config = readFile ./config/scrollbar-nvim-config.vim; }
     { plugin = surround; }
     { plugin = tabular; }
+    { plugin = telescope-github-nvim; config = "lua require('telescope').load_extension('gh')"; }
+    { plugin = telescope-nvim; config = '' lua require('telescope').setup{ } ''; }
+    { plugin = telescope-node-modules-nvim; config = "lua require'telescope'.load_extension'node_modules'"; }
     { plugin = vim-closetag; config = readFile ./config/vim-closetag-config.vim; }
     { plugin = vim-commentary; }
     { plugin = vim-cursorword; }
@@ -90,15 +92,15 @@ in
     "<leader>wr" = "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>";
     "[d" = "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>";
     "]d" = "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>";
-    gD = "<cmd>lua vim.lsp.buf.declaration()<CR>";
-    gd = "<cmd>lua vim.lsp.buf.definition()<CR>";
     gi = "<cmd>lua vim.lsp.buf.implementation()<CR>";
-    gr = "<cmd>lua vim.lsp.buf.references()<CR>";
     K = "<cmd>lua vim.lsp.buf.hover()<CR>";
 
-    # fzf
-    Ctrl-_ = ":RG<CR>";
-    Ctrl-P = ":FZF<CR>";
+    # telescope
+    Ctrl-_ = "<cmd>lua require('telescope.builtin').live_grep()<cr>";
+    Ctrl-P = "<cmd>lua require('telescope.builtin').find_files()<cr>";
+    Ctrl-B = "<cmd>lua require('telescope.builtin').buffers()<cr>";
+    gd = "<cmd>lua require('telescope.builtin').lsp_definitions()<cr>";
+    gr = "<cmd>lua require('telescope.builtin').lsp_references()<cr>";
 
     # navigation
     Ctrl-h = "<C-W>h";
