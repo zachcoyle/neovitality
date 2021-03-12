@@ -16,6 +16,7 @@ let
 in
 {
   plugins = with pkgs.vimPlugins; with pkgs.vitalityVimPlugins;  [
+    { /**/ plugin = plenary-nvim; config = wrapLuaConfig (builtins.readFile ./config/lua-rocks-config.lua); }
     { plugin = auto-pairs; }
     { plugin = barbar-nvim; }
     { plugin = colorizer; }
@@ -39,14 +40,14 @@ in
     { plugin = nvim-treesitter-textobjects; config = readFile ./config/nvim-treesitter-textobjects-config.vim; }
     { plugin = nvim-treesitter; config = readFile ./config/nvim-treesitter-config.vim; }
     { plugin = nvim-web-devicons; }
-    { plugin = plenary-nvim; }
     { plugin = popup-nvim; }
     { plugin = scrollbar-nvim; config = readFile ./config/scrollbar-nvim-config.vim; }
     { plugin = surround; }
     { plugin = tabular; }
+    #{ plugin = telescope-fzy-native-nvim; config = "lua require('telescope').load_extension('fzy_native')"; }
     { plugin = telescope-github-nvim; config = "lua require('telescope').load_extension('gh')"; }
-    { plugin = telescope-nvim; config = '' lua require('telescope').setup{ } ''; }
     { plugin = telescope-node-modules-nvim; config = "lua require'telescope'.load_extension'node_modules'"; }
+    { plugin = telescope-nvim; config = '' lua require('telescope').setup{ } ''; }
     { plugin = vim-closetag; config = readFile ./config/vim-closetag-config.vim; }
     { plugin = vim-commentary; }
     { plugin = vim-cursorword; }
@@ -63,8 +64,8 @@ in
     { plugin = vim-sensible; }
     { plugin = vim-startify; config = readFile ./config/vim-startify-config.vim; }
     { plugin = vim-tmux-navigator; }
-    { plugin = vim-vsnip; config = readFile ./config/vim-vsnip-config.vim; }
     { plugin = vim-vsnip-integ; }
+    { plugin = vim-vsnip; config = readFile ./config/vim-vsnip-config.vim; }
     { plugin = vimagit; }
   ];
 
