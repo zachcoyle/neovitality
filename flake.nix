@@ -52,7 +52,7 @@
 
         defaultPackage = neovimBuilder {
           config = {
-            vim = import ./examples/defaultConfig.nix { inherit pkgs; };
+            vim = import ./defaults/defaultConfig.nix { inherit pkgs; };
           };
         };
 
