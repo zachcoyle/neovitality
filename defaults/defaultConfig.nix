@@ -101,6 +101,7 @@ in
     Ctrl-B = "<cmd>lua require('telescope.builtin').buffers()<cr>";
     gd = "<cmd>lua require('telescope.builtin').lsp_definitions()<cr>";
     gr = "<cmd>lua require('telescope.builtin').lsp_references()<cr>";
+    "<leader>a" = "<cmd>lua require('telescope.builtin').lsp_code_actions()<cr>";
 
     # navigation
     Ctrl-h = "<C-W>h";
