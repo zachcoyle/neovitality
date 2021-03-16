@@ -70,11 +70,11 @@ with pkgs;
     };
   };
 
-  rust_analyzer = {
-    lspConfig = {
-      cmd = [ "${rust-analyzer}/bin/rust-analyzer" ];
-    };
-  };
+  #rust_analyzer = {
+  #  lspConfig = {
+  #    cmd = [ "${rust-analyzer}/bin/rust-analyzer" ];
+  #  };
+  #};
 
   terraformls = {
     lspConfig = {
