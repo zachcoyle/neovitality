@@ -44,9 +44,10 @@ in
     { plugin = scrollbar-nvim; config = readFile ./config/scrollbar-nvim-config.vim; }
     { plugin = surround; }
     { plugin = tabular; }
+    { plugin = pkgs.vimPlugins.telescope-fzy-native-nvim; config = "lua require('telescope').load_extension('fzy_native')"; }
     { plugin = telescope-github-nvim; config = "lua require('telescope').load_extension('gh')"; }
+    { plugin = telescope-node-modules-nvim; config = "lua require'telescope'.load_extension('node_modules')"; }
     { plugin = telescope-nvim; config = '' lua require('telescope').setup{ } ''; }
-    { plugin = telescope-node-modules-nvim; config = "lua require'telescope'.load_extension'node_modules'"; }
     { plugin = vim-closetag; config = readFile ./config/vim-closetag-config.vim; }
     { plugin = vim-commentary; }
     { plugin = vim-cursorword; }
