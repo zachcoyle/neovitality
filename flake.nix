@@ -69,6 +69,7 @@
           inherit system;
           buildInputs = [
             defaultPackage
+            pkgs.tree-sitter
           ];
         };
 
