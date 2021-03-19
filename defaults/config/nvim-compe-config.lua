@@ -21,6 +21,7 @@ require'compe'.setup {
     spell = true;
     tags = true;
     snippets_nvim = true;
+    tabnine = true;
   };
 }
 

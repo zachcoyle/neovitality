@@ -17,7 +17,6 @@ in
 {
   plugins = with pkgs.vimPlugins; with pkgs.vitalityVimPlugins;  [
     { plugin = barbar-nvim; }
-    { plugin = colorizer; }
     { plugin = conjure; }
     { plugin = direnv-vim; config = readFile ./config/direnv-vim-config.vim; }
     { plugin = editorconfig-vim; }
@@ -30,6 +29,7 @@ in
     { plugin = lsp_extensions-nvim; }
     { plugin = lspkind-nvim; config = "lua require('lspkind').init()"; }
     { plugin = nvim-compe; config = wrapLuaConfig (readFile ./config/nvim-compe-config.lua); }
+    { plugin = compe-tabnine; }
     { plugin = nvim-dap-virtual-text; }
     { plugin = nvim-dap; config = dapConfig; }
     { plugin = nvim-blame-line; config = "autocmd BufEnter * EnableBlameLine"; }
@@ -37,7 +37,7 @@ in
     { plugin = nvim-tree-lua; config = readFile ./config/nvim-tree-lua-config.vim; }
     { plugin = nvim-treesitter-context; }
     { plugin = nvim-treesitter-textobjects; config = readFile ./config/nvim-treesitter-textobjects-config.vim; }
-    { plugin = nvim-treesitter; config = readFile ./config/nvim-treesitter-config.vim; }
+    { plugin = nvim-treesitter; config = wrapLuaConfig (readFile ./config/nvim-treesitter-config.lua); }
     { plugin = nvim-web-devicons; }
     { plugin = plenary-nvim; }
     { plugin = popup-nvim; }
@@ -57,6 +57,7 @@ in
     { plugin = vim-devicons; }
     { plugin = vim-dispatch; }
     { plugin = vim-floaterm; }
+    { plugin = vim-hexokinase; }
     { plugin = vim-mundo; config = readFile ./config/mundo-config.vim; }
     { plugin = vim-parinfer; }
     { plugin = vim-polyglot; }
