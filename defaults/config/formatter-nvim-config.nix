@@ -26,7 +26,7 @@ let
     in
     {
       exe = "${pkgs.nodePackages.prettier}/bin/prettier";
-      args = [ "'--stdin-filepath'" "vim.api.nvim_buf_get_name(0)" ] ++ parserArgs;
+      args = [ "'--stdin-filepath'" "'\"' .. vim.api.nvim_buf_get_name(0) .. '\"'" ] ++ parserArgs;
     };
 
   clangFormatter = {
@@ -86,12 +86,12 @@ let
 
     json = {
       extension = "json";
-      formatters = [ (prettierFormatter { parser = "json"; }) ];
+      formatters = [ (prettierFormatter { parser = "typescript"; }) ];
     };
 
     jsonc = {
       extension = "json,*.jsonc";
-      formatters = [ (prettierFormatter { parser = "json"; }) ];
+      formatters = [ (prettierFormatter { parser = "typescript"; }) ];
     };
 
     kotlin = {
