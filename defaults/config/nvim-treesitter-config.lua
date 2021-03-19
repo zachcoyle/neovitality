@@ -15,4 +15,5 @@ require('nvim-treesitter.configs').setup {
 }
 
 vim.cmd [[set foldmethod=expr]]
+vim.cmd [[set foldlevel=6]]
 vim.cmd [[set foldexpr=nvim_treesitter#foldexpr()]]
