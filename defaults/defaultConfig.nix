@@ -33,6 +33,7 @@ in
     { plugin = nvim-compe; config = wrapLuaConfig (readFile ./config/nvim-compe-config.lua); }
     { plugin = nvim-dap-virtual-text; }
     { plugin = nvim-dap; config = dapConfig; }
+    { plugin = nvim-blame-line; config = "autocmd BufEnter * EnableBlameLine"; }
     { plugin = nvim-lspconfig; }
     { plugin = nvim-tree-lua; config = readFile ./config/nvim-tree-lua-config.vim; }
     { plugin = nvim-treesitter-context; }
