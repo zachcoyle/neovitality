@@ -218,11 +218,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1616113666,
-        "narHash": "sha256-8OrgTGDRX392aP2M0zSjHrPTply/Fcj4xVztJJ+t2Xk=",
+        "lastModified": 1616118291,
+        "narHash": "sha256-qD+XYYvQBDuq/L9YowIVx6q4d4xrR4N/gnFc20Ilcrc=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "6e7673347e5718987a17cd4db7138329d32fd4a4",
+        "rev": "d8fa77df475ae358cc86a0ffb68e3e366efd28dc",
         "type": "github"
       },
       "original": {
@@ -724,6 +724,22 @@
         "type": "github"
       }
     },
+    "vim-closer": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1578015863,
+        "narHash": "sha256-ciTud2dZaoT8D+KTQ6ycVTQNVhSQnkhFii2V4DSXGFQ=",
+        "owner": "9mm",
+        "repo": "vim-closer",
+        "rev": "0cb91a7a61c16247dee1eaa4b0a7c72b985311f1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "9mm",
+        "repo": "vim-closer",
+        "type": "github"
+      }
+    },
     "vim-dadbod-ui": {
       "flake": false,
       "locked": {
@@ -815,6 +831,7 @@
         "telescope-symbols-nvim": "telescope-symbols-nvim",
         "telescope-vimspector-nvim": "telescope-vimspector-nvim",
         "telescope-z-nvim": "telescope-z-nvim",
+        "vim-closer": "vim-closer",
         "vim-dadbod-ui": "vim-dadbod-ui",
         "vim-devicons": "vim-devicons",
         "vim-import-cost": "vim-import-cost",
@@ -825,11 +842,11 @@
         "vim-which-key": "vim-which-key"
       },
       "locked": {
-        "lastModified": 1616115101,
-        "narHash": "sha256-QVkJqo6K2RogJh5AuUytaOoVItg7f+CeygNNeE1hxYI=",
+        "lastModified": 1616120689,
+        "narHash": "sha256-6mE1ThxKQBL8iUfpt1Vl9gblTxCtqJs4p/jEGJlw7I4=",
         "owner": "vi-tality",
         "repo": "vim-plugins-overlay",
-        "rev": "0783082441641876e3f3e2fe8ea003d85b0dcfe6",
+        "rev": "34afbea5792287047a4a1b7b122ba50d635c7514",
         "type": "github"
       },
       "original": {

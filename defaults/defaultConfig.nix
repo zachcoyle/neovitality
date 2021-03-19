@@ -16,7 +16,6 @@ let
 in
 {
   plugins = with pkgs.vimPlugins; with pkgs.vitalityVimPlugins;  [
-    { plugin = auto-pairs; }
     { plugin = barbar-nvim; }
     { plugin = colorizer; }
     { plugin = conjure; }
@@ -49,6 +48,7 @@ in
     { plugin = telescope-github-nvim; config = "lua require('telescope').load_extension('gh')"; }
     { plugin = telescope-node-modules-nvim; config = "lua require'telescope'.load_extension('node_modules')"; }
     { plugin = telescope-nvim; config = '' lua require('telescope').setup{ } ''; }
+    { plugin = vim-closer; }
     { plugin = vim-closetag; config = readFile ./config/vim-closetag-config.vim; }
     { plugin = vim-commentary; }
     { plugin = vim-cursorword; }
