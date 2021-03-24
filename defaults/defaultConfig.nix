@@ -25,12 +25,11 @@ in
     { plugin = fugitive; }
     { plugin = galaxyline-nvim; config = galaxyline-config; }
     { plugin = gitsigns-nvim; config = gitsignsConfig; }
-    # { plugin = gruvbox; config = readFile ./config/theme-config.vim; }
+    { plugin = gruvbox; config = readFile ./config/theme-config.vim; }
     { plugin = lsp_extensions-nvim; }
     { plugin = lspkind-nvim; config = "lua require('lspkind').init()"; }
     { plugin = nvim-compe; config = wrapLuaConfig (readFile ./config/nvim-compe-config.lua); }
     { plugin = compe-tabnine; }
-    { plugin = nvcode-color-schemes-vim; config = readFile ./config/theme-config.vim; }
     { plugin = nvim-dap-virtual-text; }
     { plugin = nvim-dap; config = dapConfig; }
     { plugin = nvim-blame-line; config = "autocmd BufEnter * EnableBlameLine"; }
