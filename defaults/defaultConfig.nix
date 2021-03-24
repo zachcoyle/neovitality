@@ -25,11 +25,12 @@ in
     { plugin = fugitive; }
     { plugin = galaxyline-nvim; config = galaxyline-config; }
     { plugin = gitsigns-nvim; config = gitsignsConfig; }
-    { plugin = gruvbox; config = readFile ./config/theme-config.vim; }
+    # { plugin = gruvbox; config = readFile ./config/theme-config.vim; }
     { plugin = lsp_extensions-nvim; }
     { plugin = lspkind-nvim; config = "lua require('lspkind').init()"; }
     { plugin = nvim-compe; config = wrapLuaConfig (readFile ./config/nvim-compe-config.lua); }
     { plugin = compe-tabnine; }
+    { plugin = nvcode-color-schemes-vim; config = readFile ./config/theme-config.vim; }
     { plugin = nvim-dap-virtual-text; }
     { plugin = nvim-dap; config = dapConfig; }
     { plugin = nvim-blame-line; config = "autocmd BufEnter * EnableBlameLine"; }
@@ -57,7 +58,7 @@ in
     { plugin = vim-devicons; }
     { plugin = vim-dispatch; }
     { plugin = vim-floaterm; }
-    { plugin = vim-hexokinase; }
+    { plugin = vim-hexokinase; config = "let g:Hexokinase_optInPatterns = 'full_hex,rgb,rgba,hsl,hsla'"; }
     { plugin = vim-mundo; config = readFile ./config/mundo-config.vim; }
     { plugin = vim-parinfer; }
     { plugin = vim-polyglot; }
