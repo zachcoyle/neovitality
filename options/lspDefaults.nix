@@ -34,6 +34,12 @@ with pkgs;
     };
   };
 
+  jdtls = {
+    lspConfig = {
+      cmd = [ "${jdt-language-server}/bin/jdt-language-server" ];
+    };
+  };
+
   kotlin_language_server = {
     lspConfig = {
       cmd = [ "${nur.repos.zachcoyle.kotlin-language-server}/bin/kotlin-language-server" ];

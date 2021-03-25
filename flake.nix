@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = github:nixos/nixpkgs/nixpkgs-unstable;
+    nixpkgs-jdtls.url = github:nixos/nixpkgs/35925104b195ff6bbab8f645c56ecc0af62f87fd;
     flake-utils.url = github:numtide/flake-utils;
     nur.url = github:nix-community/NUR;
 
@@ -22,10 +23,10 @@
 
   };
 
-  outputs = { self, nixpkgs, neovim, rnix-lsp, flake-utils, nur, vim-plugins-overlay }:
+  outputs = { self, nixpkgs, neovim, rnix-lsp, flake-utils, nur, vim-plugins-overlay, ... }@inputs:
     flake-utils.lib.eachDefaultSystem (system:
       let
-
+        pkgs-jdtls = import inputs.nixpkgs-jdtls { inherit system; };
         pkgs = import nixpkgs {
           inherit system;
           config = { allowUnfree = true; };
@@ -35,6 +36,7 @@
             (final: prev: {
               neovim-nightly = neovim.defaultPackage.${system};
               rnix-lsp = rnix-lsp.defaultPackage.${system};
+              jdt-language-server = pkgs-jdtls.jdt-language-server;
             })
           ];
         };
