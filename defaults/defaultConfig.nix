@@ -38,6 +38,7 @@ in
     { plugin = nvim-treesitter-context; }
     { plugin = nvim-treesitter-textobjects; config = readFile ./config/nvim-treesitter-textobjects-config.vim; }
     { plugin = nvim-treesitter; config = wrapLuaConfig (readFile ./config/nvim-treesitter-config.lua); }
+    { plugin = nvim-ts-rainbow; }
     { plugin = nvim-web-devicons; }
     { plugin = plenary-nvim; }
     { plugin = popup-nvim; }
