@@ -1,5 +1,5 @@
 set cursorline
-set cursorcolumn
+" set cursorcolumn
 set expandtab
 set hidden
 set incsearch
