@@ -8,11 +8,6 @@ let
     EOF
   '';
 
-  dapConfig = import ./config/nvim-dap-config.nix { inherit pkgs; };
-
-  gitsignsConfig = wrapLuaConfig (builtins.readFile ./config/gitsigns-nvim-config.lua);
-  galaxyline-config = wrapLuaConfig (builtins.readFile ./config/galaxyline-nvim-config.lua);
-
 in
 {
   plugins = with pkgs.vimPlugins; with pkgs.vitalityVimPlugins;  [
@@ -23,16 +18,18 @@ in
     { plugin = emmet-vim; config = readFile ./config/emmet-vim-config.vim; }
     { plugin = formatter-nvim; config = wrapLuaConfig (import ./config/formatter-nvim-config.nix { inherit pkgs; }); }
     { plugin = fugitive; }
-    { plugin = galaxyline-nvim; config = galaxyline-config; }
-    { plugin = gitsigns-nvim; config = gitsignsConfig; }
+    { plugin = galaxyline-nvim; config = wrapLuaConfig (builtins.readFile ./config/galaxyline-nvim-config.lua); }
+    { plugin = gitsigns-nvim; config = wrapLuaConfig (builtins.readFile ./config/gitsigns-nvim-config.lua); }
     { plugin = gruvbox; config = readFile ./config/theme-config.vim; }
     { plugin = lsp_extensions-nvim; }
     { plugin = lspkind-nvim; config = "lua require('lspkind').init()"; }
     { plugin = nvim-compe; config = wrapLuaConfig (readFile ./config/nvim-compe-config.lua); }
     { plugin = compe-tabnine; }
     { plugin = nvim-dap-virtual-text; }
-    { plugin = nvim-dap; config = dapConfig; }
+    { plugin = nvim-dap; config = import ./config/nvim-dap-config.nix { inherit pkgs; }; }
     { plugin = nvim-blame-line; config = "autocmd BufEnter * EnableBlameLine"; }
+    # { plugin = nvim-jdtls; config = ""; }
+    { plugin = nvim-lightbulb; config = "autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()"; }
     { plugin = nvim-lspconfig; }
     { plugin = nvim-tree-lua; config = readFile ./config/nvim-tree-lua-config.vim; }
     { plugin = nvim-treesitter-context; }
@@ -45,10 +42,10 @@ in
     { plugin = scrollbar-nvim; config = readFile ./config/scrollbar-nvim-config.vim; }
     { plugin = surround; }
     { plugin = tabular; }
+    { plugin = telescope-nvim; config = wrapLuaConfig (readFile ./config/telescope-nvim-config.lua); }
     { plugin = pkgs.vimPlugins.telescope-fzy-native-nvim; config = "lua require('telescope').load_extension('fzy_native')"; }
     { plugin = telescope-github-nvim; config = "lua require('telescope').load_extension('gh')"; }
     { plugin = telescope-node-modules-nvim; config = "lua require'telescope'.load_extension('node_modules')"; }
-    { plugin = telescope-nvim; config = '' lua require('telescope').setup{ } ''; }
     { plugin = vim-closer; }
     { plugin = vim-closetag; config = readFile ./config/vim-closetag-config.vim; }
     { plugin = vim-commentary; }
@@ -85,7 +82,7 @@ in
 
     # nvim lsp
     "<F2>" = "<cmd>lua vim.lsp.buf.rename()<CR>";
-    "<leader>D" = "<cmd>lua vim.lsp.buf.type_definition()<CR>";
+    "<leader>d" = "<cmd>lua require('telescope.builtin').lsp_document_diagnostics()";
     "<leader>e" = "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>";
     "<leader>f" = "<cmd>lua vim.lsp.buf.formatting()<CR>";
     "<leader>k" = "<cmd>lua vim.lsp.buf.signature_help()<CR>";

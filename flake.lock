@@ -15,6 +15,22 @@
         "type": "github"
       }
     },
+    "focus-vim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1489833244,
+        "narHash": "sha256-Xg6Qq9QLmWDKQfY1k9cft8XXgyy9PkywoTJUYecTizc=",
+        "owner": "merlinrebrovic",
+        "repo": "focus.vim",
+        "rev": "7dd8f832e4e24d8b9f503af33287781fc57be404",
+        "type": "github"
+      },
+      "original": {
+        "owner": "merlinrebrovic",
+        "repo": "focus.vim",
+        "type": "github"
+      }
+    },
     "formatter-nvim": {
       "flake": false,
       "locked": {
@@ -234,11 +250,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1616724498,
-        "narHash": "sha256-tOJgk3LFZLz0ccBgAtvrNfh51D2IJIZH2waIqOnx/h4=",
+        "lastModified": 1616726538,
+        "narHash": "sha256-nRtsRxwKHdMB29lHaLqkVC7nBvCNJXnFKFuZsguUsP8=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "1d46eb19ec2ffe6de1678f5fe640ed79f61cb243",
+        "rev": "faec8f366c64f6149e7a8a86657b4370e0b36800",
         "type": "github"
       },
       "original": {
@@ -308,6 +324,22 @@
       "original": {
         "owner": "hrsh7th",
         "repo": "nvim-compe",
+        "type": "github"
+      }
+    },
+    "nvim-jdtls": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1616623196,
+        "narHash": "sha256-4aXGwCsbzL5d6ddFpGGZZro6xj6zwoEWJddBOrh5ERg=",
+        "owner": "mfussenegger",
+        "repo": "nvim-jdtls",
+        "rev": "b29410eff3459fc415048cd5569ad03d5e959296",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mfussenegger",
+        "repo": "nvim-jdtls",
         "type": "github"
       }
     },
@@ -858,6 +890,7 @@
         "flake-utils": [
           "flake-utils"
         ],
+        "focus-vim": "focus-vim",
         "formatter-nvim": "formatter-nvim",
         "fzf-lsp-nvim": "fzf-lsp-nvim",
         "galaxyline-nvim": "galaxyline-nvim",
@@ -872,6 +905,7 @@
         "nvim-bufferline-lua": "nvim-bufferline-lua",
         "nvim-colorizer-lua": "nvim-colorizer-lua",
         "nvim-compe": "nvim-compe",
+        "nvim-jdtls": "nvim-jdtls",
         "nvim-lspconfig": "nvim-lspconfig",
         "nvim-tree-lua": "nvim-tree-lua",
         "nvim-treesitter": "nvim-treesitter",
@@ -910,11 +944,11 @@
         "vim-which-key": "vim-which-key"
       },
       "locked": {
-        "lastModified": 1616725069,
-        "narHash": "sha256-zITRgHvy3ENZuPWogstHOuGIL58YM6cBbeedQIUSTuI=",
+        "lastModified": 1616726554,
+        "narHash": "sha256-8XjXIHRT1uN3BGbdt+GmTbuHPRZ3OlcnfxMueu1Ae6w=",
         "owner": "vi-tality",
         "repo": "vim-plugins-overlay",
-        "rev": "9352c95ef545b7534de7ed65b8bcc993cc668f22",
+        "rev": "3d00bc562a64de77b1e1d317d91d2d7d767bfada",
         "type": "github"
       },
       "original": {
