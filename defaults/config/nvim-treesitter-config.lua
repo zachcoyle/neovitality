@@ -6,6 +6,9 @@ require('nvim-treesitter.configs').setup {
   rainbow = {
     enable = true,
   },
+   autotag = {
+    enable = true,
+  },
   incremental_selection = {
     enable = true,
     keymaps = {

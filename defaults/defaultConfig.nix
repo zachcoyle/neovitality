@@ -12,6 +12,7 @@ in
 {
   plugins = with pkgs.vimPlugins; with pkgs.vitalityVimPlugins;  [
     { plugin = barbar-nvim; }
+    { plugin = codi-vim; }
     { plugin = conjure; }
     { plugin = direnv-vim; config = readFile ./config/direnv-vim-config.vim; }
     { plugin = editorconfig-vim; }
@@ -37,6 +38,7 @@ in
     { plugin = nvim-treesitter-textobjects; config = readFile ./config/nvim-treesitter-textobjects-config.vim; }
     { plugin = nvim-treesitter; config = wrapLuaConfig (readFile ./config/nvim-treesitter-config.lua); }
     { plugin = nvim-ts-rainbow; }
+    { plugin = nvim-ts-autotag; }
     { plugin = nvim-web-devicons; }
     { plugin = plenary-nvim; }
     { plugin = popup-nvim; }
@@ -48,7 +50,7 @@ in
     { plugin = telescope-github-nvim; config = "lua require('telescope').load_extension('gh')"; }
     { plugin = telescope-node-modules-nvim; config = "lua require'telescope'.load_extension('node_modules')"; }
     { plugin = vim-closer; }
-    { plugin = vim-closetag; config = readFile ./config/vim-closetag-config.vim; }
+    # { plugin = vim-closetag; config = readFile ./config/vim-closetag-config.vim; }
     { plugin = vim-commentary; }
     { plugin = vim-cursorword; }
     { plugin = vim-dadbod-ui; }
@@ -57,6 +59,17 @@ in
     { plugin = vim-dispatch; }
     { plugin = vim-floaterm; }
     { plugin = vim-hexokinase; config = "let g:Hexokinase_optInPatterns = 'full_hex,rgb,rgba,hsl,hsla'"; }
+    {
+      plugin = vim-import-cost;
+      config = ''
+          augroup import_cost_auto_run
+          autocmd!
+          autocmd InsertLeave *.js,*.jsx,*.ts,*.tsx ImportCost
+          autocmd BufEnter *.js,*.jsx,*.ts,*.tsx ImportCost
+          autocmd CursorHold *.js,*.jsx,*.ts,*.tsx ImportCost
+        augroup END
+      '';
+    }
     { plugin = vim-mundo; config = readFile ./config/mundo-config.vim; }
     { plugin = vim-parinfer; }
     { plugin = vim-polyglot; }

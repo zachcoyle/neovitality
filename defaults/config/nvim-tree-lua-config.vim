@@ -1,7 +1,7 @@
 let g:nvim_tree_side = 'left'
 let g:nvim_tree_width = 42
 let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache' ]
-let g:nvim_tree_auto_open = 1
+let g:nvim_tree_auto_open = 0
 let g:nvim_tree_auto_close = 1
 let g:nvim_tree_follow = 1
 let g:nvim_tree_indent_markers = 1
