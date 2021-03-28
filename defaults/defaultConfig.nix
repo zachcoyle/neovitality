@@ -22,8 +22,9 @@ in
     { plugin = galaxyline-nvim; config = wrapLuaConfig (builtins.readFile ./config/galaxyline-nvim-config.lua); }
     { plugin = gitsigns-nvim; config = wrapLuaConfig (builtins.readFile ./config/gitsigns-nvim-config.lua); }
     { plugin = gruvbox; config = readFile ./config/theme-config.vim; }
-    { plugin = indent-blankline-nvim; }
+    { plugin = indent-blankline-nvim; config = "let g:indent_blankline_bufname_exclude = ['Startify']"; }
     { plugin = lsp_extensions-nvim; }
+    # { plugin = lsp_signature-vim; config = "require'lsp_signature'.on_attach()"; }
     { plugin = lspkind-nvim; config = "lua require('lspkind').init()"; }
     { plugin = nvim-compe; config = wrapLuaConfig (readFile ./config/nvim-compe-config.lua); }
     { plugin = compe-tabnine; }
@@ -62,7 +63,7 @@ in
     {
       plugin = vim-import-cost;
       config = ''
-          augroup import_cost_auto_run
+        augroup import_cost_auto_run
           autocmd!
           autocmd InsertLeave *.js,*.jsx,*.ts,*.tsx ImportCost
           autocmd BufEnter *.js,*.jsx,*.ts,*.tsx ImportCost
