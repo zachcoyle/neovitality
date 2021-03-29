@@ -83,6 +83,15 @@ in
     { plugin = vim-vsnip-integ; }
     { plugin = vimagit; }
     { plugin = vim-sneak; }
+    {
+      plugin = vim-which-key;
+      config = ''
+        let g:mapleader = "\<Space>" 
+        let g:maplocalleader = ','
+        nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+        nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
+      '';
+    }
   ];
 
   configRC = ''
@@ -93,8 +102,8 @@ in
 
     #NvimTree
     Ctrl-n = ":NvimTreeToggle<CR>";
-    "<leader>n" = ":NvimTreeFindFile<CR";
-    "<leader>r" = ":NvimTreeRefresh<CR>";
+    "<leader>n" = ":NvimTreeFindFile<CR>";
+    # "<leader>r" = ":NvimTreeRefresh<CR>";
 
     # nvim lsp
     "<F2>" = "<cmd>lua vim.lsp.buf.rename()<CR>";
@@ -119,6 +128,9 @@ in
     gd = "<cmd>lua require('telescope.builtin').lsp_definitions()<cr>";
     gr = "<cmd>lua require('telescope.builtin').lsp_references()<cr>";
     "<leader>a" = "<cmd>lua require('telescope.builtin').lsp_code_actions()<cr>";
+    "<leader>t" = "<cmd>Telescope<cr>";
+    "<leader>i" = "<cmd>lua require('telescope').extensions.gh.issues()<cr>";
+    "<leader>p" = "<cmd>lua require('telescope').extensions.gh.pull_request()<cr>";
 
     # navigation
     Ctrl-h = "<C-W>h";
