@@ -82,7 +82,7 @@ in
     { plugin = vim-vsnip; config = readFile ./config/vim-vsnip-config.vim; }
     { plugin = vim-vsnip-integ; }
     { plugin = vimagit; }
-    { plugin = quick-scope; }
+    { plugin = vim-sneak; }
   ];
 
   configRC = ''
