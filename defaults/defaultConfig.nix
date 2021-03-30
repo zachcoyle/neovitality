@@ -30,8 +30,8 @@ in
     { plugin = compe-tabnine; }
     { plugin = nvim-dap-virtual-text; }
     { plugin = nvim-dap; config = import ./config/nvim-dap-config.nix { inherit pkgs; }; }
-    { plugin = nvim-blame-line; config = "autocmd BufEnter * EnableBlameLine"; }
     # { plugin = nvim-jdtls; config = ""; }
+    { plugin = nvim-blame-line; }
     { plugin = nvim-lightbulb; config = "autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()"; }
     { plugin = nvim-lspconfig; }
     { plugin = nvim-tree-lua; config = readFile ./config/nvim-tree-lua-config.vim; }
@@ -149,6 +149,9 @@ in
     "<leader>dl" = "lua require'dap'.repl.run_last()<CR>";
     "<leader>dr" = "lua require'dap'.repl.open()<CR>";
     "<leader>lp" = "lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message:'))<CR>";
+
+    # blameline
+    "<leader>bl" = "<cmd>ToggleBlameLine<cr>";
 
     #gundo
     "<F3>" = "<cmd>MundoToggle<CR>";

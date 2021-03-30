@@ -9,11 +9,11 @@ with pkgs;
     };
   };
 
-  #clojure_lsp = {
-  #  lspConfig = {
-  #    cmd = [ "${clojure-lsp}/bin/clojure-lsp" ];
-  #  };
-  #};
+  clojure_lsp = {
+    lspConfig = {
+      cmd = [ "${clojure-lsp}/bin/clojure-lsp" ];
+    };
+  };
 
   dockerls = {
     lspConfig = {

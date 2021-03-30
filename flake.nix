@@ -20,6 +20,7 @@
     };
 
     rnix-lsp.url = github:nix-community/rnix-lsp;
+    clojure-lsp.url = github:zachcoyle/clojure-lsp-flake;
 
   };
 
@@ -37,6 +38,7 @@
               neovim-nightly = neovim.defaultPackage.${system};
               rnix-lsp = rnix-lsp.defaultPackage.${system};
               jdt-language-server = pkgs-jdtls.jdt-language-server;
+              clojure-lsp = inputs.clojure-lsp.defaultPackage.${system};
             })
           ];
         };
