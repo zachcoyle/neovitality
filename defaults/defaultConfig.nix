@@ -134,6 +134,8 @@ in
     "<leader>dl" = "lua require'dap'.repl.run_last()<CR>";
     "<leader>dr" = "lua require'dap'.repl.open()<CR>";
     "<leader>lp" = "lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message:'))<CR>";
+    "<leader>fn" = "<cmd>FloatermToggle<cr>";
+    "<leader>fg" = "<cmd>FloatermNew gitui<cr>";
 
     # blameline
     "<leader>bl" = "<cmd>ToggleBlameLine<cr>";
