@@ -23,5 +23,5 @@ inoremap <silent><expr> <C-e>     compe#close('<C-e>')
 inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
 inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 
-set guifont FiraCode\ Nerd\ Font:h12
+set guifont=FiraCode\ Nerd\ Font:h12
 
