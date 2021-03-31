@@ -57,7 +57,7 @@ in
     { plugin = vim-dadbod; }
     { plugin = vim-devicons; }
     { plugin = vim-dispatch; }
-    { plugin = vim-floaterm; config = "let g:floaterm_autoclose=1"; }
+    { plugin = vim-floaterm; config = readfile./config/vim-floaterm-config.vim; }
     { plugin = vim-hexokinase; config = "let g:Hexokinase_optInPatterns = 'full_hex,rgb,rgba,hsl,hsla'"; }
     { plugin = vim-mundo; config = readFile ./config/mundo-config.vim; }
     { plugin = vim-parinfer; }
