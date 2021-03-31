@@ -12,7 +12,7 @@ in
 {
   plugins = with pkgs.vimPlugins; with pkgs.vitalityVimPlugins;  [
     { plugin = barbar-nvim; }
-    { plugin = codi-vim; }
+    { plugin = compe-tabnine; }
     { plugin = conjure; }
     { plugin = direnv-vim; config = readFile ./config/direnv-vim-config.vim; }
     { plugin = editorconfig-vim; }
@@ -24,35 +24,33 @@ in
     { plugin = gruvbox; config = readFile ./config/theme-config.vim; }
     { plugin = indent-blankline-nvim; config = "let g:indent_blankline_bufname_exclude = ['Startify']"; }
     { plugin = lsp_extensions-nvim; }
-    # { plugin = lsp_signature-vim; config = "require'lsp_signature'.on_attach()"; }
     { plugin = lspkind-nvim; config = "lua require('lspkind').init()"; }
-    { plugin = nvim-compe; config = wrapLuaConfig (readFile ./config/nvim-compe-config.lua); }
-    { plugin = compe-tabnine; }
-    { plugin = nvim-dap-virtual-text; }
-    { plugin = nvim-dap; config = import ./config/nvim-dap-config.nix { inherit pkgs; }; }
-    # { plugin = nvim-jdtls; config = ""; }
+    { plugin = LuaSnip; }
     { plugin = nvim-blame-line; }
+    { plugin = nvim-compe; config = wrapLuaConfig (readFile ./config/nvim-compe-config.lua); }
+    # { plugin = nvim-dap-virtual-text; config = "let g:dap_virtual_text = v:true"; }
+    # { plugin = nvim-dap; config = "packadd nvim-dap" + wrapLuaConfig (import ./config/nvim-dap-config.nix { inherit pkgs; }); }
     { plugin = nvim-lightbulb; config = "autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()"; }
     { plugin = nvim-lspconfig; }
     { plugin = nvim-tree-lua; config = readFile ./config/nvim-tree-lua-config.vim; }
     { plugin = nvim-treesitter-context; }
     { plugin = nvim-treesitter-textobjects; config = readFile ./config/nvim-treesitter-textobjects-config.vim; }
     { plugin = nvim-treesitter; config = wrapLuaConfig (readFile ./config/nvim-treesitter-config.lua); }
+    { plugin = nvim-ts-autotag; }
     { plugin = nvim-ts-context-commentstring; }
     { plugin = nvim-ts-rainbow; }
-    { plugin = nvim-ts-autotag; }
     { plugin = nvim-web-devicons; }
+    { plugin = packer-nvim; }
+    { plugin = pkgs.vimPlugins.telescope-fzy-native-nvim; config = "lua require('telescope').load_extension('fzy_native')"; }
     { plugin = plenary-nvim; }
     { plugin = popup-nvim; }
     { plugin = scrollbar-nvim; config = readFile ./config/scrollbar-nvim-config.vim; }
     { plugin = surround; }
     { plugin = tabular; }
-    { plugin = telescope-nvim; config = wrapLuaConfig (readFile ./config/telescope-nvim-config.lua); }
-    { plugin = pkgs.vimPlugins.telescope-fzy-native-nvim; config = "lua require('telescope').load_extension('fzy_native')"; }
     { plugin = telescope-github-nvim; config = "lua require('telescope').load_extension('gh')"; }
     { plugin = telescope-node-modules-nvim; config = "lua require'telescope'.load_extension('node_modules')"; }
+    { plugin = telescope-nvim; config = wrapLuaConfig (readFile ./config/telescope-nvim-config.lua); }
     { plugin = vim-closer; }
-    # { plugin = vim-closetag; config = readFile ./config/vim-closetag-config.vim; }
     { plugin = vim-commentary; }
     { plugin = vim-cursorword; }
     { plugin = vim-dadbod-ui; }
@@ -61,29 +59,16 @@ in
     { plugin = vim-dispatch; }
     { plugin = vim-floaterm; }
     { plugin = vim-hexokinase; config = "let g:Hexokinase_optInPatterns = 'full_hex,rgb,rgba,hsl,hsla'"; }
-    {
-      plugin = vim-import-cost;
-      config = ''
-        augroup import_cost_auto_run
-          autocmd!
-          autocmd InsertLeave *.js,*.jsx,*.ts,*.tsx ImportCost
-          autocmd BufEnter *.js,*.jsx,*.ts,*.tsx ImportCost
-          autocmd CursorHold *.js,*.jsx,*.ts,*.tsx ImportCost
-        augroup END
-      '';
-    }
     { plugin = vim-mundo; config = readFile ./config/mundo-config.vim; }
     { plugin = vim-parinfer; }
     { plugin = vim-polyglot; }
     { plugin = vim-prisma; }
     { plugin = vim-repeat; }
     { plugin = vim-sensible; }
+    { plugin = vim-sneak; config = "let g:sneak#label = 1"; }
     { plugin = vim-startify; config = readFile ./config/vim-startify-config.vim; }
     { plugin = vim-tmux-navigator; }
-    { plugin = vim-vsnip; config = readFile ./config/vim-vsnip-config.vim; }
-    { plugin = vim-vsnip-integ; }
     { plugin = vimagit; }
-    { plugin = vim-sneak; }
     {
       plugin = vim-which-key;
       config = ''

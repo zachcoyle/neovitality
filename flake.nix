@@ -75,6 +75,12 @@
             defaultPackage
             pkgs.tree-sitter
           ];
+
+          # dogfood :)
+          shellHook = ''
+            alias vim="${defaultPackage}/bin/nvim"
+            alias nvim="${defaultPackage}/bin/nvim"
+          '';
         };
 
       }
