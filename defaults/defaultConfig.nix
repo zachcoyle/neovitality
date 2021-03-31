@@ -74,8 +74,8 @@ in
       config = ''
         let g:mapleader = "\<Space>" 
         let g:maplocalleader = ','
-        nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
-        nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
+        nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<cr>
+        nnoremap <silent> <localleader> :<c-u>WhichKey  ','<cr>
       '';
     }
   ];
@@ -87,36 +87,37 @@ in
   nnoremap = {
 
     #NvimTree
-    Ctrl-n = ":NvimTreeToggle<CR>";
-    "<leader>n" = ":NvimTreeFindFile<CR>";
-    # "<leader>r" = ":NvimTreeRefresh<CR>";
+    Ctrl-n = ":NvimTreeToggle<cr>";
+    "<leader>n" = ":NvimTreeFindFile<cr>";
+    # "<leader>r" = ":NvimTreeRefresh<cr>";
 
     # nvim lsp
-    "<F2>" = "<cmd>lua vim.lsp.buf.rename()<CR>";
-    "<leader>d" = "<cmd>lua require('telescope.builtin').lsp_document_diagnostics()";
-    "<leader>e" = "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>";
-    "<leader>f" = "<cmd>lua vim.lsp.buf.formatting()<CR>";
-    "<leader>k" = "<cmd>lua vim.lsp.buf.signature_help()<CR>";
-    "<leader>q" = "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>";
-    "<leader>rn" = "<cmd>lua vim.lsp.buf.rename()<CR>";
-    "<leader>wa" = "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>";
-    "<leader>wl" = "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>";
-    "<leader>wr" = "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>";
-    "[d" = "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>";
-    "]d" = "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>";
-    gi = "<cmd>lua vim.lsp.buf.implementation()<CR>";
-    K = "<cmd>lua vim.lsp.buf.hover()<CR>";
+    "<F2>" = "<cmd>lua vim.lsp.buf.rename()<cr>";
+    "<leader>e" = "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>";
+    "<leader>f" = "<cmd>lua vim.lsp.buf.formatting()<cr>";
+    "<leader>k" = "<cmd>lua vim.lsp.buf.signature_help()<cr>";
+    "<leader>q" = "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>";
+    "<leader>rn" = "<cmd>lua vim.lsp.buf.rename()<cr>";
+    "<leader>wa" = "<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>";
+    "<leader>wl" = "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>";
+    "<leader>wr" = "<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>";
+    "[d" = "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>";
+    "]d" = "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>";
+    gi = "<cmd>lua vim.lsp.buf.implementation()<cr>";
+    K = "<cmd>lua vim.lsp.buf.hover()<cr>";
 
     # telescope
-    Ctrl-_ = "<cmd>lua require('telescope.builtin').live_grep()<cr>";
-    Ctrl-P = "<cmd>lua require('telescope.builtin').find_files()<cr>";
-    Ctrl-B = "<cmd>lua require('telescope.builtin').buffers()<cr>";
-    gd = "<cmd>lua require('telescope.builtin').lsp_definitions()<cr>";
-    gr = "<cmd>lua require('telescope.builtin').lsp_references()<cr>";
     "<leader>a" = "<cmd>lua require('telescope.builtin').lsp_code_actions()<cr>";
-    "<leader>t" = "<cmd>Telescope<cr>";
+    "<leader>d" = "<cmd>lua require('telescope.builtin').lsp_document_diagnostics()<cr>";
     "<leader>i" = "<cmd>lua require('telescope').extensions.gh.issues()<cr>";
     "<leader>p" = "<cmd>lua require('telescope').extensions.gh.pull_request()<cr>";
+    "<leader>t" = "<cmd>Telescope<cr>";
+    "<leader>tr" = "<cmd>lua require('telescope.builtin').live_grep()<cr>";
+    Ctrl-_ = "<cmd>lua require('telescope.builtin').live_grep()<cr>";
+    Ctrl-B = "<cmd>lua require('telescope.builtin').buffers()<cr>";
+    Ctrl-P = "<cmd>lua require('telescope.builtin').find_files()<cr>";
+    gd = "<cmd>lua require('telescope.builtin').lsp_definitions()<cr>";
+    gr = "<cmd>lua require('telescope.builtin').lsp_references()<cr>";
 
     # navigation
     Ctrl-h = "<C-W>h";
@@ -125,23 +126,25 @@ in
     Ctrl-l = "<C-W>l";
 
     # nvim-dap
-    "<F10>" = "lua require'dap'.step_over()<CR>";
-    "<F11>" = "lua require'dap'.step_into()<CR>";
-    "<F12>" = "lua require'dap'.step_out()<CR>";
-    "<F5>" = "lua require'dap'.continue()<CR>";
-    "<leader>B" = "lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition:'))<CR>";
-    "<leader>b" = "lua require'dap'.toggle_breakpoint()<CR>";
-    "<leader>dl" = "lua require'dap'.repl.run_last()<CR>";
-    "<leader>dr" = "lua require'dap'.repl.open()<CR>";
-    "<leader>lp" = "lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message:'))<CR>";
+    "<F10>" = "lua require'dap'.step_over()<cr>";
+    "<F11>" = "lua require'dap'.step_into()<cr>";
+    "<F12>" = "lua require'dap'.step_out()<cr>";
+    "<F5>" = "lua require'dap'.continue()<cr>";
+    "<leader>B" = "lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition:'))<cr>";
+    "<leader>b" = "lua require'dap'.toggle_breakpoint()<cr>";
+    "<leader>dl" = "lua require'dap'.repl.run_last()<cr>";
+    "<leader>dr" = "lua require'dap'.repl.open()<cr>";
+    "<leader>lp" = "lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message:'))<cr>";
+
+    #Floaterm
     "<leader>fn" = "<cmd>FloatermToggle<cr>";
-    "<leader>fg" = "<cmd>FloatermNew gitui<cr>";
+    "<leader>fg" = "<cmd>FloatermNew ${pkgs.gitui}/bin/gitui<cr>";
 
     # blameline
     "<leader>bl" = "<cmd>ToggleBlameLine<cr>";
 
     #gundo
-    "<F3>" = "<cmd>MundoToggle<CR>";
+    "<F3>" = "<cmd>MundoToggle<cr>";
 
   };
 
