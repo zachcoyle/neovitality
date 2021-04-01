@@ -25,6 +25,7 @@ in
     { plugin = indent-blankline-nvim; config = "let g:indent_blankline_bufname_exclude = ['Startify']"; }
     { plugin = lsp_extensions-nvim; }
     { plugin = lspkind-nvim; config = "lua require('lspkind').init()"; }
+    { plugin = lexima-vim; }
     { plugin = LuaSnip; }
     { plugin = nvim-blame-line; }
     { plugin = nvim-compe; config = wrapLuaConfig (readFile ./config/nvim-compe-config.lua); }
