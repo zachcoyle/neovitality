@@ -28,7 +28,7 @@ in
     { plugin = lexima-vim; }
     { plugin = LuaSnip; }
     { plugin = nvim-blame-line; }
-    { plugin = nvim-compe; config = wrapLuaConfig (readFile ./config/nvim-compe-config.lua); }
+    { plugin = nvim-compe; config = readFile ./config/nvim-compe-config.vim; }
     # { plugin = nvim-dap-virtual-text; config = "let g:dap_virtual_text = v:true"; }
     # { plugin = nvim-dap; config = "packadd nvim-dap" + wrapLuaConfig (import ./config/nvim-dap-config.nix { inherit pkgs; }); }
     { plugin = nvim-lightbulb; config = "autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()"; }
