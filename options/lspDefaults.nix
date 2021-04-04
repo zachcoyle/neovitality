@@ -15,6 +15,12 @@ with pkgs;
     };
   };
 
+  dhall_lsp_server = {
+    lspConfig = {
+      cmd = [ "${pkgs.dhall-lsp-server}/bin/dhall-lsp-server" ];
+    };
+  };
+
   dockerls = {
     lspConfig = {
       cmd = [ "${nodePackages.dockerfile-language-server-nodejs}/bin/docker-langserver" "--stdio" ];
