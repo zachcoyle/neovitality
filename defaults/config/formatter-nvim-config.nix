@@ -1,8 +1,5 @@
 { pkgs }:
 let
-  prettier = pkgs.callPackage ../../pkgs/prettierPkgs { };
-in
-let
   buildFormatter = { exe, args ? [ ], stdin ? true }: ''
     function()
       return {
@@ -20,7 +17,7 @@ let
       },
     '';
 
-  prettierFormatter = { parser ? null }:
+  prettierFormatter = { parser ? null, exe ? null }:
     let
       parserArgs =
         if parser != null
@@ -28,7 +25,10 @@ let
         else [ ];
     in
     {
-      exe = "${prettier}/bin/prettier";
+      exe =
+        if exe != null
+        then exe
+        else "${pkgs.nodePackages.prettier}/bin/prettier";
       args = [ "'--stdin-filepath'" "'\"' .. vim.api.nvim_buf_get_name(0) .. '\"'" ] ++ parserArgs;
     };
 
@@ -89,7 +89,12 @@ let
 
     java = {
       extension = "java";
-      formatters = [ (prettierFormatter { parser = "java"; }) ];
+      formatters = [
+        (prettierFormatter {
+          parser = "java";
+          exe = pkgs.callPackage ../../pkgs/prettierPkgs { };
+        })
+      ];
     };
 
     json = {
