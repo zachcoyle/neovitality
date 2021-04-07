@@ -23,6 +23,7 @@ require'compe'.setup {
     nvim_lua = true;
     vsnip = true;
     luasnip = true;
+    tabnine = true;
   };
 }
 
