@@ -24,6 +24,8 @@ require'compe'.setup {
     vsnip = false;
     luasnip = true;
     tabnine = true;
+    emoji = true;
+    nvim_tree_sitter = true;
   };
 }
 
