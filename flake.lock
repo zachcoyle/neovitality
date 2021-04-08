@@ -3,11 +3,11 @@
     "LuaSnip": {
       "flake": false,
       "locked": {
-        "lastModified": 1617788537,
-        "narHash": "sha256-c3q5aeibI+TWCFladO+HIrRZeaBMJlEGPQz5dwn6Vys=",
+        "lastModified": 1617894222,
+        "narHash": "sha256-Am1BGKKN2rGPl7qcu4czZoejZL2Oe7s0tI8OfH2bPjQ=",
         "owner": "L3MON4D3",
         "repo": "LuaSnip",
-        "rev": "37a4767c568df797d9761dcf975f37b99251ff93",
+        "rev": "69ec795994f88dd4f3243d72a99cdd62848916a2",
         "type": "github"
       },
       "original": {
@@ -347,11 +347,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1617882347,
-        "narHash": "sha256-8MuWjKIwneCXb5OpObpK/gzaNbNC7QQ6wlg18kfiH6U=",
+        "lastModified": 1617895218,
+        "narHash": "sha256-d8CjeUe+qq5mBcKqVx9nnpYhW2PeDDpVMZ6eVknVapw=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "0039698c4d2e9184ef920bf27f4119d4b44a41cc",
+        "rev": "de4d0dbf3a3defd9fbe6340d91ec8952d069bbd3",
         "type": "github"
       },
       "original": {
@@ -1113,11 +1113,11 @@
         "vim-which-key": "vim-which-key"
       },
       "locked": {
-        "lastModified": 1617894880,
-        "narHash": "sha256-Zjgn1n9qT6VxLTEYTM4vKM03AuG9s3plxmujocoWrsQ=",
+        "lastModified": 1617900141,
+        "narHash": "sha256-hH2s41IkVY+b7DG7vvdlTV5h41If3utatrtm2gd2F2g=",
         "owner": "vi-tality",
         "repo": "vim-plugins-overlay",
-        "rev": "53595f2f469adf5c9fdbdac77b8738526381fc3c",
+        "rev": "b505b00f08bc03492e89e67237fcf9e3df76631e",
         "type": "github"
       },
       "original": {
