@@ -4,7 +4,7 @@ vim.o.completeopt = "menuone,noselect"
 require'compe'.setup {
   enabled = true;
   autocomplete = true;
-  debug = true;
+  debug = false;
   min_length = 1;
   preselect = 'enable';
   throttle_time = 80;
@@ -16,7 +16,6 @@ require'compe'.setup {
   documentation = true;
 
   source = {
-    path = true;
     buffer = true;
     calc = true;
     nvim_lsp = true;
@@ -25,7 +24,8 @@ require'compe'.setup {
     luasnip = true;
     tabnine = true;
     emoji = true;
-    nvim_tree_sitter = true;
+    vim_dadbod_completion = true;
+    treesitter = true;
   };
 }
 
@@ -48,8 +48,8 @@ end
 _G.tab_complete = function()
   if vim.fn.pumvisible() == 1 then
     return t "<C-n>"
-  -- elseif vim.fn.call("vsnip#available", {1}) == 1 then
-  --   return t "<Plug>(vsnip-expand-or-jump)"
+  elseif require'luasnip'.expand_or_jumpable() then
+    return t "<Plug>luasnip-expand-or-jump"
   elseif check_back_space() then
     return t "<Tab>"
   else
@@ -59,8 +59,8 @@ end
 _G.s_tab_complete = function()
   if vim.fn.pumvisible() == 1 then
     return t "<C-p>"
-  elseif vim.fn.call("vsnip#jumpable", {-1}) == 1 then
-    return t "<Plug>(vsnip-jump-prev)"
+  elseif require'luasnip'.jumpable(-1) then
+    return t "<Plug>luasnip-jump-prev"
   else
     return t "<S-Tab>"
   end
@@ -72,12 +72,3 @@ vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 EOF
 
-
-" NOTE: Order is important. You can't lazy loading lexima.vim.
-let g:lexima_no_default_rules = v:true
-call lexima#set_default_rules()
-inoremap <silent><expr> <C-Space> compe#complete()
-inoremap <silent><expr> <CR>      compe#confirm(lexima#expand('<LT>CR>', 'i'))
-inoremap <silent><expr> <C-e>     compe#close('<C-e>')
-inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
-inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
