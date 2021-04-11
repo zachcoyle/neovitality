@@ -99,12 +99,12 @@ let
 
     json = {
       extension = "json";
-      formatters = [ (prettierFormatter { parser = "typescript"; }) ];
+      formatters = [ (prettierFormatter { }) ];
     };
 
     jsonc = {
       extension = "json,*.jsonc";
-      formatters = [ (prettierFormatter { parser = "typescript"; }) ];
+      formatters = [ (prettierFormatter { }) ];
     };
 
     kotlin = {
