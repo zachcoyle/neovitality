@@ -76,15 +76,21 @@ with pkgs;
     };
   };
 
+  rust_analyzer = {
+    lspConfig = {
+      cmd = [ "${rust-analyzer}/bin/rust-analyzer" ];
+    };
+  };
+
   solargraph = {
     lspConfig = {
       cmd = [ "${solargraph}/bin/solargraph" "stdio" ];
     };
   };
 
-  rust_analyzer = {
+  texlab = {
     lspConfig = {
-      cmd = [ "${rust-analyzer}/bin/rust-analyzer" ];
+      cmd = [ "${texlab}/bin/texlab" ];
     };
   };
 
