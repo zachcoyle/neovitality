@@ -443,11 +443,11 @@
     "nvim-jdtls": {
       "flake": false,
       "locked": {
-        "lastModified": 1616940708,
-        "narHash": "sha256-rNo38Wi4bDtIYOe/5jpk7VAGEkUY4AOHG994n0g30DI=",
+        "lastModified": 1618334541,
+        "narHash": "sha256-c8/6VnEKmGN2fGXQA8b8/KnGATJgzCY9KmPLJmhEnc0=",
         "owner": "mfussenegger",
         "repo": "nvim-jdtls",
-        "rev": "4ebad2d52b7c648a7f6ceb5e62dde49167d07796",
+        "rev": "20dc366d45a49c1ff830f0bab0b5dc1440fd94b8",
         "type": "github"
       },
       "original": {
@@ -475,11 +475,11 @@
     "nvim-tree-lua": {
       "flake": false,
       "locked": {
-        "lastModified": 1617917435,
-        "narHash": "sha256-efOoT92XPwQpk3ze8sdWpQ2OZH6dhsLK5bnKAln6hEY=",
+        "lastModified": 1618337541,
+        "narHash": "sha256-PXzq1BY8jvtavBIVDhPGVY9WE+rNtMZ+BJ3X0AC/bOQ=",
         "owner": "kyazdani42",
         "repo": "nvim-tree.lua",
-        "rev": "82b20f5b5ed741d2e6360990ee11a50f0cd253a4",
+        "rev": "c2f2c665d8d46eb03d0bc4c0ee425d9733d1134c",
         "type": "github"
       },
       "original": {
@@ -859,11 +859,11 @@
     "telescope-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1617989590,
-        "narHash": "sha256-LyuxiETGD1dEkYGO8Prak0X8rF9vV39133xkiO3ph0A=",
+        "lastModified": 1618340350,
+        "narHash": "sha256-IL3QkRdYxng2ITwVjoNNRJJxpQOtCUIIVvrmJ8fbsno=",
         "owner": "nvim-telescope",
         "repo": "telescope.nvim",
-        "rev": "5bd6f5ca9828ea02f2c54d616ad65c72a5cdd7fb",
+        "rev": "b7d0488db91240bed3afe4b82e5c974836ee060f",
         "type": "github"
       },
       "original": {
@@ -1113,11 +1113,11 @@
         "vim-which-key": "vim-which-key"
       },
       "locked": {
-        "lastModified": 1618332198,
-        "narHash": "sha256-HEl7sU45/bYlIjDCQfatvfnh2wMzRvWJVhnRpnH6HzM=",
+        "lastModified": 1618342490,
+        "narHash": "sha256-P0/xOPBjyRCuoEtDd5NPOh3PoZ6NaS1nG0MCtNDUeEE=",
         "owner": "vi-tality",
         "repo": "vim-plugins-overlay",
-        "rev": "127c5d71f89ad16fc23341803dc56a6d8df7c324",
+        "rev": "de3b0979c736c6aa07839d57e2f4d967c690552f",
         "type": "github"
       },
       "original": {
