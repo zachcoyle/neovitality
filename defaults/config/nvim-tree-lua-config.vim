@@ -9,7 +9,6 @@ let g:nvim_tree_hide_dotfiles = 0
 let g:nvim_tree_git_hl = 1
 let g:nvim_tree_root_folder_modifier = ':~'
 let g:nvim_tree_tab_open = 1
-let g:nvim_tree_lsp_diagnostics = 1
 let g:nvim_tree_show_icons = {
     \ 'git': 1,
     \ 'folders': 1,
