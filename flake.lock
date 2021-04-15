@@ -439,6 +439,38 @@
         "type": "github"
       }
     },
+    "nvim-dap": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1618333529,
+        "narHash": "sha256-/G4WYy2cx+feiVAM0SjU0d1uym5JmVz6GztxX41jnqA=",
+        "owner": "mfussenegger",
+        "repo": "nvim-dap",
+        "rev": "8bd09c8f81aab3f72158fd2e13aee9acf0ccb99e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mfussenegger",
+        "repo": "nvim-dap",
+        "type": "github"
+      }
+    },
+    "nvim-dap-virtual-text": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1615846599,
+        "narHash": "sha256-QllbcV0XSLL2KKwd2Kr4X7LL+fQscwqnODb05lh9s5k=",
+        "owner": "theHamsta",
+        "repo": "nvim-dap-virtual-text",
+        "rev": "b26acb69a5a4940f9eb3fd6f4bca8e1cc16fa5ce",
+        "type": "github"
+      },
+      "original": {
+        "owner": "theHamsta",
+        "repo": "nvim-dap-virtual-text",
+        "type": "github"
+      }
+    },
     "nvim-jdtls": {
       "flake": false,
       "locked": {
@@ -1070,6 +1102,8 @@
         "nvim-bufferline-lua": "nvim-bufferline-lua",
         "nvim-colorizer-lua": "nvim-colorizer-lua",
         "nvim-compe": "nvim-compe",
+        "nvim-dap": "nvim-dap",
+        "nvim-dap-virtual-text": "nvim-dap-virtual-text",
         "nvim-jdtls": "nvim-jdtls",
         "nvim-lspconfig": "nvim-lspconfig",
         "nvim-tree-lua": "nvim-tree-lua",
@@ -1112,11 +1146,11 @@
         "vim-which-key": "vim-which-key"
       },
       "locked": {
-        "lastModified": 1618492408,
-        "narHash": "sha256-0dE+CbaC9FQkhXmZk2vpIZog3kudeSEu+7/2zspnDrk=",
+        "lastModified": 1618504465,
+        "narHash": "sha256-zS0Y+VLAzPZYfCluVqai7oIwmcQccQw745xxPUM1xKo=",
         "owner": "vi-tality",
         "repo": "vim-plugins-overlay",
-        "rev": "036ad2ba13db5a568f1643970c9bfe119c8f4106",
+        "rev": "5cd19c5592dce98f9f974d4c59e01094d778db5a",
         "type": "github"
       },
       "original": {
