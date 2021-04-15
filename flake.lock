@@ -165,11 +165,11 @@
     "gruvbox": {
       "flake": false,
       "locked": {
-        "lastModified": 1616019452,
-        "narHash": "sha256-veNIOYXPgzv3i7rgUD0FuPIL4+VcEinoPUVaiu9eCHs=",
+        "lastModified": 1618492339,
+        "narHash": "sha256-FNoaDUrCGJmsJ5f0RM2RbV4xTyHoxGiZv1XQya+AEiQ=",
         "owner": "gruvbox-community",
         "repo": "gruvbox",
-        "rev": "8a36e8dae3e31fa5edfb5ae91fb1c2d36b05979e",
+        "rev": "42668ea643d56729467fb79c1a0a5e30289fe590",
         "type": "github"
       },
       "original": {
@@ -1112,11 +1112,11 @@
         "vim-which-key": "vim-which-key"
       },
       "locked": {
-        "lastModified": 1618491429,
-        "narHash": "sha256-nn+icV8jHzcDIbibgO0VTuHCWLvZgGvIlphAVlce8Os=",
+        "lastModified": 1618492408,
+        "narHash": "sha256-0dE+CbaC9FQkhXmZk2vpIZog3kudeSEu+7/2zspnDrk=",
         "owner": "vi-tality",
         "repo": "vim-plugins-overlay",
-        "rev": "fb7fcaab33eeb0679af4e6f25b207d3d8faa64ce",
+        "rev": "036ad2ba13db5a568f1643970c9bfe119c8f4106",
         "type": "github"
       },
       "original": {
