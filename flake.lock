@@ -165,16 +165,15 @@
     "gruvbox": {
       "flake": false,
       "locked": {
-        "lastModified": 1616107031,
-        "narHash": "sha256-FNoaDUrCGJmsJ5f0RM2RbV4xTyHoxGiZv1XQya+AEiQ=",
-        "owner": "zachcoyle",
+        "lastModified": 1616019452,
+        "narHash": "sha256-veNIOYXPgzv3i7rgUD0FuPIL4+VcEinoPUVaiu9eCHs=",
+        "owner": "gruvbox-community",
         "repo": "gruvbox",
-        "rev": "2ab0d4614d3a50a8a862aaf5ab69ed59898234b1",
+        "rev": "8a36e8dae3e31fa5edfb5ae91fb1c2d36b05979e",
         "type": "github"
       },
       "original": {
-        "owner": "zachcoyle",
-        "ref": "add-gitsigns",
+        "owner": "gruvbox-community",
         "repo": "gruvbox",
         "type": "github"
       }
@@ -347,11 +346,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1618470821,
-        "narHash": "sha256-yS1gROfzNYv1+hGd0/U6gVkC6xSq4psP/anw9AACcMI=",
+        "lastModified": 1618490722,
+        "narHash": "sha256-8HSbalVJ2Fe1q/W4zQX4P7KLBzu22Rh3DfMkSa0L4aY=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "b5c5a9961e1a8a4111eac2aaaef544746cb54b3e",
+        "rev": "a3f4f1d051cea74cbe9be1a079ef0374e6baa952",
         "type": "github"
       },
       "original": {
@@ -1113,11 +1112,11 @@
         "vim-which-key": "vim-which-key"
       },
       "locked": {
-        "lastModified": 1618474627,
-        "narHash": "sha256-zgQRuHE9sJOiEc8CNVhry020UC3T3KrkxQogyx81/Ak=",
+        "lastModified": 1618491429,
+        "narHash": "sha256-nn+icV8jHzcDIbibgO0VTuHCWLvZgGvIlphAVlce8Os=",
         "owner": "vi-tality",
         "repo": "vim-plugins-overlay",
-        "rev": "60b2da4d713fc5180b4986eb417d3497be7d244a",
+        "rev": "fb7fcaab33eeb0679af4e6f25b207d3d8faa64ce",
         "type": "github"
       },
       "original": {
