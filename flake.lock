@@ -346,11 +346,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1618519558,
-        "narHash": "sha256-OCfRiJEOlUhyLKILpBxQ5XEHcIHvh8yBLo3l308KgMg=",
+        "lastModified": 1618531138,
+        "narHash": "sha256-g6p+uFa/twrGwfvDEUdB2TvJT64GrU5OR2nbkIKfj0g=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "bce7ad5d2b6fcd526e304abe0c416386d15200aa",
+        "rev": "20923d78d1972514118012c4b77e9d6efdcfdbad",
         "type": "github"
       },
       "original": {
@@ -506,11 +506,11 @@
     "nvim-tree-lua": {
       "flake": false,
       "locked": {
-        "lastModified": 1618520621,
-        "narHash": "sha256-488uOykWX23as2uh+SF8wWOkIM6667ld5GL+DWqQ9pg=",
+        "lastModified": 1618524236,
+        "narHash": "sha256-sw9+9bcax04iRaE9nxnjYuQUl7uLspl6fWUC8BRxvzs=",
         "owner": "kyazdani42",
         "repo": "nvim-tree.lua",
-        "rev": "75338221b0c2c452efe93e05fbe9f31ec8f25f94",
+        "rev": "b5ef2fb7f81010a34994f4ab55e73df808b54d62",
         "type": "github"
       },
       "original": {
@@ -1146,11 +1146,11 @@
         "vim-which-key": "vim-which-key"
       },
       "locked": {
-        "lastModified": 1618523217,
-        "narHash": "sha256-Y1Cp+z6Woveqo6GSw1eoFJZuhq/IrUjs8Rppu/CqFSU=",
+        "lastModified": 1618532466,
+        "narHash": "sha256-lULaHrY3txqMSiZcwSIaw9e7Lw4vZOqRF9Su2ZVnnsI=",
         "owner": "vi-tality",
         "repo": "vim-plugins-overlay",
-        "rev": "53b071109c72214e153deffe629cce1dedfd55f8",
+        "rev": "cffbddf7ea82657c4b48d934b33ae369a0635a38",
         "type": "github"
       },
       "original": {
