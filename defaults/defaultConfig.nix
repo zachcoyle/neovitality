@@ -36,7 +36,7 @@ in
     { plugin = nvim-tree-lua; config = readFile ./config/nvim-tree-lua-config.vim; }
     { plugin = nvim-treesitter-context; }
     { plugin = nvim-treesitter-textobjects; config = readFile ./config/nvim-treesitter-textobjects-config.vim; }
-    { plugin = nvim-treesitter; config = wrapLuaConfig (readFile ./config/nvim-treesitter-config.lua); }
+    { plugin = pkgs.vimPlugins.nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars); config = wrapLuaConfig (readFile ./config/nvim-treesitter-config.lua); }
     { plugin = nvim-ts-autotag; }
     { plugin = nvim-ts-context-commentstring; }
     { plugin = nvim-ts-rainbow; }
