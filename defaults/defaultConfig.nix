@@ -41,7 +41,6 @@ in
     { plugin = nvim-ts-context-commentstring; }
     { plugin = nvim-ts-rainbow; }
     { plugin = nvim-web-devicons; }
-    # { plugin = packer-nvim; }
     { plugin = pkgs.vimPlugins.telescope-fzy-native-nvim; config = "lua require('telescope').load_extension('fzy_native')"; }
     { plugin = plenary-nvim; }
     { plugin = popup-nvim; }
