@@ -1,7 +1,12 @@
-{ pkgs, lib ? pkgs.lib }:
+{ pkgs
+, lib ? pkgs.lib
+}:
+
 with builtins;
 with lib;
+
 let
+
   wrapLuaConfig = luaConfig: ''
     lua << EOF
     ${luaConfig}
