@@ -37,6 +37,7 @@
             vim-plugins-overlay.overlay
             nur.overlay
             (final: prev: {
+              python = prev.python3;
               neovim-nightly = neovim.defaultPackage.${system};
               rnix-lsp = rnix-lsp.defaultPackage.${system};
               jdt-language-server = pkgs-jdtls.jdt-language-server;
