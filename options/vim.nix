@@ -19,12 +19,12 @@ let
 
         cmd = mkOption {
           default = [ ];
-          type = with types; listOf string;
+          type = with types; listOf str;
         };
 
         filetypes = mkOption {
           default = [ ];
-          type = with types; listOf string;
+          type = with types; listOf str;
         };
       };
     };
