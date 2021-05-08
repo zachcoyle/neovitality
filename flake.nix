@@ -7,6 +7,7 @@
     flake-utils.url = github:numtide/flake-utils;
     devshell.url = github:numtide/devshell;
     nur.url = github:nix-community/NUR;
+    nix-eval-lsp.url = github:aaronjanse/nix-eval-lsp;
 
     neovim = {
       url = github:neovim/neovim?dir=contrib;
@@ -42,6 +43,7 @@
               rnix-lsp = rnix-lsp.defaultPackage.${system};
               jdt-language-server = pkgs-jdtls.jdt-language-server;
               clojure-lsp = inputs.clojure-lsp.defaultPackage.${system};
+              nix-eval-lsp = inputs.nix-eval-lsp.defaultPackage.${system};
             })
           ];
         };

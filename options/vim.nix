@@ -225,6 +225,23 @@ in
 
             ${builtins.concatStringsSep "\n" lspConfigs}
 
+            lspconfig["nixeval"] = {
+              cmd = {"${pkgs.nix-eval-lsp}/bin/nix-eval-lsp"};
+              filetypes = {"nix"};
+              root_dir = function(fname) 
+                return util.find_git_ancestor(fname) or vim.loop.os_homedir()
+              end;
+              settings = {
+              };
+              init_options = {
+              };
+              default_config = {
+                root_dir = "vim's starting directory";
+              };
+            };
+
+            lspconfig.nixeval.setup {}
+
             local function preview_location_callback(_, _, result)
               if result == nil or vim.tbl_isempty(result) then
                 return nil
