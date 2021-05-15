@@ -2,11 +2,25 @@
   description = "Big Neovim Energy";
 
   inputs = {
-    nixpkgs.url = github:nixos/nixpkgs/nixpkgs-unstable;
+    naersk = {
+      url = github:nmattia/naersk;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixpkgs.url = github:nixos/nixpkgs/master;
     nixpkgs-jdtls.url = github:nixos/nixpkgs/35925104b195ff6bbab8f645c56ecc0af62f87fd;
-    flake-utils.url = github:numtide/flake-utils;
-    devshell.url = github:numtide/devshell;
-    nur.url = github:nix-community/NUR;
+    flake-utils = {
+      url = github:numtide/flake-utils;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    devshell = {
+      url = github:numtide/devshell;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nur = {
+      url = github:nix-community/NUR;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     neovim = {
       url = github:neovim/neovim?dir=contrib;
@@ -20,8 +34,16 @@
       inputs.flake-utils.follows = "flake-utils";
     };
 
-    rnix-lsp.url = github:nix-community/rnix-lsp;
-    clojure-lsp.url = github:zachcoyle/clojure-lsp-flake;
+    rnix-lsp = {
+      url = github:nix-community/rnix-lsp;
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.naersk.follows = "naersk";
+    };
+
+    clojure-lsp = {
+      url = github:zachcoyle/clojure-lsp-flake;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, neovim, rnix-lsp, flake-utils, devshell, nur, vim-plugins-overlay, ... }@inputs:
