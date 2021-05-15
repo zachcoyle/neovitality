@@ -17,7 +17,6 @@
     vim-plugins-overlay = {
       url = github:vi-tality/vim-plugins-overlay;
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
     };
 
     rnix-lsp.url = github:nix-community/rnix-lsp;
