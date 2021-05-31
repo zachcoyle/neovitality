@@ -34,14 +34,14 @@ in
     { plugin = LuaSnip; }
     { plugin = nvim-blame-line; }
     { plugin = nvim-compe; config = readFile ./config/nvim-compe-config.vim; }
-    # { plugin = nvim-dap-virtual-text; config = "let g:dap_virtual_text = v:true"; }
-    # { plugin = nvim-dap; config = "packadd nvim-dap" + wrapLuaConfig (import ./config/nvim-dap-config.nix { inherit pkgs; }); }
+    { plugin = nvim-dap-virtual-text; config = "let g:dap_virtual_text = v:true"; }
+    { plugin = nvim-dap; config = wrapLuaConfig (import ./config/nvim-dap-config.nix { inherit pkgs; }); }
     { plugin = nvim-lightbulb; config = "autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()"; }
     { plugin = nvim-lspconfig; }
     { plugin = nvim-tree-lua; config = readFile ./config/nvim-tree-lua-config.vim; }
     { plugin = nvim-treesitter-context; }
     { plugin = nvim-treesitter-textobjects; config = readFile ./config/nvim-treesitter-textobjects-config.vim; }
-    { plugin = pkgs.vimPlugins.nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars); config = wrapLuaConfig (readFile ./config/nvim-treesitter-config.lua); }
+    { plugin = pkgs.vimPlugins.nvim-treesitter.withPlugins (_: [ ] /*pkgs.tree-sitter.allGrammars*/); config = wrapLuaConfig (readFile ./config/nvim-treesitter-config.lua); }
     { plugin = nvim-ts-autotag; }
     { plugin = nvim-ts-context-commentstring; }
     { plugin = nvim-ts-rainbow; }
@@ -52,6 +52,7 @@ in
     { plugin = scrollbar-nvim; config = readFile ./config/scrollbar-nvim-config.vim; }
     { plugin = surround; }
     { plugin = tabular; }
+    { plugin = telescope-dap-nvim; config = "lua require('telescope').load_extension('dap')"; }
     { plugin = telescope-github-nvim; config = "lua require('telescope').load_extension('gh')"; }
     { plugin = telescope-node-modules-nvim; config = "lua require'telescope'.load_extension('node_modules')"; }
     { plugin = telescope-nvim; config = wrapLuaConfig (readFile ./config/telescope-nvim-config.lua); }
@@ -131,15 +132,15 @@ in
     Ctrl-l = "<C-W>l";
 
     # nvim-dap
-    "<F10>" = "lua require'dap'.step_over()<cr>";
-    "<F11>" = "lua require'dap'.step_into()<cr>";
-    "<F12>" = "lua require'dap'.step_out()<cr>";
-    "<F5>" = "lua require'dap'.continue()<cr>";
-    "<leader>B" = "lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition:'))<cr>";
-    "<leader>b" = "lua require'dap'.toggle_breakpoint()<cr>";
-    "<leader>dl" = "lua require'dap'.repl.run_last()<cr>";
-    "<leader>dr" = "lua require'dap'.repl.open()<cr>";
-    "<leader>lp" = "lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message:'))<cr>";
+    "<F10>" = "<cmd>lua require'dap'.step_over()<cr>";
+    "<F11>" = "<cmd>lua require'dap'.step_into()<cr>";
+    "<F12>" = "<cmd>lua require'dap'.step_out()<cr>";
+    "<F5>" = "<cmd>lua require'dap'.continue()<cr>";
+    "<leader>B" = "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition:'))<cr>";
+    "<leader>b" = "<cmd>lua require'dap'.toggle_breakpoint()<cr>";
+    "<leader>dl" = "<cmd>lua require'dap'.repl.run_last()<cr>";
+    "<leader>dr" = "<cmd>lua require'dap'.repl.open()<cr>";
+    "<leader>lp" = "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message:'))<cr>";
 
     #Floaterm
     "<leader>fn" = "<cmd>FloatermToggle<cr>";

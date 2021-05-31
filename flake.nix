@@ -6,7 +6,7 @@
       url = github:nmattia/naersk;
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixpkgs.url = github:nixos/nixpkgs/master;
+    nixpkgs.url = github:nixos/nixpkgs/4aa2e32246c6b9d765191baba60969a27d484ccf;
     nixpkgs-jdtls.url = github:nixos/nixpkgs/35925104b195ff6bbab8f645c56ecc0af62f87fd;
     flake-utils = {
       url = github:numtide/flake-utils;
@@ -31,7 +31,6 @@
     vim-plugins-overlay = {
       url = github:vi-tality/vim-plugins-overlay;
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
     };
 
     rnix-lsp = {
