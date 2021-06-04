@@ -38,11 +38,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1622712065,
-        "narHash": "sha256-I+VS0DmvpnG7jSNXiZfHflcnqB1envdCAS+NJ8nTKF8=",
+        "lastModified": 1622800304,
+        "narHash": "sha256-mkXqoBoJahvkeEG6VPlbBMyiMKwt4my1BVgOQ6QzaQw=",
         "owner": "zachcoyle",
         "repo": "clojure-lsp-flake",
-        "rev": "ad5fced9f54599cc789b43947610968f554fe2f2",
+        "rev": "35d64eff9ecf262d791b2f01f96a1b500546ee9f",
         "type": "github"
       },
       "original": {
@@ -303,11 +303,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1622709875,
-        "narHash": "sha256-O1phXV5qG6+o136QgOdvFX51nM0iumPKScd9hX+jSn8=",
+        "lastModified": 1622799842,
+        "narHash": "sha256-2mxbJOMmO4S4tYq9GWYWsXhF8SxqMC4LnqTDQbucZGg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "95222ea78011226872735fff0260b4debb045a3a",
+        "rev": "b096b6d308ddbb168078343bdbf75f91d0bd27ff",
         "type": "github"
       },
       "original": {
@@ -377,11 +377,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1622754170,
-        "narHash": "sha256-bhjTA50DTpC0Nhnx5nq4s+WLAev3JVV4+FHbJ9CCulI=",
+        "lastModified": 1622797399,
+        "narHash": "sha256-meLoqN3uNokNn403F23AKPbLNCMtWrPNb7+c2Bh3o2g=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "548f46ae8ee0fd3ac20a8a85e97a45c50e430cc5",
+        "rev": "ffb29e0d6b5d6938683a0d7c1eb03339b4175d3d",
         "type": "github"
       },
       "original": {
