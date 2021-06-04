@@ -27,6 +27,7 @@ in
     { plugin = galaxyline-nvim; config = wrapLuaConfig (builtins.readFile ./config/galaxyline-nvim-config.lua); }
     { plugin = gitsigns-nvim; config = wrapLuaConfig (builtins.readFile ./config/gitsigns-nvim-config.lua); }
     { plugin = gruvbox; config = readFile ./config/theme-config.vim; }
+    { plugin = idris2-vim; }
     { plugin = indent-blankline-nvim; config = "let g:indent_blankline_bufname_exclude = ['Startify']"; }
     { plugin = lsp_extensions-nvim; }
     { plugin = lspkind-nvim; config = "lua require('lspkind').init()"; }
