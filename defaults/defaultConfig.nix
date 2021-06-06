@@ -29,10 +29,10 @@ in
     { plugin = gruvbox; config = readFile ./config/theme-config.vim; }
     { plugin = idris2-vim; }
     { plugin = indent-blankline-nvim; config = "let g:indent_blankline_bufname_exclude = ['Startify']"; }
-    { plugin = lsp_extensions-nvim; }
-    { plugin = lspkind-nvim; config = "lua require('lspkind').init()"; }
-    { plugin = lsp_signature-nvim; config = "lua require'lsp_signature'.on_attach()"; }
     { plugin = lexima-vim; }
+    { plugin = lsp_extensions-nvim; }
+    { plugin = lsp_signature-nvim; config = "lua require'lsp_signature'.on_attach()"; }
+    { plugin = lspkind-nvim; config = "lua require('lspkind').init()"; }
     { plugin = LuaSnip; }
     { plugin = nvim-blame-line; }
     { plugin = nvim-compe; config = readFile ./config/nvim-compe-config.vim; }
@@ -43,11 +43,11 @@ in
     { plugin = nvim-tree-lua; config = readFile ./config/nvim-tree-lua-config.vim; }
     { plugin = nvim-treesitter-context; }
     { plugin = nvim-treesitter-textobjects; config = readFile ./config/nvim-treesitter-textobjects-config.vim; }
-    { plugin = pkgs.vimPlugins.nvim-treesitter.withPlugins (_: [ ] /*pkgs.tree-sitter.allGrammars*/); config = wrapLuaConfig (readFile ./config/nvim-treesitter-config.lua); }
     { plugin = nvim-ts-autotag; }
     { plugin = nvim-ts-context-commentstring; }
     { plugin = nvim-ts-rainbow; }
     { plugin = nvim-web-devicons; }
+    { plugin = pkgs.vimPlugins.nvim-treesitter.withPlugins (_: [ ] /*pkgs.tree-sitter.allGrammars*/); config = wrapLuaConfig (readFile ./config/nvim-treesitter-config.lua); }
     { plugin = pkgs.vimPlugins.telescope-fzy-native-nvim; config = "lua require('telescope').load_extension('fzy_native')"; }
     { plugin = plenary-nvim; }
     { plugin = popup-nvim; }
@@ -76,16 +76,8 @@ in
     { plugin = vim-sneak; config = "let g:sneak#label=1"; }
     { plugin = vim-startify; config = readFile ./config/vim-startify-config.vim; }
     { plugin = vim-tmux-navigator; }
+    { plugin = vim-which-key; config = readFile ./config/vim-which-key-config.vim; }
     { plugin = vimagit; }
-    {
-      plugin = vim-which-key;
-      config = ''
-        let g:mapleader = "\<Space>" 
-        let g:maplocalleader = ','
-        nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<cr>
-        nnoremap <silent> <localleader> :<c-u>WhichKey  ','<cr>
-      '';
-    }
   ];
 
   configRC = ''
