@@ -47,7 +47,7 @@ in
     { plugin = nvim-ts-context-commentstring; }
     { plugin = nvim-ts-rainbow; }
     { plugin = nvim-web-devicons; }
-    { plugin = pkgs.vimPlugins.nvim-treesitter.withPlugins (_: [ ] /*pkgs.tree-sitter.allGrammars*/); config = wrapLuaConfig (readFile ./config/nvim-treesitter-config.lua); }
+    { plugin = pkgs.vimPlugins.nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars); config = wrapLuaConfig (readFile ./config/nvim-treesitter-config.lua); }
     { plugin = pkgs.vimPlugins.telescope-fzy-native-nvim; config = "lua require('telescope').load_extension('fzy_native')"; }
     { plugin = plenary-nvim; }
     { plugin = popup-nvim; }
