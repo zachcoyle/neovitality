@@ -9,6 +9,12 @@ with pkgs;
     };
   };
 
+  clangd = {
+    lspConfig = {
+      cmd = [ "${clang-tools}/bin/clangd" "--background-index" ];
+    };
+  };
+
   clojure_lsp = {
     lspConfig = {
       cmd = [ "${clojure-lsp}/bin/clojure-lsp" ];
