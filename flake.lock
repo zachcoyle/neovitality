@@ -229,11 +229,11 @@
     "lsp_signature-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1624227636,
-        "narHash": "sha256-Xp1/L8QCQVPD95x/q1qeNVRlK9wMfBYwhfpld14fIpw=",
+        "lastModified": 1624274288,
+        "narHash": "sha256-2jUNZpMMA3aUjQNvfB656i4RebiHSc3RB/RWeDeIA2c=",
         "owner": "ray-x",
         "repo": "lsp_signature.nvim",
-        "rev": "f9de4f49c462c04620946a2c7f22453c77ff8e05",
+        "rev": "a99d102b00b114017521344c6a26ceb1dcab9820",
         "type": "github"
       },
       "original": {
@@ -553,11 +553,11 @@
     "nvim-treesitter": {
       "flake": false,
       "locked": {
-        "lastModified": 1623938000,
-        "narHash": "sha256-TEjRies4cwMYqT0VVHI2LzxJ/2TgwbbNWHHs4zeauI8=",
+        "lastModified": 1624258358,
+        "narHash": "sha256-ezfRIwGC5rkASn2HMpZkndivgFhVOtzkP4nrGXcL/4c=",
         "owner": "nvim-treesitter",
         "repo": "nvim-treesitter",
-        "rev": "d1f6a2a3d8372725e777e96740bfdf0cde7eb2c8",
+        "rev": "89b1254cde93f7cc590ea9d0591f0317f8cbd106",
         "type": "github"
       },
       "original": {
@@ -1177,11 +1177,11 @@
         "which-key-nvim": "which-key-nvim"
       },
       "locked": {
-        "lastModified": 1624237125,
-        "narHash": "sha256-AeA7KWy98e9qVXvhlRGxI8pAcr4i12C7PgY91CnXH3M=",
+        "lastModified": 1624278421,
+        "narHash": "sha256-IETu2dseZYxnicY7o83XvpXhMefovvdlqT+8jr5xra0=",
         "owner": "vi-tality",
         "repo": "vim-plugins-overlay",
-        "rev": "bdb9017f75ca4aa17c793587b2eb92fe55f349d4",
+        "rev": "da9aef3486373cd82c9ca17ecfcecc1146114275",
         "type": "github"
       },
       "original": {
