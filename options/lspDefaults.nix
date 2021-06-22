@@ -9,7 +9,7 @@ with pkgs;
     };
   };
 
-  clangd = {
+  clangd = lib.mkIf (system == "x86_64-linux") {
     lspConfig = {
       cmd = [ "${clang-tools}/bin/clangd" "--background-index" ];
     };
@@ -93,6 +93,8 @@ with pkgs;
       cmd = [ "${solargraph}/bin/solargraph" "stdio" ];
     };
   };
+
+  sourcekit = lib.mkIf (pkgs.system == "x86_64-darwin") { };
 
   texlab = {
     lspConfig = {
