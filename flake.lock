@@ -212,11 +212,11 @@
     "indent-blankline-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1623902117,
-        "narHash": "sha256-wN4reeKfzbD82gFFlEDIshP58FWxC+vpnZ84xbSb0Dw=",
+        "lastModified": 1624410510,
+        "narHash": "sha256-IM2NrKKmmEM9rAP4BFBx5wfFKbzRcye72q0v1pia81c=",
         "owner": "lukas-reineke",
         "repo": "indent-blankline.nvim",
-        "rev": "1b7a974ddf95fb88c3c450888369d492bdb99a53",
+        "rev": "f314659a68f936bf65502fe318222facbeb439a5",
         "type": "github"
       },
       "original": {
@@ -377,11 +377,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1624389874,
-        "narHash": "sha256-p6ML95bA57yRI1HXvTKayj3gc3wkvePh2fE+czurKP8=",
+        "lastModified": 1624417539,
+        "narHash": "sha256-6mfR2ZDJAaxcA4nfGc2ROR+CxF68+O5a5QX6+pxLYUU=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "cfe9e2e5ae53250337b0ffb3f39b477ca09cd232",
+        "rev": "b1a075602a1eb235b98df781557f6d515b1fe8d2",
         "type": "github"
       },
       "original": {
@@ -1177,11 +1177,11 @@
         "which-key-nvim": "which-key-nvim"
       },
       "locked": {
-        "lastModified": 1624403110,
-        "narHash": "sha256-wOzoWubsGiejvqzoeWlr1g85B6N4U5hRKDMHmOUrJYw=",
+        "lastModified": 1624419198,
+        "narHash": "sha256-+OMY7Ju0hTcD4gEgP1CR5Y8aNvomJPkm8iHB+T03Wro=",
         "owner": "vi-tality",
         "repo": "vim-plugins-overlay",
-        "rev": "a8ae0943a5f02d12981fcf62c13c7b74f4518c09",
+        "rev": "3a173abcf928803c4d240092aba229caf26acca4",
         "type": "github"
       },
       "original": {
