@@ -146,6 +146,9 @@ in
     #gundo
     "<F3>" = "<cmd>MundoToggle<cr>";
 
+    "<leader>ss" = "<cmd>SessionSave<CR>";
+    "<leader>sl" = "<cmd>SessionLoad<CR>";
+
   };
 
   inoremap = { };
