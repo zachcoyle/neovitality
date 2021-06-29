@@ -1,4 +1,6 @@
-let g:startify_custom_header = [
+let g:dashboard_default_executive ='telescope'
+let g:dashboard_custom_footer = []
+let g:dashboard_custom_header = [
       \ '                                       _              ',
       \ '                          o           | | o           ',
       \ '     _  _    _   __         _|_  __,  | |   _|_       ',

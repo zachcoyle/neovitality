@@ -19,6 +19,7 @@ in
     { plugin = barbar-nvim; }
     { plugin = compe-tabnine; }
     { plugin = conjure; }
+    { plugin = dashboard-nvim; config = readFile ./config/dashboard-nvim-config.vim; }
     { plugin = direnv-vim; config = readFile ./config/direnv-vim-config.vim; }
     { plugin = editorconfig-vim; }
     { plugin = emmet-vim; config = readFile ./config/emmet-vim-config.vim; }
@@ -74,7 +75,6 @@ in
     { plugin = vim-repeat; }
     { plugin = vim-sensible; }
     { plugin = vim-sneak; config = "let g:sneak#label=1"; }
-    { plugin = vim-startify; config = readFile ./config/vim-startify-config.vim; }
     { plugin = vim-tmux-navigator; }
     { plugin = vim-which-key; config = readFile ./config/vim-which-key-config.vim; }
     { plugin = vimagit; }
@@ -145,6 +145,9 @@ in
 
     #gundo
     "<F3>" = "<cmd>MundoToggle<cr>";
+
+    "<leader>ss" = "<cmd>SessionSave<CR>";
+    "<leader>sl" = "<cmd>SessionLoad<CR>";
 
   };
 
