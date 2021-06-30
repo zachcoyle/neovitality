@@ -13,14 +13,18 @@ let
   };
   vim = vimOptions.config.vim;
 in
-pkgs.wrapNeovim pkgs.neovim {
-  configure = {
-    customRC = vim.configRC;
+{
+  neovim = pkgs.wrapNeovim pkgs.neovim {
+    configure = {
+      customRC = vim.configRC;
 
-    packages.myVimPackage = with pkgs.vimPlugins; {
-      start = vim.startPlugins;
-      opt = vim.optPlugins;
+      packages.myVimPackage = with pkgs.vimPlugins; {
+        start = vim.startPlugins;
+        opt = vim.optPlugins;
+      };
     };
+
   };
 
+  init-vim = vim.configRC;
 }

@@ -44,6 +44,13 @@
           ];
         };
         neovimBuilder = import ./options/neovimBuilder.nix { inherit pkgs; };
+
+        customNeovim = neovimBuilder {
+          config = {
+            vim = import ./defaults/defaultConfig.nix { inherit pkgs; };
+          };
+        };
+
       in
       rec {
 
@@ -55,11 +62,9 @@
 
         packages.neovim-nightly = pkgs.neovim;
 
-        defaultPackage = neovimBuilder {
-          config = {
-            vim = import ./defaults/defaultConfig.nix { inherit pkgs; };
-          };
-        };
+        defaultPackage = customNeovim.neovim;
+        packages.init-vim = pkgs.writeText "init.vim" customNeovim.init-vim;
+
 
         apps = {
           nvim = flake-utils.lib.mkApp {
