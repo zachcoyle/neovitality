@@ -63,7 +63,9 @@
         packages.neovim-nightly = pkgs.neovim;
 
         defaultPackage = customNeovim.neovim;
-        packages.init-vim = pkgs.writeText "init.vim" customNeovim.init-vim;
+        packages.init-vim = pkgs.runCommand "init.vim" { } ''
+          sed -r 's#/nix/store/[a-zA-Z0-9]{32}-.+/##' <${(pkgs.writeText "init-vim" customNeovim.init-vim)} > $out
+        '';
 
 
         apps = {
