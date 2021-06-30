@@ -33,10 +33,10 @@
           overlays = [
             devshell.overlay
             vim-plugins-overlay.overlay
+            neovim.overlay
             nur.overlay
             (final: prev: {
               python = prev.python3;
-              neovim-nightly = neovim.defaultPackage.${system};
               rnix-lsp = rnix-lsp.defaultPackage.${system};
               jdt-language-server = pkgs-jdtls.jdt-language-server;
               clojure-lsp = inputs.clojure-lsp.defaultPackage.${system};
@@ -53,7 +53,7 @@
           vim-plugins-overlay = vim-plugins-overlay.overlay;
         };
 
-        packages.neovim-nightly = neovim.defaultPackage.${system};
+        packages.neovim-nightly = pkgs.neovim;
 
         defaultPackage = neovimBuilder {
           config = {

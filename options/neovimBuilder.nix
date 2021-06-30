@@ -13,7 +13,7 @@ let
   };
   vim = vimOptions.config.vim;
 in
-pkgs.wrapNeovim pkgs.neovim-nightly {
+pkgs.wrapNeovim pkgs.neovim {
   configure = {
     customRC = vim.configRC;
 
