@@ -24,6 +24,24 @@
   };
 
   outputs = { self, nixpkgs, neovim, rnix-lsp, flake-utils, devshell, nur, vim-plugins-overlay, ... }@inputs:
+    {
+      overlay = final: prev:
+        let
+          pkgs = nixpkgs.legacyPackages.${prev.system};
+        in
+        rec {
+
+          neovimBuilder = import ./options/neovimBuilder.nix { inherit pkgs; };
+
+          neovitality = neovimBuilder {
+            config = {
+              config = {
+                vim = import ./defaults/defaultConfig.nix { inherit pkgs; };
+              };
+            };
+          };
+        };
+    } //
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs-jdtls = import inputs.nixpkgs-jdtls { inherit system; };
