@@ -27,6 +27,18 @@
     {
       overlay = final: prev:
         let
+          nixpkgs.overlays = [
+            vim-plugins-overlay.overlay
+            neovim.overlay
+            nur.overlay
+
+            (final: prev: {
+              python = prev.python3;
+              rnix-lsp = rnix-lsp.defaultPackage.${prev.system};
+              jdt-language-server = inputs.nixpkgs-jdtls.legacyPackages.${prev.system}.jdt-language-server;
+              clojure-lsp = inputs.clojure-lsp.defaultPackage.${prev.system};
+            })
+          ];
           pkgs = nixpkgs.legacyPackages.${prev.system};
         in
         rec {
