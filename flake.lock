@@ -180,11 +180,11 @@
     "gitsigns-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1625436525,
-        "narHash": "sha256-XzI5RM31T2nAWz6qNnn+uH3X/NaVtnldlEYY1PY8B6Y=",
+        "lastModified": 1625492567,
+        "narHash": "sha256-JPehAK4PEVvMHIAIpyvARPq+PfVy694IpQoyJP/YPFQ=",
         "owner": "lewis6991",
         "repo": "gitsigns.nvim",
-        "rev": "69f12c7923b1d690bb839399c23ca655cff937a9",
+        "rev": "41c58163c4a4384a37bc482ab13c17ee930a5cf7",
         "type": "github"
       },
       "original": {
@@ -441,11 +441,11 @@
     "nvim-bufferline-lua": {
       "flake": false,
       "locked": {
-        "lastModified": 1625396642,
-        "narHash": "sha256-+FyPeKrKeCWWobECULrZthnwCqi9mqltFo243nZf1bo=",
+        "lastModified": 1625491462,
+        "narHash": "sha256-ro+TPl7xS9yeKv8pP8SnNryCjLe71rcMUt8zKv6HkWc=",
         "owner": "akinsho",
         "repo": "nvim-bufferline.lua",
-        "rev": "33ad2ec9f51941317df407f98c509817805fe03b",
+        "rev": "d66f0e45243a46fc3fd0d84ed7d54e37882207ba",
         "type": "github"
       },
       "original": {
@@ -649,11 +649,11 @@
     "octo-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1625472130,
-        "narHash": "sha256-XetRUS2pF5xWUhxc/5tlAskQ3CzhTINAdUJMZcissuI=",
+        "lastModified": 1625489273,
+        "narHash": "sha256-XaZsCL986rVNjWQl1tgPRY2wdzf1lCg+KPfUrpJ0iZE=",
         "owner": "pwntester",
         "repo": "octo.nvim",
-        "rev": "f9d0f92ce06cbe30a66a09358c764c9a5ec2e851",
+        "rev": "5fc8f2484ab99cb8dd4deb61b983cbbe54c84c34",
         "type": "github"
       },
       "original": {
@@ -1211,11 +1211,11 @@
         "which-key-nvim": "which-key-nvim"
       },
       "locked": {
-        "lastModified": 1625485168,
-        "narHash": "sha256-9ol3XlFfF8Z5rooipwnGKpxrypvL46ycFLA7vhbj9wI=",
+        "lastModified": 1625495232,
+        "narHash": "sha256-FYPF1/3zm2nB8/NLDs6xgCxjAUB4gscAKVShYo31Xto=",
         "owner": "vi-tality",
         "repo": "vim-plugins-overlay",
-        "rev": "b8a1bb5296fb62dc36e0c672e5eab11c2d7c9a13",
+        "rev": "27feb51a0f89056b13edb5bf5a1ac6bd6dc78e02",
         "type": "github"
       },
       "original": {
