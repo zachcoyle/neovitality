@@ -244,7 +244,7 @@ in
   vim.api.nvim_exec([[
   augroup FormatAutogroup
     autocmd!
-    autocmd BufWritePost ${autoSaveFiletypes} FormatWrite
+    autocmd BufWritePost ${autoSaveFiletypes} silent FormatWrite
   augroup END
   ]], true)
 ''

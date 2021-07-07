@@ -95,7 +95,6 @@ in
     # nvim lsp
     "<F2>" = "<cmd>lua vim.lsp.buf.rename()<cr>";
     "<leader>e" = "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>";
-    "<leader>f" = "<cmd>lua vim.lsp.buf.formatting()<cr>";
     "<leader>k" = "<cmd>lua vim.lsp.buf.signature_help()<cr>";
     "<leader>q" = "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>";
     "<leader>rn" = "<cmd>lua vim.lsp.buf.rename()<cr>";
@@ -146,9 +145,11 @@ in
 
     #gundo
     "<F3>" = "<cmd>MundoToggle<cr>";
-
     "<leader>ss" = "<cmd>SessionSave<CR>";
     "<leader>sl" = "<cmd>SessionLoad<CR>";
+
+    #formatter.nvim
+    "<leader>f" = "<silent><cmd>Format<CR>";
 
   };
 
