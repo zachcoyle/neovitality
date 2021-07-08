@@ -145,11 +145,11 @@ in
 
     #gundo
     "<F3>" = "<cmd>MundoToggle<cr>";
-    "<leader>ss" = "<cmd>SessionSave<CR>";
-    "<leader>sl" = "<cmd>SessionLoad<CR>";
+    "<leader>ss" = "<cmd>SessionSave<cr>";
+    "<leader>sl" = "<cmd>SessionLoad<cr>";
 
     #formatter.nvim
-    "<leader>f" = "<silent><cmd>Format<CR>";
+    "<leader>f" = "<silent><cmd>Format<cr>";
 
   };
 

@@ -96,6 +96,13 @@ with pkgs;
 
   sourcekit = lib.mkIf (pkgs.system == "x86_64-darwin") { };
 
+  sumneko_lua = lib.mkIf (pkgs.system == "x86_64-linux") {
+    lspConfig = {
+      cmd = [ "${sumneko-lua-language-server}/bin/lua-language-server" ];
+    };
+  };
+
+
   texlab = {
     lspConfig = {
       cmd = [ "${texlab}/bin/texlab" ];
