@@ -20,7 +20,6 @@
     };
 
     rnix-lsp.url = github:nix-community/rnix-lsp;
-    clojure-lsp.url = github:zachcoyle/clojure-lsp-flake;
   };
 
   outputs = { self, nixpkgs, neovim, rnix-lsp, flake-utils, devshell, nur, vim-plugins-overlay, ... }@inputs:
@@ -39,7 +38,6 @@
               python = prev.python3;
               rnix-lsp = rnix-lsp.defaultPackage.${system};
               jdt-language-server = pkgs-jdtls.jdt-language-server;
-              clojure-lsp = inputs.clojure-lsp.defaultPackage.${system};
             })
           ];
         };
