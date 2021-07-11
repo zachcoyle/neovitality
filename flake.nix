@@ -9,7 +9,7 @@
     nur.url = github:nix-community/NUR;
 
     neovim = {
-      url = github:neovim/neovim/v0.5.0?dir=contrib;
+      url = github:neovim/neovim?dir=contrib;
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
