@@ -18,8 +18,40 @@ in
   plugins = with pkgs.vimPlugins; with pkgs.vitalityVimPlugins;  [
     { plugin = barbar-nvim; }
     { plugin = blamer-nvim; config = readFile ./config/blamer-nvim-config.vim; }
-    { plugin = compe-tabnine; }
+    # { plugin = compe-tabnine; }
     { plugin = conjure; }
+    {
+      plugin = completion-nvim;
+      config = ''
+        inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+        inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+        " Set completeopt to have a better completion experience
+        set completeopt=menuone,noinsert,noselect
+
+        " Avoid showing message extra message when using completion
+        set shortmess+=c
+
+        let g:completion_chain_complete_list = {
+            \ 'default': [
+            \    {'complete_items': [ 'lsp', 'tabnine' ]},
+            \    {'complete_items': ['snippet', 'ts', 'buffers']},
+            \    {'mode': '<c-p>'},
+            \    {'mode': '<c-n>'}
+            \]
+        \}
+
+        imap <c-j> <Plug>(completion_next_source)
+        imap <c-k> <Plug>(completion_prev_source)
+        let g:completion_auto_change_source = 1
+
+
+        autocmd BufEnter * lua require'completion'.on_attach()
+      '';
+    }
+    { plugin = completion-tabnine; }
+    { plugin = completion-treesitter; }
+    { plugin = completion-buffers; }
     { plugin = dashboard-nvim; config = readFile ./config/dashboard-nvim-config.vim; }
     { plugin = direnv-vim; config = readFile ./config/direnv-vim-config.vim; }
     { plugin = editorconfig-vim; }
@@ -37,7 +69,7 @@ in
     { plugin = lspkind-nvim; config = "lua require('lspkind').init()"; }
     { plugin = LuaSnip; }
     { plugin = neogit; }
-    { plugin = nvim-compe; config = readFile ./config/nvim-compe-config.vim; }
+    # { plugin = nvim-compe; config = readFile ./config/nvim-compe-config.vim; }
     { plugin = nvim-dap-virtual-text; config = "let g:dap_virtual_text = v:true"; }
     { plugin = nvim-dap; config = wrapLuaConfig (import ./config/nvim-dap-config.nix { inherit pkgs; }); }
     { plugin = nvim-lightbulb; config = "autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()"; }
