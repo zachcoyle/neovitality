@@ -292,11 +292,11 @@
     "neogit": {
       "flake": false,
       "locked": {
-        "lastModified": 1625832932,
-        "narHash": "sha256-O2w8x2Hx9FW8l70F8buGmSzdacOoScSeLQbLU4+B6Hg=",
+        "lastModified": 1626013804,
+        "narHash": "sha256-syaWOJ5EuIEjSGZ06EmIYu2Aim6TGG0kamBT/yxx/qQ=",
         "owner": "TimUntersberger",
         "repo": "neogit",
-        "rev": "7a133c83b174bb40019f42ecc2a80c09bff53f33",
+        "rev": "467d64d8f4e3018a8742aa152ed5e2c83c3bbef0",
         "type": "github"
       },
       "original": {
@@ -392,11 +392,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1625986452,
-        "narHash": "sha256-eLJt7tqWe3slBDEwtA4Y3TXQkupdxSjqVGSCpwAl8g8=",
+        "lastModified": 1626017491,
+        "narHash": "sha256-1QCfuEqn8ps14Gy4ef4o+vLHVH4SNIhCBEsPKnMOH7U=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "b308042a4e30aa38215786e1ae69ef11e272fb74",
+        "rev": "45a22f0dd5869df4f7bdbf4b7e051d51946d564b",
         "type": "github"
       },
       "original": {
@@ -1229,11 +1229,11 @@
         "which-key-nvim": "which-key-nvim"
       },
       "locked": {
-        "lastModified": 1626010333,
-        "narHash": "sha256-rBoDKgnd6MN63pnPopmMtHgNxRaXdjs8+YP6445L2K0=",
+        "lastModified": 1626019909,
+        "narHash": "sha256-li1ayJhLTPXLJw5Ln0BuYBstH0xXEMqoY/Ukz8Tg+tU=",
         "owner": "vi-tality",
         "repo": "vim-plugins-overlay",
-        "rev": "5e9b2755e4e4427f6931927688497e38f3d64325",
+        "rev": "e4c7d29bc0e23c6c74ac05768a7abd8fa79d0db5",
         "type": "github"
       },
       "original": {
