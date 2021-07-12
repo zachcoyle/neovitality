@@ -1280,11 +1280,11 @@
         "which-key-nvim": "which-key-nvim"
       },
       "locked": {
-        "lastModified": 1626084139,
-        "narHash": "sha256-pU9bzTJ98F+WWEhwdsQMUUCpqMyNPf6f6FapwM0iJdE=",
+        "lastModified": 1626088620,
+        "narHash": "sha256-KHbixs2kCabGZhxco/8/t2tTnrpvYJzklc3CjX2cR4I=",
         "owner": "vi-tality",
         "repo": "vim-plugins-overlay",
-        "rev": "d2ad54d2f9f7d2b07a96ec48aaa7e8fcdf255f0a",
+        "rev": "bffaff2496a368287b3465683c0f630447b3caee",
         "type": "github"
       },
       "original": {
