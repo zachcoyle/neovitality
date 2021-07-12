@@ -117,6 +117,16 @@ let
       ];
     };
 
+    lua = {
+      extension = "lua";
+      formatters = [
+        {
+          exe = "${pkgs.stylua}/bin/stylua";
+          args = [ "'--search-parent-directories'" "'--stdin-filepath'" "'\"%:p\"'" "'--'" "'-'" ];
+        }
+      ];
+    };
+
     nix = {
       extension = "nix";
       formatters = [{ exe = "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt"; }];
