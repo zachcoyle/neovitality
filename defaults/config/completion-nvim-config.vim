@@ -21,4 +21,4 @@ imap <c-k> <Plug>(completion_prev_source)
 let g:completion_auto_change_source = 1
 
 
-autocmd BufEnter * lua require'completion'.on_attach()
+autocmd BufEnter * if &buftype != "nofile" | lua require'completion'.on_attach()
