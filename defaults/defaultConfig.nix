@@ -84,7 +84,7 @@ in
   ];
 
   configRC = ''
-    ${builtins.readFile ./config/init.vim}
+    ${wrapLuaConfig (builtins.readFile ./config/init.lua)}
   '';
 
   nnoremap = {
