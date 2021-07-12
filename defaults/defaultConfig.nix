@@ -38,7 +38,7 @@ in
     { plugin = lsp_extensions-nvim; }
     { plugin = lsp_signature-nvim; config = "lua require'lsp_signature'.on_attach()"; }
     { plugin = lspkind-nvim; config = "lua require('lspkind').init()"; }
-    { plugin = LuaSnip; }
+    # { plugin = LuaSnip; }
     { plugin = neogit; }
     { plugin = nvim-dap-virtual-text; config = "let g:dap_virtual_text = v:true"; }
     { plugin = nvim-dap; config = wrapLuaConfig (import ./config/nvim-dap-config.nix { inherit pkgs; }); }
