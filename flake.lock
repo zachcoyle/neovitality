@@ -95,6 +95,22 @@
         "type": "github"
       }
     },
+    "feline-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1625976424,
+        "narHash": "sha256-rBjMuszwNZaEuU/RYYjlLh0fTcutPJS1d666igpt6aM=",
+        "owner": "famiu",
+        "repo": "feline.nvim",
+        "rev": "4c04c967691d028b4056f726735db329039cdff2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "famiu",
+        "repo": "feline.nvim",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "locked": {
         "lastModified": 1623875721,
@@ -1179,6 +1195,7 @@
         "blamer-nvim": "blamer-nvim",
         "calvera-dark-nvim": "calvera-dark-nvim",
         "completion-nvim": "completion-nvim",
+        "feline-nvim": "feline-nvim",
         "focus-vim": "focus-vim",
         "formatter-nvim": "formatter-nvim",
         "fzf-lsp-nvim": "fzf-lsp-nvim",
@@ -1246,11 +1263,11 @@
         "which-key-nvim": "which-key-nvim"
       },
       "locked": {
-        "lastModified": 1626081396,
-        "narHash": "sha256-kYgShdoMMwOJZLbawGe3lWP4U1qYN90BY+6HNpwzJAI=",
+        "lastModified": 1626082358,
+        "narHash": "sha256-zgyRCf6FJzdrnaMSHev9jmeIMWVx3g/xkrrPkPdJqXc=",
         "owner": "vi-tality",
         "repo": "vim-plugins-overlay",
-        "rev": "bc7a8e4c021f40cb9091a95b8deacb285a6cac73",
+        "rev": "80f3109532ca1c5b18ffc016176603e30d2b8d5b",
         "type": "github"
       },
       "original": {

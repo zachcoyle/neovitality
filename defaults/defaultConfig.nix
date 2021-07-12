@@ -17,6 +17,7 @@ in
 {
   plugins = with pkgs.vimPlugins; with pkgs.vitalityVimPlugins;  [
     # { plugin = LuaSnip; }
+    # { plugin = neorg; config = wrapLuaConfig (import ./config/neorg-config.lua); }
     { plugin = barbar-nvim; }
     { plugin = blamer-nvim; config = readFile ./config/blamer-nvim-config.vim; }
     { plugin = completion-buffers; }
@@ -28,9 +29,10 @@ in
     { plugin = direnv-vim; config = readFile ./config/direnv-vim-config.vim; }
     { plugin = editorconfig-vim; }
     { plugin = emmet-vim; config = readFile ./config/emmet-vim-config.vim; }
+    { plugin = feline-nvim; config = wrapLuaConfig "require('feline').setup()"; }
     { plugin = formatter-nvim; config = wrapLuaConfig (import ./config/formatter-nvim-config.nix { inherit pkgs; }); }
     { plugin = fugitive; }
-    { plugin = galaxyline-nvim; config = wrapLuaConfig (builtins.readFile ./config/galaxyline-nvim-config.lua); }
+    # { plugin = galaxyline-nvim; config = wrapLuaConfig (builtins.readFile ./config/galaxyline-nvim-config.lua); }
     { plugin = gitsigns-nvim; config = wrapLuaConfig (builtins.readFile ./config/gitsigns-nvim-config.lua); }
     { plugin = gruvbox; config = readFile ./config/theme-config.vim; }
     { plugin = idris2-vim; }
@@ -40,7 +42,6 @@ in
     { plugin = lsp_signature-nvim; config = "lua require'lsp_signature'.on_attach()"; }
     { plugin = lspkind-nvim; config = "lua require('lspkind').init()"; }
     { plugin = neogit; }
-    { plugin = neorg; config = wrapLuaConfig (import ./config/neorg-config.lua); }
     { plugin = nvim-dap-virtual-text; config = "let g:dap_virtual_text = v:true"; }
     { plugin = nvim-dap; config = wrapLuaConfig (import ./config/nvim-dap-config.nix { inherit pkgs; }); }
     { plugin = nvim-lightbulb; config = "autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()"; }
