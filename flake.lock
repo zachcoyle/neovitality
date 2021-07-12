@@ -321,6 +321,22 @@
         "type": "github"
       }
     },
+    "neon": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1624149183,
+        "narHash": "sha256-uqktz0O+lgFLkiSfd3Y02iCRRFcVPxIxwkdDgjomLsc=",
+        "owner": "rafamadriz",
+        "repo": "neon",
+        "rev": "14db261c6a1777502aa40ed7f82e02a1d4ff9404",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rafamadriz",
+        "repo": "neon",
+        "type": "github"
+      }
+    },
     "neorg": {
       "flake": false,
       "locked": {
@@ -1207,6 +1223,7 @@
         "lsp_signature-nvim": "lsp_signature-nvim",
         "lspkind-nvim": "lspkind-nvim",
         "neogit": "neogit",
+        "neon": "neon",
         "neorg": "neorg",
         "nixpkgs": [
           "nixpkgs"
@@ -1263,11 +1280,11 @@
         "which-key-nvim": "which-key-nvim"
       },
       "locked": {
-        "lastModified": 1626082358,
-        "narHash": "sha256-zgyRCf6FJzdrnaMSHev9jmeIMWVx3g/xkrrPkPdJqXc=",
+        "lastModified": 1626084139,
+        "narHash": "sha256-pU9bzTJ98F+WWEhwdsQMUUCpqMyNPf6f6FapwM0iJdE=",
         "owner": "vi-tality",
         "repo": "vim-plugins-overlay",
-        "rev": "80f3109532ca1c5b18ffc016176603e30d2b8d5b",
+        "rev": "d2ad54d2f9f7d2b07a96ec48aaa7e8fcdf255f0a",
         "type": "github"
       },
       "original": {
