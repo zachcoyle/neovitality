@@ -305,6 +305,22 @@
         "type": "github"
       }
     },
+    "neorg": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1626077169,
+        "narHash": "sha256-6Fiz/W5/O3DkBUKx2f1qxSrnTiPg0gb84rd9CZJmtIc=",
+        "owner": "vhyrro",
+        "repo": "neorg",
+        "rev": "78f245c4d858ae78c8b07b757e190e8c7c401196",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vhyrro",
+        "repo": "neorg",
+        "type": "github"
+      }
+    },
     "neovim": {
       "inputs": {
         "flake-utils": [
@@ -392,11 +408,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1626053062,
-        "narHash": "sha256-j6nab8ElTmwtJpY6PbUnM0owwOF27UqV1ESJIvQ9FDM=",
+        "lastModified": 1626081255,
+        "narHash": "sha256-KdMbnT+LRetYDTgZPgREuO+dEiN12OHegUlUD0SSKqw=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "df7ecdf5569c830ddc336395920018bc1c03fff3",
+        "rev": "6de00646e4e13324e38207c0421ad164c96aa9a4",
         "type": "github"
       },
       "original": {
@@ -1174,6 +1190,7 @@
         "lsp_signature-nvim": "lsp_signature-nvim",
         "lspkind-nvim": "lspkind-nvim",
         "neogit": "neogit",
+        "neorg": "neorg",
         "nixpkgs": [
           "nixpkgs"
         ],
@@ -1229,11 +1246,11 @@
         "which-key-nvim": "which-key-nvim"
       },
       "locked": {
-        "lastModified": 1626078760,
-        "narHash": "sha256-etJP7+eFPv+yg73sXahInPDkITt2iuPj4RrWkmPBi5A=",
+        "lastModified": 1626081396,
+        "narHash": "sha256-kYgShdoMMwOJZLbawGe3lWP4U1qYN90BY+6HNpwzJAI=",
         "owner": "vi-tality",
         "repo": "vim-plugins-overlay",
-        "rev": "00399466ad1282d43a787132fc208d6a0796c75b",
+        "rev": "bc7a8e4c021f40cb9091a95b8deacb285a6cac73",
         "type": "github"
       },
       "original": {
