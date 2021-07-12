@@ -40,7 +40,7 @@ in
     { plugin = lsp_signature-nvim; config = "lua require'lsp_signature'.on_attach()"; }
     { plugin = lspkind-nvim; config = "lua require('lspkind').init()"; }
     { plugin = neogit; }
-    { plugin = neorg; }
+    { plugin = neorg; config = wrapLuaConfig (import ./config/neorg-config.lua); }
     { plugin = nvim-dap-virtual-text; config = "let g:dap_virtual_text = v:true"; }
     { plugin = nvim-dap; config = wrapLuaConfig (import ./config/nvim-dap-config.nix { inherit pkgs; }); }
     { plugin = nvim-lightbulb; config = "autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()"; }
