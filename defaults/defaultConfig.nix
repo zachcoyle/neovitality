@@ -39,11 +39,11 @@ in
     { plugin = lsp_signature-nvim; config = "lua require'lsp_signature'.on_attach()"; }
     { plugin = lspkind-nvim; config = "lua require('lspkind').init()"; }
     { plugin = neogit; }
-    { plugin = onedark-vim; config = readFile ./config/theme-config.vim; }
     { plugin = nvim-dap-virtual-text; config = "let g:dap_virtual_text = v:true"; }
     { plugin = nvim-dap; config = wrapLuaConfig (import ./config/nvim-dap-config.nix { inherit pkgs; }); }
     { plugin = nvim-lightbulb; config = "autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()"; }
     { plugin = nvim-lspconfig; }
+    { plugin = nvim-scrollview; }
     { plugin = nvim-tree-lua; config = readFile ./config/nvim-tree-lua-config.vim; }
     { plugin = nvim-treesitter-context; }
     { plugin = nvim-treesitter-textobjects; config = readFile ./config/nvim-treesitter-textobjects-config.vim; }
@@ -52,11 +52,11 @@ in
     { plugin = nvim-ts-rainbow; }
     { plugin = nvim-web-devicons; }
     { plugin = octo-nvim; }
+    { plugin = onedark-vim; config = readFile ./config/theme-config.vim; }
     { plugin = pkgs.vimPlugins.nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars); config = wrapLuaConfig (readFile ./config/nvim-treesitter-config.lua); }
     { plugin = pkgs.vimPlugins.telescope-fzy-native-nvim; config = "lua require('telescope').load_extension('fzy_native')"; }
     { plugin = plenary-nvim; }
     { plugin = popup-nvim; }
-    { plugin = scrollbar-nvim; config = readFile ./config/scrollbar-nvim-config.vim; }
     { plugin = surround; }
     { plugin = tabular; }
     { plugin = telescope-dap-nvim; config = "lua require('telescope').load_extension('dap')"; }
