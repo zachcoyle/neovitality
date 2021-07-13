@@ -16,6 +16,7 @@ let
 in
 {
   plugins = with pkgs.vimPlugins; with pkgs.vitalityVimPlugins;  [
+    { /*0*/ plugin = telescope-nvim; config = wrapLuaConfig (readFile ./config/telescope-nvim-config.lua); }
     { plugin = barbar-nvim; }
     { plugin = blamer-nvim; config = readFile ./config/blamer-nvim-config.vim; }
     { plugin = completion-buffers; }
@@ -61,7 +62,6 @@ in
     { plugin = telescope-dap-nvim; config = "lua require('telescope').load_extension('dap')"; }
     { plugin = telescope-github-nvim; config = "lua require('telescope').load_extension('gh')"; }
     { plugin = telescope-node-modules-nvim; config = "lua require'telescope'.load_extension('node_modules')"; }
-    { plugin = telescope-nvim; config = wrapLuaConfig (readFile ./config/telescope-nvim-config.lua); }
     { plugin = vim-closer; }
     { plugin = vim-commentary; }
     { plugin = vim-cursorword; }
