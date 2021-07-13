@@ -77,6 +77,7 @@ in
     { plugin = vim-prisma; }
     { plugin = vim-repeat; }
     { plugin = vim-sensible; }
+    { plugin = presence-nvim; config = wrapLuaConfig (readFile ./config/presence-nvim-config.lua); }
     { plugin = vim-sneak; config = "let g:sneak#label=1"; }
     { plugin = vim-tmux-navigator; }
     { plugin = vim-which-key; config = readFile ./config/vim-which-key-config.vim; }

@@ -789,6 +789,22 @@
         "type": "github"
       }
     },
+    "presence-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1625861678,
+        "narHash": "sha256-6y4Xa8jSV/QiXichJPaIWHs3rY/D6MXTDCL65nowrKc=",
+        "owner": "andweeb",
+        "repo": "presence.nvim",
+        "rev": "080d24394b9abc93b6cd7635cb96c7d6601759a3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "andweeb",
+        "repo": "presence.nvim",
+        "type": "github"
+      }
+    },
     "rnix-lsp": {
       "inputs": {
         "naersk": "naersk",
@@ -1281,6 +1297,7 @@
         "packer-nvim": "packer-nvim",
         "plenary-nvim": "plenary-nvim",
         "popup-nvim": "popup-nvim",
+        "presence-nvim": "presence-nvim",
         "scrollbar-nvim": "scrollbar-nvim",
         "snippets-nvim": "snippets-nvim",
         "telescope-bibtex-nvim": "telescope-bibtex-nvim",
@@ -1314,11 +1331,11 @@
         "which-key-nvim": "which-key-nvim"
       },
       "locked": {
-        "lastModified": 1626194379,
-        "narHash": "sha256-9vYjXrte49ILoRcHjIln3+zFQW0nGc8nKM7GTRAc1ks=",
+        "lastModified": 1626211985,
+        "narHash": "sha256-BH1H+fK8uD5xJmsFdlxWUoyr/evqUH2K9IlmnMO3Wjw=",
         "owner": "vi-tality",
         "repo": "vim-plugins-overlay",
-        "rev": "ecd1d767be4a193633ab84f1388183d92894ef6c",
+        "rev": "09bcf62b11a4904423ddb91614158e53db2de762",
         "type": "github"
       },
       "original": {
