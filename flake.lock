@@ -709,6 +709,22 @@
         "type": "github"
       }
     },
+    "onedark-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1626071342,
+        "narHash": "sha256-Y5LXDpArPY3vliJ6/yloHBqNBhY0YppV3MgCfpKn47s=",
+        "owner": "joshdick",
+        "repo": "onedark.vim",
+        "rev": "ee4b22cbae8a3a434fad832bd89a6981c7c061af",
+        "type": "github"
+      },
+      "original": {
+        "owner": "joshdick",
+        "repo": "onedark.vim",
+        "type": "github"
+      }
+    },
     "packer-nvim": {
       "flake": false,
       "locked": {
@@ -1244,6 +1260,7 @@
         "nvim-ts-rainbow": "nvim-ts-rainbow",
         "nvim-web-devicons": "nvim-web-devicons",
         "octo-nvim": "octo-nvim",
+        "onedark-nvim": "onedark-nvim",
         "packer-nvim": "packer-nvim",
         "plenary-nvim": "plenary-nvim",
         "popup-nvim": "popup-nvim",
@@ -1280,11 +1297,11 @@
         "which-key-nvim": "which-key-nvim"
       },
       "locked": {
-        "lastModified": 1626181333,
-        "narHash": "sha256-3mhbSSJPHbVBgbUIVD5YhMZDBwCi8A/6oiqPsHCXGNU=",
+        "lastModified": 1626186271,
+        "narHash": "sha256-36uTrpb1lmWArgKvFP2oFhgUQTJvATkMOjVerqcxSBU=",
         "owner": "vi-tality",
         "repo": "vim-plugins-overlay",
-        "rev": "c006895fda2b3c5f4f029b09e9b81e4bab6e12d4",
+        "rev": "663774ca67f4eb7a079b18f8c556a614584f6c2f",
         "type": "github"
       },
       "original": {
