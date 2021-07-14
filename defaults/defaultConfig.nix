@@ -28,9 +28,9 @@ in
     { plugin = direnv-vim; config = readFile ./config/direnv-vim-config.vim; }
     { plugin = editorconfig-vim; }
     { plugin = emmet-vim; config = readFile ./config/emmet-vim-config.vim; }
-    { plugin = feline-nvim; config = wrapLuaConfig "require('feline').setup()"; }
     { plugin = formatter-nvim; config = wrapLuaConfig (import ./config/formatter-nvim-config.nix { inherit pkgs; }); }
     { plugin = fugitive; }
+    { plugin = galaxyline-nvim; config = wrapLuaConfig (builtins.readFile ./config/galaxyline-nvim-config.lua); }
     { plugin = gitsigns-nvim; config = wrapLuaConfig (builtins.readFile ./config/gitsigns-nvim-config.lua); }
     { plugin = idris2-vim; }
     { plugin = indent-blankline-nvim; config = "let g:indent_blankline_bufname_exclude = ['Startify']"; }
@@ -57,6 +57,7 @@ in
     { plugin = pkgs.vimPlugins.telescope-fzy-native-nvim; config = "lua require('telescope').load_extension('fzy_native')"; }
     { plugin = plenary-nvim; }
     { plugin = popup-nvim; }
+    { plugin = presence-nvim; config = wrapLuaConfig (readFile ./config/presence-nvim-config.lua); }
     { plugin = surround; }
     { plugin = tabular; }
     { plugin = telescope-dap-nvim; config = "lua require('telescope').load_extension('dap')"; }
@@ -77,7 +78,6 @@ in
     { plugin = vim-prisma; }
     { plugin = vim-repeat; }
     { plugin = vim-sensible; }
-    { plugin = presence-nvim; config = wrapLuaConfig (readFile ./config/presence-nvim-config.lua); }
     { plugin = vim-sneak; config = "let g:sneak#label=1"; }
     { plugin = vim-tmux-navigator; }
     { plugin = vim-which-key; config = readFile ./config/vim-which-key-config.vim; }
