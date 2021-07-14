@@ -51,11 +51,11 @@
     "calvera-dark-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1625752957,
-        "narHash": "sha256-AfHbfNuLdYJs5TzjmkB/9+TWFZu9vBr/JzEoxp/1YQs=",
+        "lastModified": 1626239960,
+        "narHash": "sha256-ZNTGavez9cQeF6HLwgmEWQpjN0FXOxoz0s9skDmycOI=",
         "owner": "yashguptaz",
         "repo": "calvera-dark.nvim",
-        "rev": "92e067cf9c2b854ad7e0fee3cd78c9619e32817c",
+        "rev": "8a951ef80684ae6298eb541630e60d5d5d4ef2ba",
         "type": "github"
       },
       "original": {
@@ -520,11 +520,11 @@
     "nvim-compe": {
       "flake": false,
       "locked": {
-        "lastModified": 1626161214,
-        "narHash": "sha256-XH1QNH/+j+mhZ7wFUBR1lappj2+GjZXjAa2Yz+0uqbc=",
+        "lastModified": 1626234912,
+        "narHash": "sha256-VXFfnGeb/HIxQBmsIxAodOVM4QbW3i+qqixf8gOlbOE=",
         "owner": "hrsh7th",
         "repo": "nvim-compe",
-        "rev": "a3e530ea915634afb43b21e621d45515f7bdff77",
+        "rev": "9687868acc76f7ac1344ad646300e0987ea17af3",
         "type": "github"
       },
       "original": {
@@ -632,11 +632,11 @@
     "nvim-treesitter": {
       "flake": false,
       "locked": {
-        "lastModified": 1626186469,
-        "narHash": "sha256-9HhFwEsppm7A4SMIexxguwX4d/hHsM/AFZSBvq3zfC4=",
+        "lastModified": 1626251768,
+        "narHash": "sha256-pPwhWB9eL3hKEQrJ1E3mJO6UqN5Et7L+HG1j8iY/e3s=",
         "owner": "nvim-treesitter",
         "repo": "nvim-treesitter",
-        "rev": "b2008fcda16522841aedd8985af06d4d62d97617",
+        "rev": "18388e4bd4e18c4e4c7ad8715896a69ba51fd84e",
         "type": "github"
       },
       "original": {
@@ -1331,11 +1331,11 @@
         "which-key-nvim": "which-key-nvim"
       },
       "locked": {
-        "lastModified": 1626213075,
-        "narHash": "sha256-UCckXJWWJ7yzAl0d0gqKJPeJzi3JFsYtYOOBXpQKAcg=",
+        "lastModified": 1626255082,
+        "narHash": "sha256-mK8mK7XcrbIT1PqTKxPxwfsS8i6QjkTCCxX+OsfDj4s=",
         "owner": "vi-tality",
         "repo": "vim-plugins-overlay",
-        "rev": "517345318279f4fd4dff05abb0a45e7bcdac6d34",
+        "rev": "566aaf5863995dd953905c89f82fa00cad4fd9f0",
         "type": "github"
       },
       "original": {
