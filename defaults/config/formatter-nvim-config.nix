@@ -54,10 +54,10 @@ let
       formatters = [ (prettierFormatter { parser = "css"; }) ];
     };
 
-    dhall = {
-      extension = "dhall";
-      formatters = [{ exe = "${pkgs.dhall}/bin/dhall"; args = [ "format" ]; }];
-    };
+    # dhall = {
+    #   extension = "dhall";
+    #   formatters = [{ exe = "${pkgs.dhall}/bin/dhall"; args = [ "format" ]; }];
+    # };
 
     go = {
       extension = "go";
