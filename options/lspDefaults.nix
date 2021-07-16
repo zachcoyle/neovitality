@@ -16,9 +16,9 @@ with pkgs;
   };
 
   clojure_lsp = {
-    lspConfig = {
-      cmd = [ "${clojure-lsp}/bin/clojure-lsp" ];
-    };
+    # lspConfig = {
+    #   cmd = [ "${clojure-lsp}/bin/clojure-lsp" ];
+    # };
   };
 
   dhall_lsp_server = {
