@@ -520,11 +520,11 @@
     "nvim-compe": {
       "flake": false,
       "locked": {
-        "lastModified": 1626270106,
-        "narHash": "sha256-0hOLUowMkYVv97M6cEVfB6d6UaHD8EHnC4keQAXby6M=",
+        "lastModified": 1626411398,
+        "narHash": "sha256-NhBo1Ru6KFGUeRhTbnRxlSAin8CjExP3bSEN7jNSNlM=",
         "owner": "hrsh7th",
         "repo": "nvim-compe",
-        "rev": "29879b29b63fcd315e247a110a505e6a337b584a",
+        "rev": "ef97a9b17c655d8b603c5fa9abf6fbb623a1dad4",
         "type": "github"
       },
       "original": {
@@ -680,11 +680,11 @@
     "nvim-ts-rainbow": {
       "flake": false,
       "locked": {
-        "lastModified": 1626197408,
-        "narHash": "sha256-9J/Fgny7wi8EbPRtU3ubfzR0eD7QKgit7AxxHHhhK9Q=",
+        "lastModified": 1626416725,
+        "narHash": "sha256-jUAZ06+EE/er8xNJrCjG6E4aGQXLyanp4Op97+OUbak=",
         "owner": "p00f",
         "repo": "nvim-ts-rainbow",
-        "rev": "15e8a45517c596b9acd9406bcb6f650d6bfdb339",
+        "rev": "4887eb7526004e069bd8898041a714c7eaad72e7",
         "type": "github"
       },
       "original": {
@@ -1331,11 +1331,11 @@
         "which-key-nvim": "which-key-nvim"
       },
       "locked": {
-        "lastModified": 1626400928,
-        "narHash": "sha256-0dZYv2u1/bBL7kWw/o+nR5xUlKDdOxluUUZ0F+Ax+yQ=",
+        "lastModified": 1626434552,
+        "narHash": "sha256-n4X0l5hToHIMh6WccfrGQ8t6Q+O9lxo10O2R5FgfMO8=",
         "owner": "vi-tality",
         "repo": "vim-plugins-overlay",
-        "rev": "c52b8ec9f38bc074a8919d2a1de88b76ef6696db",
+        "rev": "73335b762b65e76c11f8aa156ce237dd4264ecee",
         "type": "github"
       },
       "original": {
