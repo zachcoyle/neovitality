@@ -58,9 +58,12 @@ in
     { plugin = plenary-nvim; }
     { plugin = popup-nvim; }
     { plugin = presence-nvim; config = wrapLuaConfig (readFile ./config/presence-nvim-config.lua); }
+    # { plugin = sql-nvim; config = "let g:sql_clib_path = '${pkgs.sqlite.out}/lib/libsqlite3.so'"; }
     { plugin = surround; }
     { plugin = tabular; }
     { plugin = telescope-dap-nvim; config = "lua require('telescope').load_extension('dap')"; }
+    { plugin = telescope-emoji-nvim; config = "lua require('telescope').load_extension('emoji')"; }
+    # { plugin = telescope-frecency-nvim; config = "lua require('telescope').load_extension('frecency')"; }
     { plugin = telescope-github-nvim; config = "lua require('telescope').load_extension('gh')"; }
     { plugin = telescope-node-modules-nvim; config = "lua require'telescope'.load_extension('node_modules')"; }
     { plugin = vim-closer; }
@@ -115,9 +118,12 @@ in
     "<leader>p" = "<cmd>lua require('telescope').extensions.gh.pull_request()<cr>";
     "<leader>t" = "<cmd>Telescope<cr>";
     "<leader>tr" = "<cmd>lua require('telescope.builtin').live_grep()<cr>";
+    "<leader>te" = "<cmd>lua require('telescope').extensions.emoji.search()<cr>";
+
     Ctrl-_ = "<cmd>lua require('telescope.builtin').live_grep()<cr>";
     Ctrl-B = "<cmd>lua require('telescope.builtin').buffers()<cr>";
     Ctrl-P = "<cmd>lua require('telescope.builtin').find_files()<cr>";
+    # Ctrl-P = "<cmd>lua require('telescope').extensions.frecency.frecency()<cr>";
     gd = "<cmd>lua require('telescope.builtin').lsp_definitions()<cr>";
     gr = "<cmd>lua require('telescope.builtin').lsp_references()<cr>";
 

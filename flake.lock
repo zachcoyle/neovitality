@@ -440,11 +440,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1626565935,
-        "narHash": "sha256-IQvHlobYCn8+7qmsH1YfLmBQLG2Yk9rlhZG+qnRtkqs=",
+        "lastModified": 1626568559,
+        "narHash": "sha256-TLMKxmrCkmJqX7zEMMJSwu1+PYKT6gTqftQy0EeNBoE=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "cda9aad0ed6f681b27f4c838a961dc2aa8942d32",
+        "rev": "7d14d19d097c115dfe75d0338646d9488dcd4601",
         "type": "github"
       },
       "original": {
@@ -866,6 +866,22 @@
       "original": {
         "owner": "norcalli",
         "repo": "snippets.nvim",
+        "type": "github"
+      }
+    },
+    "sql-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1626534923,
+        "narHash": "sha256-AakSz+G7f2BWNYCOMMxEdAXI/i+ln/qJjEci3wWwHe8=",
+        "owner": "tami5",
+        "repo": "sql.nvim",
+        "rev": "76277236829ca77dd41d285c794ab8878129e3f8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tami5",
+        "repo": "sql.nvim",
         "type": "github"
       }
     },
@@ -1316,6 +1332,7 @@
         "presence-nvim": "presence-nvim",
         "scrollbar-nvim": "scrollbar-nvim",
         "snippets-nvim": "snippets-nvim",
+        "sql-nvim": "sql-nvim",
         "telescope-bibtex-nvim": "telescope-bibtex-nvim",
         "telescope-cheat-nvim": "telescope-cheat-nvim",
         "telescope-dap-nvim": "telescope-dap-nvim",
@@ -1348,11 +1365,11 @@
         "which-key-nvim": "which-key-nvim"
       },
       "locked": {
-        "lastModified": 1626567093,
-        "narHash": "sha256-ZWM1R2/nx6I4AtcSD+YUPUx8axNWGyctpPDaqJctXDw=",
+        "lastModified": 1626568844,
+        "narHash": "sha256-EBhIs2yi7VFM68v1Ws3wNH3/QQOYNJSwpRz0RQ+28bc=",
         "owner": "vi-tality",
         "repo": "vim-plugins-overlay",
-        "rev": "6d389a7b420d7339d67ff5a243db978546f905f4",
+        "rev": "eb59b639d3884322757573dc3779bc47c11cd382",
         "type": "github"
       },
       "original": {
