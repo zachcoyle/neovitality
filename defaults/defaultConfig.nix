@@ -117,15 +117,15 @@ in
     "<leader>i" = "<cmd>lua require('telescope').extensions.gh.issues()<cr>";
     "<leader>p" = "<cmd>lua require('telescope').extensions.gh.pull_request()<cr>";
     "<leader>t" = "<cmd>Telescope<cr>";
-    "<leader>tr" = "<cmd>lua require('telescope.builtin').live_grep()<cr>";
+    "<leader>tr" = "<cmd>lua require('telescope.builtin').live_grep({layout_strategy='vertical',layout_config={width=0.9}})<cr>";
     "<leader>te" = "<cmd>lua require('telescope').extensions.emoji.search()<cr>";
 
-    Ctrl-_ = "<cmd>lua require('telescope.builtin').live_grep()<cr>";
+    Ctrl-_ = "<cmd>lua require('telescope.builtin').live_grep({layout_strategy='vertical',layout_config={width=0.9}})<cr>";
     Ctrl-B = "<cmd>lua require('telescope.builtin').buffers()<cr>";
-    Ctrl-P = "<cmd>lua require('telescope.builtin').find_files()<cr>";
+    Ctrl-P = "<cmd>lua require('telescope.builtin').find_files({layout_strategy='vertical',layout_config={width=0.9}})<cr>";
     # Ctrl-P = "<cmd>lua require('telescope').extensions.frecency.frecency()<cr>";
-    gd = "<cmd>lua require('telescope.builtin').lsp_definitions()<cr>";
-    gr = "<cmd>lua require('telescope.builtin').lsp_references()<cr>";
+    gd = "<cmd>lua require('telescope.builtin').lsp_definitions({layout_strategy='vertical',layout_config={width=0.9}})<cr>";
+    gr = "<cmd>lua require('telescope.builtin').lsp_references({layout_strategy='vertical',layout_config={width=0.9}})<cr>";
 
     # navigation
     Ctrl-h = "<C-W>h";
