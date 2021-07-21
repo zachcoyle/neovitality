@@ -203,3 +203,6 @@ gls.right[6] = {
 		highlight = { colors.fg, colors.bg },
 	},
 }
+
+gls.short_line_left = gls.left
+gls.short_line_right = gls.right
