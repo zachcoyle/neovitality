@@ -65,7 +65,7 @@ in
     { plugin = telescope-emoji-nvim; config = "lua require('telescope').load_extension('emoji')"; }
     # { plugin = telescope-frecency-nvim; config = "lua require('telescope').load_extension('frecency')"; }
     { plugin = telescope-github-nvim; config = "lua require('telescope').load_extension('gh')"; }
-    { plugin = telescope-node-modules-nvim; config = "lua require'telescope'.load_extension('node_modules')"; }
+    # { plugin = telescope-node-modules-nvim; config = "lua require'telescope'.load_extension('node_modules')"; }
     { plugin = vim-closer; }
     { plugin = vim-commentary; }
     { plugin = vim-cursorword; }
