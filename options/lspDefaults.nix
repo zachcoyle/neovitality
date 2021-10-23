@@ -103,11 +103,11 @@ with pkgs;
   };
 
 
-  texlab = {
-    lspConfig = {
-      cmd = [ "${texlab}/bin/texlab" ];
-    };
-  };
+  # texlab = {
+  #   lspConfig = {
+  #     cmd = [ "${texlab}/bin/texlab" ];
+  #   };
+  # };
 
   terraformls = {
     lspConfig = {

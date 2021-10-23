@@ -18,11 +18,9 @@
       url = github:vi-tality/vim-plugins-overlay;
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    rnix-lsp.url = github:nix-community/rnix-lsp;
   };
 
-  outputs = { self, nixpkgs, neovim, rnix-lsp, flake-utils, devshell, nur, vim-plugins-overlay, ... }@inputs:
+  outputs = { self, nixpkgs, neovim, flake-utils, devshell, nur, vim-plugins-overlay, ... }@inputs:
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs-jdtls = import inputs.nixpkgs-jdtls { inherit system; };
@@ -36,7 +34,6 @@
             nur.overlay
             (final: prev: {
               python = prev.python3;
-              rnix-lsp = rnix-lsp.defaultPackage.${system};
               jdt-language-server = pkgs-jdtls.jdt-language-server;
             })
           ];
