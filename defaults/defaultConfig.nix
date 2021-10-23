@@ -16,13 +16,18 @@ let
 in
 {
   plugins = with pkgs.vimPlugins; with pkgs.vitalityVimPlugins;  [
+    # { plugin = completion-buffers; }
+    # { plugin = completion-nvim; config = readFile ./config/completion-nvim-config.vim; }
+    # { plugin = completion-tabnine; }
+    # { plugin = completion-treesitter; }
+    # { plugin = sql-nvim; config = "let g:sql_clib_path = '${pkgs.sqlite.out}/lib/libsqlite3.so'"; }
+    # { plugin = telescope-frecency-nvim; config = "lua require('telescope').load_extension('frecency')"; }
+    # { plugin = telescope-node-modules-nvim; config = "lua require'telescope'.load_extension('node_modules')"; }
     { /*0*/ plugin = telescope-nvim; config = wrapLuaConfig (readFile ./config/telescope-nvim-config.lua); }
     { plugin = barbar-nvim; }
     { plugin = blamer-nvim; config = readFile ./config/blamer-nvim-config.vim; }
-    { plugin = completion-buffers; }
-    { plugin = completion-nvim; config = readFile ./config/completion-nvim-config.vim; }
-    { plugin = completion-tabnine; }
-    { plugin = completion-treesitter; }
+    { plugin = cmp-buffer; }
+    { plugin = cmp-nvim-lsp; }
     { plugin = conjure; }
     { plugin = dashboard-nvim; config = readFile ./config/dashboard-nvim-config.vim; }
     { plugin = direnv-vim; config = readFile ./config/direnv-vim-config.vim; }
@@ -39,6 +44,7 @@ in
     { plugin = lsp_signature-nvim; config = "lua require'lsp_signature'.on_attach()"; }
     { plugin = lspkind-nvim; config = "lua require('lspkind').init()"; }
     { plugin = neogit; }
+    { plugin = nvim-cmp; config = wrapLuaConfig (readFile ./config/nvim-cmp-config.lua); }
     { plugin = nvim-dap-virtual-text; config = "let g:dap_virtual_text = v:true"; }
     { plugin = nvim-dap; config = wrapLuaConfig (import ./config/nvim-dap-config.nix { inherit pkgs; }); }
     { plugin = nvim-lightbulb; config = "autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()"; }
@@ -58,14 +64,11 @@ in
     { plugin = plenary-nvim; }
     { plugin = popup-nvim; }
     { plugin = presence-nvim; config = wrapLuaConfig (readFile ./config/presence-nvim-config.lua); }
-    # { plugin = sql-nvim; config = "let g:sql_clib_path = '${pkgs.sqlite.out}/lib/libsqlite3.so'"; }
     { plugin = surround; }
     { plugin = tabular; }
     { plugin = telescope-dap-nvim; config = "lua require('telescope').load_extension('dap')"; }
     { plugin = telescope-emoji-nvim; config = "lua require('telescope').load_extension('emoji')"; }
-    # { plugin = telescope-frecency-nvim; config = "lua require('telescope').load_extension('frecency')"; }
     { plugin = telescope-github-nvim; config = "lua require('telescope').load_extension('gh')"; }
-    # { plugin = telescope-node-modules-nvim; config = "lua require'telescope'.load_extension('node_modules')"; }
     { plugin = vim-closer; }
     { plugin = vim-commentary; }
     { plugin = vim-cursorword; }

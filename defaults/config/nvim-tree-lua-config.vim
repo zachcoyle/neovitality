@@ -20,3 +20,6 @@ set termguicolors
 
 highlight NvimTreeFolderIcon guibg=blue
 
+lua << EOF
+  require'nvim-tree'.setup{}
+EOF
