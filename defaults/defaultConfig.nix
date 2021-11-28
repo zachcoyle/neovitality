@@ -32,7 +32,6 @@ in
     { plugin = emmet-vim; config = readFile ./config/emmet-vim-config.vim; }
     { plugin = formatter-nvim; config = wrapLuaConfig (import ./config/formatter-nvim-config.nix { inherit pkgs; }); }
     { plugin = fugitive; }
-    { plugin = galaxyline-nvim; config = wrapLuaConfig (builtins.readFile ./config/galaxyline-nvim-config.lua); }
     { plugin = gitsigns-nvim; config = wrapLuaConfig (builtins.readFile ./config/gitsigns-nvim-config.lua); }
     { plugin = gruvbox; config = readFile ./config/theme-config.vim; }
     { plugin = idris2-vim; }
@@ -41,6 +40,7 @@ in
     { plugin = lsp_extensions-nvim; }
     { plugin = lsp_signature-nvim; config = "lua require'lsp_signature'.on_attach()"; }
     { plugin = lspkind-nvim; config = "lua require('lspkind').init()"; }
+    { plugin = lualine-nvim; config = "lua require('lualine').setup { options = { theme = 'gruvbox' } } "; }
     { plugin = neogit; }
     { plugin = nvim-cmp; config = wrapLuaConfig (readFile ./config/nvim-cmp-config.lua); }
     { plugin = nvim-dap-virtual-text; config = "let g:dap_virtual_text = v:true"; }
