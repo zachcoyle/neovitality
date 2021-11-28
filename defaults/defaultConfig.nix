@@ -16,11 +16,6 @@ let
 in
 {
   plugins = with pkgs.vimPlugins; with pkgs.vitalityVimPlugins;  [
-    # { plugin = completion-buffers; }
-    # { plugin = completion-nvim; config = readFile ./config/completion-nvim-config.vim; }
-    # { plugin = completion-tabnine; }
-    # { plugin = completion-treesitter; }
-    # { plugin = sql-nvim; config = "let g:sql_clib_path = '${pkgs.sqlite.out}/lib/libsqlite3.so'"; }
     # { plugin = telescope-frecency-nvim; config = "lua require('telescope').load_extension('frecency')"; }
     # { plugin = telescope-node-modules-nvim; config = "lua require'telescope'.load_extension('node_modules')"; }
     { /*0*/ plugin = telescope-nvim; config = wrapLuaConfig (readFile ./config/telescope-nvim-config.lua); }
@@ -37,6 +32,7 @@ in
     { plugin = fugitive; }
     { plugin = galaxyline-nvim; config = wrapLuaConfig (builtins.readFile ./config/galaxyline-nvim-config.lua); }
     { plugin = gitsigns-nvim; config = wrapLuaConfig (builtins.readFile ./config/gitsigns-nvim-config.lua); }
+    { plugin = gruvbox; config = readFile ./config/theme-config.vim; }
     { plugin = idris2-vim; }
     { plugin = indent-blankline-nvim; config = "let g:indent_blankline_bufname_exclude = ['Startify']"; }
     { plugin = lexima-vim; }
@@ -58,7 +54,6 @@ in
     { plugin = nvim-ts-rainbow; }
     { plugin = nvim-web-devicons; }
     { plugin = octo-nvim; }
-    { plugin = onedark-vim; config = readFile ./config/theme-config.vim; }
     { plugin = pkgs.vimPlugins.nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars); config = wrapLuaConfig (readFile ./config/nvim-treesitter-config.lua); }
     { plugin = pkgs.vimPlugins.telescope-fzy-native-nvim; config = "lua require('telescope').load_extension('fzy_native')"; }
     { plugin = plenary-nvim; }
