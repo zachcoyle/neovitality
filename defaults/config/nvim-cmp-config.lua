@@ -8,11 +8,28 @@ local feedkey = function(key, mode)
 end
 
 local cmp = require("cmp")
+local lspkind = require("lspkind")
 
 cmp.setup({
 	sources = {
 		{ name = "nvim_lsp" },
+		{ name = "treesitter" },
 		{ name = "buffer" },
+		{ name = "path" },
+	},
+
+	formatting = {
+		format = lspkind.cmp_format({
+			with_text = true,
+			menu = {
+				buffer = "[Buffer]",
+				nvim_lsp = "[LSP]",
+				luasnip = "[LuaSnip]",
+				nvim_lua = "[Lua]",
+				latex_symbols = "[Latex]",
+				treesitter = "[Treesitter]",
+			},
+		}),
 	},
 
 	mapping = {
