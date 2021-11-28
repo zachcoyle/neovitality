@@ -1,4 +1,4 @@
-colorscheme onedark 
+colorscheme gruvbox
 
 sign define LspDiagnosticsSignError text=  linehl= texthl=LspDiagnosticsSignError numhl=
 sign define LspDiagnosticsSignHint text=  linehl= texthl=LspDiagnosticsSignHint numhl=

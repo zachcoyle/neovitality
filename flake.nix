@@ -73,6 +73,7 @@
           packages = with pkgs; [
             rnix-lsp
             nixpkgs-fmt
+            stylua
           ];
 
           commands = [ ];
