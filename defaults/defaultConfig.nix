@@ -50,7 +50,7 @@ in
     { plugin = nvim-lightbulb; config = "autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()"; }
     { plugin = nvim-lspconfig; }
     { plugin = nvim-scrollview; }
-    { plugin = nvim-tree-lua; config = readFile ./config/nvim-tree-lua-config.vim; }
+    { plugin = nvim-tree-lua; config = wrapLuaConfig (readFile ./config/nvim-tree-config.lua); }
     { plugin = nvim-treesitter-context; }
     { plugin = nvim-treesitter-textobjects; config = readFile ./config/nvim-treesitter-textobjects-config.vim; }
     { plugin = nvim-ts-autotag; }

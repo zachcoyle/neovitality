@@ -58,10 +58,6 @@
         packages.neovim-nightly = pkgs.neovim;
 
         defaultPackage = customNeovim.neovim;
-        packages.init-vim = pkgs.runCommand "init.vim" { } ''
-          sed -r 's#/nix/store/[a-zA-Z0-9]{32}-.+/##' <${(pkgs.writeText "init-vim" customNeovim.init-vim)} > $out
-        '';
-
 
         apps = {
           nvim = flake-utils.lib.mkApp {
@@ -74,23 +70,12 @@
 
         devShell = pkgs.devshell.mkShell {
           name = "neovitality";
-          packages = [
-            defaultPackage
-            pkgs.tree-sitter
+          packages = with pkgs; [
+            rnix-lsp
+            nixpkgs-fmt
           ];
 
-          commands = [
-            {
-              name = "nvim";
-              command = "${defaultPackage}/bin/nvim";
-              help = "alias for neovim with neovitality config";
-            }
-            {
-              name = "vim";
-              command = "${defaultPackage}/bin/nvim";
-              help = "alias for neovim with neovitality config";
-            }
-          ];
+          commands = [ ];
         };
 
       }
