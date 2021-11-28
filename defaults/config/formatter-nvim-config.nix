@@ -28,12 +28,12 @@ let
       exe =
         if exe != null
         then exe
-        else "${pkgs.nodePackages.prettier}/bin/prettier";
+        else "prettier";
       args = [ "'--stdin-filepath'" "'\"' .. vim.api.nvim_buf_get_name(0) .. '\"'" ] ++ parserArgs;
     };
 
   clangFormatter = {
-    exe = "${pkgs.clang-tools}/bin/clang-format";
+    exe = "clang-format";
     args = [ "'--assume-filename=' .. vim.api.nvim_buf_get_name(0)" ];
   };
 
@@ -56,14 +56,14 @@ let
 
     dhall = {
       extension = "dhall";
-      formatters = [{ exe = "${pkgs.dhall}/bin/dhall"; args = [ "'format'" ]; }];
+      formatters = [{ exe = "dhall"; args = [ "'format'" ]; }];
     };
 
     go = {
       extension = "go";
       formatters = [
-        { exe = "${pkgs.gofumpt}/bin/gofumpt"; }
-        { exe = "${pkgs.gofumpt}/bin/gofumports"; }
+        { exe = "gofumpt"; }
+        { exe = "gofumports"; }
       ];
     };
 
@@ -74,7 +74,7 @@ let
 
     haskell = {
       extension = "hs";
-      formatters = [{ exe = "${pkgs.ormolu}/bin/ormolu"; }];
+      formatters = [{ exe = "ormolu"; }];
     };
 
     javascript = {
@@ -111,7 +111,7 @@ let
       extension = "kt";
       formatters = [
         {
-          exe = "${pkgs.ktlint}/bin/ktlint";
+          exe = "ktlint";
           args = [ "'-F'" ];
         }
       ];
@@ -121,7 +121,7 @@ let
       extension = "lua";
       formatters = [
         {
-          exe = "${pkgs.stylua}/bin/stylua";
+          exe = "stylua";
           args = [ "'--search-parent-directories'" "'--stdin-filepath'" "'\"%:p\"'" "'--'" "'-'" ];
         }
       ];
@@ -129,7 +129,7 @@ let
 
     nix = {
       extension = "nix";
-      formatters = [{ exe = "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt"; }];
+      formatters = [{ exe = "nixpkgs-fmt"; }];
     };
 
     objc = {
@@ -141,11 +141,11 @@ let
       extension = "py";
       formatters = [
         {
-          exe = "${pkgs.python3Packages.isort}/bin/isort";
+          exe = "isort";
           args = [ "'-'" ];
         }
         {
-          exe = "${pkgs.python3Packages.black}/bin/black";
+          exe = "black";
           args = [ "'-q'" "'-'" ];
         }
       ];
@@ -155,7 +155,7 @@ let
       extension = "rb";
       formatters = [
         {
-          exe = "${pkgs.rubocop}/bin/rubocop";
+          exe = "rubocop";
           args = [ "'--auto-correct'" "'--stdin'" "'\"%:p\"'" "'2>/dev/null'" "'|'" "'sed \"1,/^====================$/d\"'" ];
         }
       ];
@@ -163,14 +163,14 @@ let
 
     rust = {
       extension = "rs";
-      formatters = [{ exe = "${pkgs.rustfmt}/bin/rustfmt"; }];
+      formatters = [{ exe = "rustfmt"; }];
     };
 
     scala = {
       extension = "scala,*.sc";
       formatters = [
         {
-          exe = "${pkgs.scalafmt}/bin/scalafmt";
+          exe = "scalafmt";
           args = [ "'--stdin'" ];
 
         }
@@ -181,7 +181,7 @@ let
       extension = "sh";
       formatters = [
         {
-          exe = "${pkgs.shfmt}/bin/shfmt";
+          exe = "shfmt";
           args = [ "'-i 2'" ];
         }
       ];
@@ -191,7 +191,7 @@ let
       extension = "tf";
       formatters = [
         {
-          exe = "${pkgs.terraform}/bin/terraform";
+          exe = "terraform";
           args = [ "'fmt'" "'-write'" "'-'" ];
         }
       ];
@@ -220,7 +220,7 @@ let
   #     extension = "swift";
   #     formatters = [
   #       {
-  #         exe = "${pkgs.swiftformat}/bin/swiftformat";
+  #         exe = "swiftformat";
   #       }
   #     ];
   #   };
