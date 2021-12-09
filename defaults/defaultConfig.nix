@@ -48,7 +48,6 @@ in
     { plugin = nvim-lightbulb; config = "autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()"; }
     { plugin = nvim-lspconfig; }
     { plugin = nvim-scrollview; }
-    { plugin = nvim-tree-lua; config = wrapLuaConfig (readFile ./config/nvim-tree-config.lua); }
     { plugin = nvim-treesitter-context; }
     { plugin = nvim-treesitter-textobjects; config = readFile ./config/nvim-treesitter-textobjects-config.vim; }
     { plugin = nvim-ts-autotag; }
@@ -66,6 +65,7 @@ in
     { plugin = telescope-dap-nvim; config = "lua require('telescope').load_extension('dap')"; }
     { plugin = telescope-emoji-nvim; config = "lua require('telescope').load_extension('emoji')"; }
     { plugin = telescope-github-nvim; config = "lua require('telescope').load_extension('gh')"; }
+    { plugin = telescope-file-browser-nvim; config = "lua require('telescope').load_extension('file_browser')"; }
     { plugin = vim-closer; }
     { plugin = vim-commentary; }
     { plugin = vim-cursorword; }
@@ -119,6 +119,7 @@ in
     "<leader>t" = "<cmd>Telescope<cr>";
     "<leader>tr" = "<cmd>lua require('telescope.builtin').live_grep({layout_strategy='vertical',layout_config={width=0.9}})<cr>";
     "<leader>te" = "<cmd>lua require('telescope').extensions.emoji.search()<cr>";
+    "<leader>f" = "<cmd>lua require('telescope').extensions.file_browser.file_browser()<cr>";
 
     Ctrl-_ = "<cmd>lua require('telescope.builtin').live_grep({layout_strategy='vertical',layout_config={width=0.9}})<cr>";
     Ctrl-B = "<cmd>lua require('telescope.builtin').buffers()<cr>";
@@ -157,7 +158,7 @@ in
     "<leader>sl" = "<cmd>SessionLoad<cr>";
 
     #formatter.nvim
-    "<leader>f" = "<silent><cmd>Format<cr>";
+    # "<leader>f" = "<silent><cmd>Format<cr>";
 
     ####
 

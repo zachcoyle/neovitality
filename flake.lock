@@ -961,22 +961,6 @@
         "type": "github"
       }
     },
-    "telescope-bibtex-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1638174325,
-        "narHash": "sha256-zy19ted5+msskdSFiYndxIc1dRK6J0MA2J/65GuwmQE=",
-        "owner": "nvim-telescope",
-        "repo": "telescope-bibtex.nvim",
-        "rev": "408468422dd00fa1786afbf673f9972e121e4415",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nvim-telescope",
-        "repo": "telescope-bibtex.nvim",
-        "type": "github"
-      }
-    },
     "telescope-cheat-nvim": {
       "flake": false,
       "locked": {
@@ -1022,6 +1006,22 @@
       "original": {
         "owner": "xiyaowong",
         "repo": "telescope-emoji.nvim",
+        "type": "github"
+      }
+    },
+    "telescope-file-browser-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1639006661,
+        "narHash": "sha256-cseJrFPD+TD4vm76vLwEafnmKt8XvBseb0FeqqneVuA=",
+        "owner": "nvim-telescope",
+        "repo": "telescope-file-browser.nvim",
+        "rev": "31d91004bd802fa80ccfc5ae474fb5aa67111abb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-telescope",
+        "repo": "telescope-file-browser.nvim",
         "type": "github"
       }
     },
@@ -1402,10 +1402,10 @@
         "scrollbar-nvim": "scrollbar-nvim",
         "snippets-nvim": "snippets-nvim",
         "sql-nvim": "sql-nvim",
-        "telescope-bibtex-nvim": "telescope-bibtex-nvim",
         "telescope-cheat-nvim": "telescope-cheat-nvim",
         "telescope-dap-nvim": "telescope-dap-nvim",
         "telescope-emoji-nvim": "telescope-emoji-nvim",
+        "telescope-file-browser-nvim": "telescope-file-browser-nvim",
         "telescope-frecency-nvim": "telescope-frecency-nvim",
         "telescope-fzf-writer-nvim": "telescope-fzf-writer-nvim",
         "telescope-fzy-native-nvim": "telescope-fzy-native-nvim",
@@ -1434,11 +1434,11 @@
         "which-key-nvim": "which-key-nvim"
       },
       "locked": {
-        "lastModified": 1639067956,
-        "narHash": "sha256-XCElMANpdT0t1A1HeYyNeEr64CSFY2vSKsCbUOfdECg=",
+        "lastModified": 1639069351,
+        "narHash": "sha256-t66lu1nYfu4nRv1ppYuM5WwbZ+/OuCNxnRuNCO955gY=",
         "owner": "vi-tality",
         "repo": "vim-plugins-overlay",
-        "rev": "fae4999688512277bfbc20cd5606511d5889ff18",
+        "rev": "a0adb26dd9a77f772347b8f3016fc488c5ffa29c",
         "type": "github"
       },
       "original": {
