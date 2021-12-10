@@ -2,7 +2,6 @@
 
 with pkgs;
 {
-
   bashls = { };
   clangd = lib.mkIf (system == "x86_64-linux") { };
   clojure_lsp = { };

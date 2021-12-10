@@ -87,15 +87,12 @@ let
       formatters = [ (prettierFormatter { }) ];
     };
 
-    # java = {
-    #   extension = "java";
-    #   formatters = [
-    #     (prettierFormatter {
-    #       parser = "java";
-    #       exe = pkgs.callPackage ../../pkgs/prettierPkgs { };
-    #     })
-    #   ];
-    # };
+    java = {
+      extension = "java";
+      formatters = [
+        (prettierFormatter { parser = "java"; })
+      ];
+    };
 
     json = {
       extension = "json";

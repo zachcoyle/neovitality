@@ -5,6 +5,7 @@
 with builtins;
 with lib;
 
+
 let
 
   wrapLuaConfig = luaConfig: ''
@@ -16,8 +17,9 @@ let
 in
 {
   plugins = with pkgs.vimPlugins; with pkgs.vitalityVimPlugins;  [
+    # { plugin = nvim-autopairs; config = wrapLuaConfig (readFile ./config/nvim-autopairs-config.lua); }
     { /*0*/ plugin = telescope-nvim; config = wrapLuaConfig (readFile ./config/telescope-nvim-config.lua); }
-    { plugin = sqlite-lua; }
+    { /*1*/ plugin = vim-vsnip; }
     { plugin = barbar-nvim; }
     { plugin = blamer-nvim; config = readFile ./config/blamer-nvim-config.vim; }
     { plugin = cmp-buffer; }
@@ -25,6 +27,7 @@ in
     { plugin = cmp-path; }
     { plugin = cmp-tabnine; }
     { plugin = cmp-treesitter; }
+    { plugin = cmp-vsnip; }
     { plugin = conjure; }
     { plugin = dashboard-nvim; config = readFile ./config/dashboard-nvim-config.vim; }
     { plugin = direnv-vim; config = readFile ./config/direnv-vim-config.vim; }
@@ -36,7 +39,6 @@ in
     { plugin = gruvbox; config = readFile ./config/theme-config.vim; }
     { plugin = idris2-vim; }
     { plugin = indent-blankline-nvim; config = readFile ./config/indent-blankline-nvim-config.vim; }
-    { plugin = lexima-vim; }
     { plugin = lsp_extensions-nvim; }
     { plugin = lsp_signature-nvim; config = "lua require'lsp_signature'.on_attach()"; }
     { plugin = lspkind-nvim; config = "lua require('lspkind').init()"; }
@@ -60,6 +62,7 @@ in
     { plugin = plenary-nvim; }
     { plugin = popup-nvim; }
     { plugin = presence-nvim; config = wrapLuaConfig (readFile ./config/presence-nvim-config.lua); }
+    { plugin = sqlite-lua; }
     { plugin = surround; }
     { plugin = tabular; }
     { plugin = telescope-dap-nvim; config = "lua require('telescope').load_extension('dap')"; }

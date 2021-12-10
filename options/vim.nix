@@ -190,6 +190,7 @@ in
         lspconfig.${name}.setup {
           ${luaArray "cmd" config.cmd}
           ${luaArray "filetypes" config.filetypes}
+          capabilities = capabilities,
         }
       '';
       lspConfigs = mapAttrsFlatten (name: value: buildLspConfig name value.lspConfig) config.vim.languages;
@@ -222,6 +223,7 @@ in
 
         ${wrapLuaConfig ''
             local lspconfig = require'lspconfig'
+            local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
             ${builtins.concatStringsSep "\n" lspConfigs}
 

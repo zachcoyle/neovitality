@@ -550,6 +550,22 @@
         "type": "github"
       }
     },
+    "nvim-autopairs": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1638972450,
+        "narHash": "sha256-K4fxgXRnjPAsKJM3QEek0Wvx2L/OvFs0beC66+xyWyA=",
+        "owner": "windwp",
+        "repo": "nvim-autopairs",
+        "rev": "8b932b61803f1e71ffa2d61ee7826268b1710131",
+        "type": "github"
+      },
+      "original": {
+        "owner": "windwp",
+        "repo": "nvim-autopairs",
+        "type": "github"
+      }
+    },
     "nvim-blame-line": {
       "flake": false,
       "locked": {
@@ -1377,6 +1393,7 @@
           "nixpkgs"
         ],
         "nvcode-color-schemes-vim": "nvcode-color-schemes-vim",
+        "nvim-autopairs": "nvim-autopairs",
         "nvim-blame-line": "nvim-blame-line",
         "nvim-bufferline-lua": "nvim-bufferline-lua",
         "nvim-cmp": "nvim-cmp",
@@ -1434,11 +1451,11 @@
         "which-key-nvim": "which-key-nvim"
       },
       "locked": {
-        "lastModified": 1639094712,
-        "narHash": "sha256-wIU/MGyRGNUSafBQ41LzZmn+Ci5VkQkJOKsLiUDsqHU=",
+        "lastModified": 1639111254,
+        "narHash": "sha256-H9mVvk6tUsBRVCudi8ZGnzJxicAIYHWa4itn0W7suXw=",
         "owner": "vi-tality",
         "repo": "vim-plugins-overlay",
-        "rev": "c4ee08d47cac554e7936a200cc6df3afd2f36358",
+        "rev": "1af217aff7c4b4afaf7f8cc7653d10a6730eea70",
         "type": "github"
       },
       "original": {
