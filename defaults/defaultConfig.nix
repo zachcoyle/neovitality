@@ -23,6 +23,7 @@ in
     { plugin = cmp-buffer; }
     { plugin = cmp-nvim-lsp; }
     { plugin = cmp-path; }
+    { plugin = cmp-tabnine; }
     { plugin = cmp-treesitter; }
     { plugin = conjure; }
     { plugin = dashboard-nvim; config = readFile ./config/dashboard-nvim-config.vim; }

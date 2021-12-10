@@ -13,6 +13,7 @@ local lspkind = require("lspkind")
 cmp.setup({
 	sources = {
 		{ name = "nvim_lsp" },
+		{ name = "cmp_tabnine" },
 		{ name = "treesitter" },
 		{ name = "buffer" },
 		{ name = "path" },
@@ -22,12 +23,13 @@ cmp.setup({
 		format = lspkind.cmp_format({
 			with_text = true,
 			menu = {
-				buffer = "[Buffer]",
+				buffer = "[Buf]",
 				nvim_lsp = "[LSP]",
 				luasnip = "[LuaSnip]",
 				nvim_lua = "[Lua]",
 				latex_symbols = "[Latex]",
-				treesitter = "[Treesitter]",
+				treesitter = "[TS]",
+				cmp_tabnine = "[TN]",
 			},
 		}),
 	},
