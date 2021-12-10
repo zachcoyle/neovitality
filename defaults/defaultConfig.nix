@@ -16,9 +16,8 @@ let
 in
 {
   plugins = with pkgs.vimPlugins; with pkgs.vitalityVimPlugins;  [
-    # { plugin = telescope-frecency-nvim; config = "lua require('telescope').load_extension('frecency')"; }
-    # { plugin = telescope-node-modules-nvim; config = "lua require'telescope'.load_extension('node_modules')"; }
     { /*0*/ plugin = telescope-nvim; config = wrapLuaConfig (readFile ./config/telescope-nvim-config.lua); }
+    { plugin = sqlite-lua; }
     { plugin = barbar-nvim; }
     { plugin = blamer-nvim; config = readFile ./config/blamer-nvim-config.vim; }
     { plugin = cmp-buffer; }
@@ -35,7 +34,7 @@ in
     { plugin = gitsigns-nvim; config = wrapLuaConfig (builtins.readFile ./config/gitsigns-nvim-config.lua); }
     { plugin = gruvbox; config = readFile ./config/theme-config.vim; }
     { plugin = idris2-vim; }
-    { plugin = indent-blankline-nvim; config = "let g:indent_blankline_bufname_exclude = ['Startify']"; }
+    { plugin = indent-blankline-nvim; config = readFile ./config/indent-blankline-nvim-config.vim; }
     { plugin = lexima-vim; }
     { plugin = lsp_extensions-nvim; }
     { plugin = lsp_signature-nvim; config = "lua require'lsp_signature'.on_attach()"; }
@@ -64,8 +63,10 @@ in
     { plugin = tabular; }
     { plugin = telescope-dap-nvim; config = "lua require('telescope').load_extension('dap')"; }
     { plugin = telescope-emoji-nvim; config = "lua require('telescope').load_extension('emoji')"; }
-    { plugin = telescope-github-nvim; config = "lua require('telescope').load_extension('gh')"; }
     { plugin = telescope-file-browser-nvim; config = "lua require('telescope').load_extension('file_browser')"; }
+    { plugin = telescope-frecency-nvim; config = "lua require('telescope').load_extension('frecency')"; }
+    { plugin = telescope-github-nvim; config = "lua require('telescope').load_extension('gh')"; }
+    { plugin = telescope-node-modules-nvim; config = "lua require'telescope'.load_extension('node_modules')"; }
     { plugin = vim-closer; }
     { plugin = vim-commentary; }
     { plugin = vim-cursorword; }
@@ -92,10 +93,6 @@ in
   '';
 
   nnoremap = {
-
-    #NvimTree
-    Ctrl-n = ":NvimTreeToggle<cr>";
-    "<leader>n" = ":NvimTreeFindFile<cr>";
 
     # nvim lsp
     "<F2>" = "<cmd>lua vim.lsp.buf.rename()<cr>";
@@ -157,11 +154,7 @@ in
     "<leader>ss" = "<cmd>SessionSave<cr>";
     "<leader>sl" = "<cmd>SessionLoad<cr>";
 
-    #formatter.nvim
-    # "<leader>f" = "<silent><cmd>Format<cr>";
-
-    ####
-
+    # quickfix 
     "<leader>qo" = "<cmd>copen<cr>";
     "<leader>qn" = "<cmd>cnext<cr>";
     "<leader>qp" = "<cmd>cprevious<cr>";

@@ -71,8 +71,9 @@
         devShell = pkgs.devshell.mkShell {
           name = "neovitality";
           packages = with pkgs; [
-            rnix-lsp
             nixpkgs-fmt
+            nodePackages.vim-language-server
+            rnix-lsp
             stylua
           ];
 
