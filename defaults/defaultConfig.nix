@@ -22,6 +22,8 @@ in
     { /*1*/ plugin = vim-vsnip; }
     { plugin = barbar-nvim; }
     { plugin = blamer-nvim; config = readFile ./config/blamer-nvim-config.vim; }
+    # { plugin = copilot-vim; }
+    # { plugin = cmp-copilot; }
     { plugin = cmp-buffer; }
     { plugin = cmp-nvim-lsp; }
     { plugin = cmp-path; }

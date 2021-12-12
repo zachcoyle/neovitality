@@ -551,22 +551,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-jdtls": {
-      "locked": {
-        "lastModified": 1610965183,
-        "narHash": "sha256-Zx8BERJyGHkQ3FSqzO3DCsygLDeNCgD29nUHoWU3Mcc=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "35925104b195ff6bbab8f645c56ecc0af62f87fd",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "35925104b195ff6bbab8f645c56ecc0af62f87fd",
-        "type": "github"
-      }
-    },
     "nur": {
       "locked": {
         "lastModified": 1639313230,
@@ -972,7 +956,6 @@
         "flake-utils": "flake-utils",
         "neovim": "neovim",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-jdtls": "nixpkgs-jdtls",
         "nur": "nur",
         "vim-plugins-overlay": "vim-plugins-overlay"
       }

@@ -17,6 +17,7 @@ cmp.setup({
 		{ name = "treesitter" },
 		{ name = "buffer" },
 		{ name = "path" },
+		-- { name = "copilot" },
 	},
 
 	formatting = {
