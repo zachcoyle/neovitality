@@ -301,6 +301,22 @@
         "type": "github"
       }
     },
+    "friendly-snippets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1638911899,
+        "narHash": "sha256-T7dNx/XagGm74BBKqYm6OBGl133Pn3zQuHjRj1+BlPs=",
+        "owner": "rafamadriz",
+        "repo": "friendly-snippets",
+        "rev": "4a9516c116f8d3a5766fcb8ac91b176979612d5d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rafamadriz",
+        "repo": "friendly-snippets",
+        "type": "github"
+      }
+    },
     "fzf-lsp-nvim": {
       "flake": false,
       "locked": {
@@ -1410,6 +1426,7 @@
         "feline-nvim": "feline-nvim",
         "focus-vim": "focus-vim",
         "formatter-nvim": "formatter-nvim",
+        "friendly-snippets": "friendly-snippets",
         "fzf-lsp-nvim": "fzf-lsp-nvim",
         "galaxyline-nvim": "galaxyline-nvim",
         "gitsigns-nvim": "gitsigns-nvim",
@@ -1485,11 +1502,11 @@
         "which-key-nvim": "which-key-nvim"
       },
       "locked": {
-        "lastModified": 1639317475,
-        "narHash": "sha256-TENMBpu2qTkL0haRciFRbC5ooZ9Lbwjtkf+prA4ZuTY=",
+        "lastModified": 1639319021,
+        "narHash": "sha256-PQHXuaZpR4kIQtw4b0UvswBW77y0C3Jc5spgpmOcuho=",
         "owner": "vi-tality",
         "repo": "vim-plugins-overlay",
-        "rev": "6f5ce0b38b8b9957eb81e14fa8633cdfc22ca4d2",
+        "rev": "9284893cb0dbfe8925853ac17bcf8b979114cac0",
         "type": "github"
       },
       "original": {

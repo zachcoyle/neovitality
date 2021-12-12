@@ -36,6 +36,7 @@ in
     { plugin = editorconfig-vim; }
     { plugin = emmet-vim; config = readFile ./config/emmet-vim-config.vim; }
     { plugin = formatter-nvim; config = wrapLuaConfig (import ./config/formatter-nvim-config.nix { inherit pkgs; }); }
+    { plugin = friendly-snippets; }
     { plugin = gitsigns-nvim; config = wrapLuaConfig (builtins.readFile ./config/gitsigns-nvim-config.lua); }
     { plugin = gruvbox; config = readFile ./config/theme-config.vim; }
     { plugin = harpoon; config = wrapLuaConfig (readFile ./config/harpoon-config.lua); }

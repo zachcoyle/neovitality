@@ -17,7 +17,14 @@ cmp.setup({
 		{ name = "treesitter" },
 		{ name = "buffer" },
 		{ name = "path" },
+		{ name = "vsnip" },
 		-- { name = "copilot" },
+	},
+
+	snippet = {
+		expand = function(args)
+			vim.fn["vsnip#anonymous"](args.body)
+		end,
 	},
 
 	formatting = {
@@ -30,11 +37,13 @@ cmp.setup({
 				latex_symbols = "[Latex]",
 				treesitter = "[TS]",
 				cmp_tabnine = "[TN]",
+				vsnip = "[Snip]",
 			},
 		}),
 	},
 
 	mapping = {
+		["<CR>"] = cmp.mapping.confirm({ select = true }),
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
